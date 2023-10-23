@@ -1,18 +1,34 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+
+const config = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  corePlugins: {
+    preflight: false
+  },
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        primary: 'linear-gradient(92deg, #0B3E27 0%, #197149 97.73%)'
       },
-    },
+      boxShadow: {
+        1: '0 4px 10px 2px rgba(0, 0, 0, .05)',
+        2: '0 6px 12px 0px rgba(0, 0, 0, .08)'
+      },
+      colors: {
+        black: '#202020',
+        gray: {
+          10: '#DDDDDD',
+          20: '#A8A8A8'
+        }
+      },
+      fontSize: {
+        captionSm: ['.75rem', {lineHeight: '180%', fontWeight: 400}],
+        captionMd: ['.813rem', {lineHeight: '180%', fontWeight: 400}],
+        captionLg: ['.813rem', {lineHeight: '180%', fontWeight: 400}]
+      }
+    }
   },
-  plugins: [],
-}
+  plugins: []
+};
+
+export default config;
