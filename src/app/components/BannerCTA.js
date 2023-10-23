@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const BannerCTA = () => {
   
-  const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-10';
+  const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-20';
   
   return (
     <Row
@@ -49,7 +49,7 @@ const CTALink = ({text, icon}) => {
       <div className="[&>div]:text-center [&>div]:text-captionXl">
         <div className="text-black">{text?.persian}</div>
         
-        <div className="text-gray-20">{text?.english}</div>
+        <div className="text-gray-30">{text?.english}</div>
       </div>
       
       <div>

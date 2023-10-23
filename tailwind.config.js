@@ -17,14 +17,16 @@ const config = {
       colors: {
         black: '#202020',
         gray: {
-          10: '#DDDDDD',
-          20: '#A8A8A8'
+          10: '#F8F8F8',
+          20: '#DDDDDD',
+          30: '#A8A8A8'
         }
       },
       fontSize: {
-        captionSm: ['.75rem', {lineHeight: '180%', fontWeight: 400}],
-        captionMd: ['.813rem', {lineHeight: '180%', fontWeight: 400}],
-        captionLg: ['.813rem', {lineHeight: '180%', fontWeight: 400}]
+        captionSm: ['.75rem', {lineHeight: '160%', fontWeight: 400}],
+        captionMd: ['.813rem', {lineHeight: '160%', fontWeight: 400}],
+        captionLg: ['1rem', {lineHeight: '160%', fontWeight: 400}],
+        captionXl: ['1.2rem', {lineHeight: '160%', fontWeight: 400}]
       }
     }
   },
