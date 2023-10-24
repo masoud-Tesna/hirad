@@ -1,9 +1,13 @@
 'use client';
 
+import ProjectsList from '@/app/components/ProjectsLists';
+
 const Home = () => {
   return (
     <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto beatae eaque expedita nam necessitatibus pariatur praesentium reprehenderit, ullam unde.
+      <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
+        <ProjectsList />
+      </div>
     </div>
   );
 };
