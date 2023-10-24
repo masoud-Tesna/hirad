@@ -27,7 +27,7 @@ const Banner = () => {
   
   return (
     <ParallaxProvider>
-      <FixParallaxScrollEvent />
+      {/*<FixParallaxScrollEvent />*/}
       
       <ParallaxBanner
         layers={[
