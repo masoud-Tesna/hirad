@@ -2,9 +2,9 @@
 
 import {Layout} from 'antd';
 import Image from 'next/image';
-import Banner from './components/Banner';
-import BannerCTA from './components/BannerCTA';
-import Footer from './components/Footer';
+import Banner from '@/templates/Banner';
+import BannerCTA from '@/templates/BannerCTA';
+import Footer from '@/templates/Footer';
 
 export default function Template({children}) {
   
@@ -33,7 +33,7 @@ export default function Template({children}) {
           </div>
         </div>
         
-        <div className="--pageSection">
+        <div className="--pageSection mt-[30px]">
           {children}
         </div>
       </Layout.Content>
