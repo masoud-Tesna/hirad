@@ -19,7 +19,7 @@
     & > div {
       &:not(:nth-last-child(-n+2)) {
         & > div {
-          @apply border-solid border-0 border-b border-gray-30
+          @apply border-solid border-0 border-b border-gray-40
         }
       }
     }

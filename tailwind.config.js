@@ -28,8 +28,9 @@ const config = {
         black: '#202020',
         gray: {
           10: '#F8F8F8',
-          20: '#DDDDDD',
-          30: '#A8A8A8'
+          20: '#F5F5F5',
+          30: '#DDDDDD',
+          40: '#A8A8A8'
         }
       },
       fontSize: {

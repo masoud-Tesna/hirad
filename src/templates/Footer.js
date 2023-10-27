@@ -1,4 +1,4 @@
-import {Col, Row, Space} from 'antd';
+import {Col, Row} from 'antd';
 import Image from 'next/image';
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
                   </Col>
                   
                   <Col flex="1 1" className="[&>div]:text-black [&>div]:text-captionLg [&>div]:py-[12px]">
-                    <div className="border-solid border-0 border-b border-gray-20 inline-block">
+                    <div className="border-solid border-0 border-b border-gray-30 inline-block">
                       تهران، شهرک غرب، خیابان گل افشان، پلاک 84
                     </div>
                     
@@ -49,7 +49,7 @@ const Footer = () => {
                 <Row
                   gutter={20}
                   align={'middle'}
-                  className="border-solid border-0 border-b border-gray-20 [&>div]:text-captionLg [&>div]:text-black"
+                  className="border-solid border-0 border-b border-gray-30 [&>div]:text-captionLg [&>div]:text-black"
                 >
                   <Col flex="1 1">
                     021-880912912
