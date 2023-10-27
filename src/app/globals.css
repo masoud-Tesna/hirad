@@ -41,4 +41,11 @@
       }
     }
   }
+  
+  .--falamacProjectSection {
+    .--centerSection {
+      background: linear-gradient(90deg, rgba(134, 134, 134, 0.20) 0.77%, rgba(255, 255, 255, 0.20) 106.96%);
+      filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.05));
+    }
+  }
 }

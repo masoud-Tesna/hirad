@@ -5,6 +5,7 @@ import ProjectsList from '@/app/components/ProjectsListsGrid';
 import ProjectsListSlider from '@/app/components/ProjectsListSlider';
 import FollowUsSection from '@/app/components/FollowUsSection';
 import BusinessPartners from '@/app/components/BusinessPartners';
+import FalamacProject from '@/app/components/FalamacProject';
 
 const Home = () => {
   return (
@@ -29,6 +30,10 @@ const Home = () => {
         <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
           <BusinessPartners />
         </div>
+      </div>
+      
+      <div>
+        <FalamacProject />
       </div>
     </>
   );
