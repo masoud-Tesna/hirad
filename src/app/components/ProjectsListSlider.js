@@ -79,7 +79,7 @@ export default () => {
                         پروژه فلامک، شهـرک غرب
                       </div>
                       
-                      <div className="text-gray-30 text-captionXl">
+                      <div className="text-gray-40 text-captionXl">
                         Flamac Project, Shahrak-e Gharb
                       </div>
                       
@@ -249,7 +249,7 @@ export default () => {
                         پروژه فلامک، شهـرک غرب
                       </div>
                       
-                      <div className="text-gray-30 text-captionXl">
+                      <div className="text-gray-40 text-captionXl">
                         Flamac Project, Shahrak-e Gharb
                       </div>
                       
@@ -419,7 +419,7 @@ export default () => {
                         پروژه فلامک، شهـرک غرب
                       </div>
                       
-                      <div className="text-gray-30 text-captionXl">
+                      <div className="text-gray-40 text-captionXl">
                         Flamac Project, Shahrak-e Gharb
                       </div>
                       
@@ -589,7 +589,7 @@ export default () => {
                         پروژه فلامک، شهـرک غرب
                       </div>
                       
-                      <div className="text-gray-30 text-captionXl">
+                      <div className="text-gray-40 text-captionXl">
                         Flamac Project, Shahrak-e Gharb
                       </div>
                       

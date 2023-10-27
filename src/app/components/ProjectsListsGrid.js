@@ -42,7 +42,7 @@ export default () => {
             گروه ساختمانی هیراد
           </div>
           
-          <div className="text-gray-30 text-captionXl">
+          <div className="text-gray-40 text-captionXl">
             Hirad Construction Group
           </div>
           
