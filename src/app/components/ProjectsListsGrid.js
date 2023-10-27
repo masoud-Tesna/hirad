@@ -33,7 +33,7 @@ const Box = styled.div`
   }
 `;
 
-const ProjectsList = () => {
+export default () => {
   return (
     <>
       <Row justify={'center'}>
@@ -183,41 +183,6 @@ const ProjectsList = () => {
           </div>
         </div>
       </Box>
-      
-      {/*<div className="grid grid-cols-[repeat(3,1fr)] grid-rows-[3fr_2fr_3fr] gap-4 h-[400px] mt-[40px]">
-        <div
-          className="bg-[url('/images/projects/project1.png')] bg-no-repeat bg-cover bg-center"
-          style={{gridArea: '1 / 3 / 4 / 4'}}
-        >
-          1
-        </div>
-        
-        <div
-          className="bg-[url('/images/projects/project2.png')] bg-no-repeat bg-cover bg-center"
-          style={{gridArea: '1 / 2 / 2 / 3'}}
-        >2
-        </div>
-        
-        <div
-          className="bg-[url('/images/projects/project3.png')] bg-no-repeat bg-cover bg-center"
-          style={{gridArea: '2 / 2 / 4 / 3'}}
-        >3
-        </div>
-        
-        <div
-          className="bg-[url('/images/projects/project4.png')] bg-no-repeat bg-cover bg-center"
-          style={{gridArea: '1 / 1 / 3 / 2'}}
-        >4
-        </div>
-        
-        <div
-          className="bg-[url('/images/projects/project5.png')] bg-no-repeat bg-cover bg-center"
-          style={{gridArea: '3 / 1 / 4 / 2'}}
-        >5
-        </div>
-      
-      </div>*/}
     </>
   );
 };
-export default ProjectsList;

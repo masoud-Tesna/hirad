@@ -8,6 +8,7 @@ import {antdTheme} from '@/theme';
 import {useMemo, useState} from 'react';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
+// import {register} from 'swiper/element/bundle';
 
 const StyledComponentsRegistry = ({children}) => {
   const cache = useMemo(() => createCache(), []);
@@ -18,6 +19,9 @@ const StyledComponentsRegistry = ({children}) => {
 };
 
 const CombineProvider = ({children}) => {
+  // register Swiper custom elements
+  // register();
+  
   const [queryClient] = useState(() => new QueryClient());
   
   return (

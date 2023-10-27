@@ -12,38 +12,33 @@
   .d-ltr {
     direction: ltr;
   }
-  
-  .headline {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 10vw;
+}
+
+@layer components {
+  .--pointsSection {
+    & > div {
+      &:not(:nth-last-child(-n+2)) {
+        & > div {
+          @apply border-solid border-0 border-b border-gray-30
+        }
+      }
+    }
   }
   
-  .inset {
-    position: absolute;
-    inset: 0;
+  .--projectsListSlider {
+    .swiper-button-prev,
+    .swiper-button-next {
+      @apply bg-primary bg-clip-text text-transparent;
+    }
+    
+    .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        @apply w-[9px] h-[9px] bg-white opacity-100;
+        
+        &.swiper-pagination-bullet-active {
+          @apply bg-primary;
+        }
+      }
+    }
   }
-  
-  .white {
-    color: white;
-  }
-  
-  .gray {
-    color: #446;
-  }
-  
-  .full {
-    height: 100vh;
-  }
-  
-  .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .gradient {
-    background: linear-gradient(rgba(14, 62, 151, 0.5) 50%, black);
-  }
-  
 }
