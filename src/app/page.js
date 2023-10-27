@@ -1,8 +1,10 @@
 'use client';
 
+// components
 import ProjectsList from '@/app/components/ProjectsListsGrid';
 import ProjectsListSlider from '@/app/components/ProjectsListSlider';
 import FollowUsSection from '@/app/components/FollowUsSection';
+import BusinessPartners from '@/app/components/BusinessPartners';
 
 const Home = () => {
   return (
@@ -21,6 +23,12 @@ const Home = () => {
       
       <div>
         <FollowUsSection />
+      </div>
+      
+      <div className="py-[80px]">
+        <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
+          <BusinessPartners />
+        </div>
       </div>
     </>
   );
