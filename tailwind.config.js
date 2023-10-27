@@ -19,8 +19,9 @@ const config = {
       },
       boxShadow: {
         1: '0 4px 10px 2px rgba(0, 0, 0, .05)',
-        2: '0 6px 12px 0px rgba(0, 0, 0, .08)',
-        3: '0px 6px 12px 0px rgba(0, 0, 0, .12)'
+        2: '0 6px 12px 0 rgba(0, 0, 0, .08)',
+        3: '0 6px 12px 0 rgba(0, 0, 0, .12)',
+        4: '0 10px 25px 0 rgba(0, 0, 0, .30) inset'
       },
       colors: {
         secondary: '#0B3E27',

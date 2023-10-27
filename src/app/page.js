@@ -2,6 +2,7 @@
 
 import ProjectsList from '@/app/components/ProjectsListsGrid';
 import ProjectsListSlider from '@/app/components/ProjectsListSlider';
+import FollowUsSection from '@/app/components/FollowUsSection';
 
 const Home = () => {
   return (
@@ -16,6 +17,10 @@ const Home = () => {
         <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
           <ProjectsListSlider />
         </div>
+      </div>
+      
+      <div>
+        <FollowUsSection />
       </div>
     </>
   );
