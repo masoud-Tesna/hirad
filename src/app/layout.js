@@ -10,7 +10,7 @@ export const metadata = {
 const RootLayout = ({children}) => {
   return (
     <html lang="fa">
-    <body>
+    <body className={'!font-samim'}>
     <div className="--hiradApp h-full">
       <CombineProvider>
         {children}

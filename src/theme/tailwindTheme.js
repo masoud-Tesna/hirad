@@ -15,14 +15,19 @@ const tailwindTheme = {
       },
       boxShadow: {
         1: '0 4px 10px 2px rgba(0, 0, 0, .05)',
-        2: '0 6px 12px 0px rgba(0, 0, 0, .08)'
+        2: '0 6px 12px 0 rgba(0, 0, 0, .08)',
+        3: '0 6px 12px 0 rgba(0, 0, 0, .12)',
+        4: '0 10px 25px 0 rgba(0, 0, 0, .30) inset'
       },
       colors: {
+        secondary: '#0B3E27',
         black: '#202020',
         gray: {
           10: '#F8F8F8',
-          20: '#DDDDDD',
-          30: '#A8A8A8'
+          20: '#F5F5F5',
+          30: '#DDDDDD',
+          40: '#A8A8A8',
+          50: '#757575'
         }
       },
       fontSize: {
@@ -33,6 +38,9 @@ const tailwindTheme = {
         captionXxl: ['1.8rem', {lineHeight: '160%', fontWeight: 400}],
         xs: ['.6255rem', {lineHeight: '160%', fontWeight: 400}],
         sm: ['.875rem', {lineHeight: '160%', fontWeight: 400}]
+      },
+      fontFamily: {
+        samim: 'samimFont'
       }
     }
   }

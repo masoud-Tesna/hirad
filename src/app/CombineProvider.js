@@ -8,6 +8,7 @@ import {antdTheme} from '@/theme';
 import {useMemo, useState} from 'react';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
+import {BannerProvider} from '@/app/contexts/Banner';
 // import {register} from 'swiper/element/bundle';
 
 const StyledComponentsRegistry = ({children}) => {
@@ -28,7 +29,9 @@ const CombineProvider = ({children}) => {
     <QueryClientProvider client={queryClient}>
       <StyledComponentsRegistry>
         <ConfigProvider theme={antdTheme} direction={'rtl'} locale={faIR}>
-          {children}
+          <BannerProvider>
+            {children}
+          </BannerProvider>
           
           <ReactQueryDevtools />
         </ConfigProvider>

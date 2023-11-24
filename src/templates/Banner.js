@@ -1,11 +1,11 @@
 'use client';
 
-import {useEffect} from 'react';
-import {ParallaxBanner, ParallaxProvider, useParallaxController} from 'react-scroll-parallax';
+import {useBanner} from '@/app/contexts/Banner';
+import Image from 'next/image';
 
 const passiveEventListener = {passive: true};
 
-const FixParallaxScrollEvent = () => {
+/*const FixParallaxScrollEvent = () => {
   const parallaxController = useParallaxController();
   
   useEffect(() => {
@@ -21,13 +21,27 @@ const FixParallaxScrollEvent = () => {
   }, [parallaxController]);
   
   return null;
-};
+};*/
 
 const Banner = () => {
+  const {bannerSettings} = useBanner();
+  
   
   return (
+    <div style={{height: bannerSettings?.height}}>
+      <Image
+        src={bannerSettings?.banner}
+        alt={bannerSettings?.alt}
+        layout={'fill'}
+        style={{maxHeight: bannerSettings?.height}}
+      />
+    </div>
+  );
+  
+  
+  /*return (
     <ParallaxProvider>
-      <FixParallaxScrollEvent />
+      {/!*<FixParallaxScrollEvent />*!/}
       
       <ParallaxBanner
         layers={[
@@ -45,7 +59,7 @@ const Banner = () => {
         className="h-full"
       />
     </ParallaxProvider>
-  );
+  );*/
 };
 
 export default Banner;

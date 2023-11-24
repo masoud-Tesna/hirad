@@ -30,7 +30,8 @@ const config = {
           10: '#F8F8F8',
           20: '#F5F5F5',
           30: '#DDDDDD',
-          40: '#A8A8A8'
+          40: '#A8A8A8',
+          50: '#757575'
         }
       },
       fontSize: {
@@ -41,6 +42,9 @@ const config = {
         captionXxl: ['1.8rem', {lineHeight: '160%', fontWeight: 400}],
         xs: ['.6255rem', {lineHeight: '160%', fontWeight: 400}],
         sm: ['.875rem', {lineHeight: '160%', fontWeight: 400}]
+      },
+      fontFamily: {
+        samim: 'samimFont'
       }
     }
   },
