@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import {Button, Col, Row} from 'antd';
 import Image from 'next/image';
 
-export default () => {
+const ProjectsListSlider = () => {
   return (
     <div className="d-ltr">
       {/*<swiper-container
@@ -736,7 +736,7 @@ export default () => {
       </Swiper>
     </div>
   );
-}
+};
 
 const ProjectImageGallery = ({images}) => {
   return (
@@ -758,3 +758,5 @@ const ProjectImageGallery = ({images}) => {
     </Swiper>
   );
 };
+
+export default ProjectsListSlider;

@@ -2,16 +2,17 @@ import ChangeBanner from '@/app/projects/[projectName]/components/ChangeBanner';
 import {Col, Row} from 'antd';
 
 import projectImage from '/public/images/projects/felamak/forDescription.png';
-import projectAmenitiesBg from '/public/images/projectAmenitiesBg.png';
 import Image from 'next/image';
 import Description from '@/app/projects/[projectName]/components/Description';
+import ProjectAmenities from '@/app/projects/[projectName]/components/ProjectAmenities';
+import ProjectGallery from '@/app/projects/[projectName]/components/ProjectGallery';
 
 const ProjectDetailsPage = ({params: {projectName}}) => {
   return (
     <>
       <ChangeBanner projectName={projectName} />
       
-      <Row justify={'space-between'} align={'middle'}>
+      <Row justify={'space-between'} align={'middle'} className="mb-[100px]">
         <Col span={9}>
           <Description
             details={{
@@ -31,11 +32,9 @@ const ProjectDetailsPage = ({params: {projectName}}) => {
         </Col>
       </Row>
       
-      <div className="" style={{backgroundImage: `url('${projectAmenitiesBg.src}')`}}>
-        <div className="w-1/3 h-[683px]">
-          dd
-        </div>
-      </div>
+      <ProjectAmenities />
+      
+      <ProjectGallery />
     </>
   );
 };

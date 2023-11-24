@@ -4,9 +4,9 @@ import persian from 'react-date-object/calendars/persian';
 import gregorian from 'react-date-object/calendars/gregorian';
 import messages from './inputRulesMessage';
 
-export const formatNumber = number => {
+/*export const formatNumber = number => {
   return number.toLocaleString(undefined, {maximumFractionDigits: 0});
-};
+};*/
 
 export const formatCadNumber = cardNumber => cardNumber?.replace(/\d{4}(?=.)/g, '$& - ');
 
