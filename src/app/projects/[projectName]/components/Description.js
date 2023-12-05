@@ -4,7 +4,7 @@ const Description = ({details}) => {
   return (
     <>
       <div
-        className="text-[5.94306rem] bg-clip-text text-transparent uppercase font-bold opacity-50"
+        className="max-md:text-center text-[5.94306rem] bg-clip-text text-transparent uppercase font-bold opacity-50"
         style={{
           backgroundPosition: '-70% 70%',
           backgroundRepeat: 'repeat, no-repeat',
@@ -14,11 +14,11 @@ const Description = ({details}) => {
         {details?.projectName}
       </div>
       
-      <div className="text-gray-40 text-[1.51369rem] tracking-[0.135rem] capitalize">
+      <div className="max-md:text-center text-gray-40 text-[1.51369rem] tracking-[0.115rem] capitalize">
         {details.title.top}
       </div>
       
-      <div className="text-black text-[1.329rem] tracking-[0.11rem] capitalize mb-[20px]">
+      <div className="max-md:text-center text-black text-[1.329rem] tracking-[0.118rem] capitalize mb-[20px]">
         {details?.title?.bottom}
       </div>
       

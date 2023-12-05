@@ -76,7 +76,13 @@ const CTALink = ({text, icon, onClick}) => {
       </div>
       
       <div>
-        <Image src={icon?.path} alt={text?.persian} layout={'responsive'} width={icon?.width} height={icon?.height} />
+        <Image
+          src={icon?.path}
+          alt={text?.persian}
+          width={50}
+          height={54}
+          className="max-w-[50px] max-h-[54px]"
+        />
       </div>
     </Space>
   );

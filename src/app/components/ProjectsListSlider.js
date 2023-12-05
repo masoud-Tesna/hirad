@@ -11,32 +11,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {Button, Col, Row} from 'antd';
 import Image from 'next/image';
+import {useRouter} from 'next/navigation';
 
 const ProjectsListSlider = () => {
+  const router = useRouter();
+  
   return (
     <div className="d-ltr">
-      {/*<swiper-container
-        init="false"
-        className="w-full h-[400px]"
-        grab-cursor="true"
-        effect="creative"
-        creative-effect={{
-          prev: {
-            shadow: true,
-            translate: [0, 0, -400]
-          },
-          next: {
-            translate: ['100%', 0, 0]
-          }
-        }}
-      >
-        <swiper-slide className="flex items-center justify-center bg-red-500">Slide 1</swiper-slide>
-        <swiper-slide className="flex items-center justify-center bg-amber-500">Slide 2</swiper-slide>
-        <swiper-slide className="flex items-center justify-center bg-blue-500">Slide 3</swiper-slide>
-        <swiper-slide className="flex items-center justify-center bg-cyan-5000">Slide 4</swiper-slide>
-        <swiper-slide className="flex items-center justify-center bg-fuchsia-500">Slide 5</swiper-slide>
-      </swiper-container>*/}
-      
       <Swiper
         navigation
         grabCursor
@@ -57,7 +38,7 @@ const ProjectsListSlider = () => {
       >
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col span={12} className="p-[60px] pb-[34px]">
+            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
               <Row gutter={[0, 35]}>
                 <Col span={24}>
                   <Row gutter={23}>
@@ -79,7 +60,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Flamac Project, Shahrak-e Gharb
+                        Falamac Project, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionLg">
@@ -202,14 +183,19 @@ const ProjectsListSlider = () => {
                 </Col>
                 
                 <Col span={24}>
-                  <Button type="primary" className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-" block>
+                  <Button
+                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    type="primary"
+                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    block
+                  >
                     معرفی کامل پروژه
                   </Button>
                 </Col>
               </Row>
             </Col>
             
-            <Col span={12}>
+            <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [
@@ -226,12 +212,11 @@ const ProjectsListSlider = () => {
         
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col span={12} className="p-[60px] pb-[34px]">
+            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
               <Row gutter={[0, 35]}>
                 <Col span={24}>
                   <Row gutter={23}>
                     <Col className="text-secondary/10 tracking-[-24px]">
-                      {/*،،*/}
                       <svg
                         className="w-[50px] h-[70px] text-secondary/10"
                         aria-hidden="true"
@@ -249,7 +234,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Flamac Project, Shahrak-e Gharb
+                        Falamac Project, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionLg">
@@ -372,14 +357,19 @@ const ProjectsListSlider = () => {
                 </Col>
                 
                 <Col span={24}>
-                  <Button type="primary" className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-" block>
+                  <Button
+                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    type="primary"
+                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    block
+                  >
                     معرفی کامل پروژه
                   </Button>
                 </Col>
               </Row>
             </Col>
             
-            <Col span={12}>
+            <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [
@@ -396,12 +386,11 @@ const ProjectsListSlider = () => {
         
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col span={12} className="p-[60px] pb-[34px]">
+            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
               <Row gutter={[0, 35]}>
                 <Col span={24}>
                   <Row gutter={23}>
                     <Col className="text-secondary/10 tracking-[-24px]">
-                      {/*،،*/}
                       <svg
                         className="w-[50px] h-[70px] text-secondary/10"
                         aria-hidden="true"
@@ -419,7 +408,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Flamac Project, Shahrak-e Gharb
+                        Falamac Project, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionLg">
@@ -542,14 +531,19 @@ const ProjectsListSlider = () => {
                 </Col>
                 
                 <Col span={24}>
-                  <Button type="primary" className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-" block>
+                  <Button
+                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    type="primary"
+                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    block
+                  >
                     معرفی کامل پروژه
                   </Button>
                 </Col>
               </Row>
             </Col>
             
-            <Col span={12}>
+            <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [
@@ -566,12 +560,11 @@ const ProjectsListSlider = () => {
         
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col span={12} className="p-[60px] pb-[34px]">
+            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
               <Row gutter={[0, 35]}>
                 <Col span={24}>
                   <Row gutter={23}>
                     <Col className="text-secondary/10 tracking-[-24px]">
-                      {/*،،*/}
                       <svg
                         className="w-[50px] h-[70px] text-secondary/10"
                         aria-hidden="true"
@@ -589,7 +582,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Flamac Project, Shahrak-e Gharb
+                        Falamac Project, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionLg">
@@ -712,14 +705,19 @@ const ProjectsListSlider = () => {
                 </Col>
                 
                 <Col span={24}>
-                  <Button type="primary" className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-" block>
+                  <Button
+                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    type="primary"
+                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    block
+                  >
                     معرفی کامل پروژه
                   </Button>
                 </Col>
               </Row>
             </Col>
             
-            <Col span={12}>
+            <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [

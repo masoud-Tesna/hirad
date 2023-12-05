@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  # this service should use the web image after you build it
+  hirad-frontend:
+    image: hirad-frontend
+    container_name: hirad-frontend
+    restart: unless-stopped
+    build:
+      context: .
+      args:
+        - ENV=$ENV
+      dockerfile: Dockerfile
+    
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: production

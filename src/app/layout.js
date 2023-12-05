@@ -1,6 +1,7 @@
 import './globals.css';
 import React from 'react';
 import CombineProvider from '@/app/CombineProvider';
+import PageTemplate from '@/app/PageTemplate';
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,7 +14,9 @@ const RootLayout = ({children}) => {
     <body className={'!font-samim'}>
     <div className="--hiradApp h-full">
       <CombineProvider>
-        {children}
+        <PageTemplate>
+          {children}
+        </PageTemplate>
       </CombineProvider>
     </div>
     </body>

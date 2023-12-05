@@ -47,7 +47,7 @@ export const useMutation = (
   const [mutationRequestIsLoading, setMutationRequestIsLoading] = useState(false); // state for mutation request is
                                                                                    // loading
   
-  const callApi = async (data, params) => {
+  const callApi = async (data) => {
     const result = await axiosClient.request(
       {
         method,
@@ -62,7 +62,7 @@ export const useMutation = (
   
   // Instead of returning here, just save the result in a variable
   const mutationResult = tanstackUseMutation({
-    mutationFn: variables => callApi(variables, params),
+    mutationFn: callApi,
     onMutate: () => setMutationRequestIsLoading(true), // start is loading
     retry: false,
     onSettled: async (data, error) => {

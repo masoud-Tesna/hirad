@@ -15,7 +15,7 @@ const ProjectGallery = () => {
           </div>
           
           <div className="text-black text-captionLg uppercase">
-            FLAMAC
+            Falamac
           </div>
         </Col>
       </Row>

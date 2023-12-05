@@ -29,7 +29,8 @@ const antdTheme = {
     Modal: {
       boxShadow: '0 6px 22px 0 rgba(0, 0, 0, .25)',
       marginXS: 25,
-      borderRadiusLG: 0
+      borderRadiusLG: 0,
+      colorBgMask: 'rgba(0, 0, 0, 0.50)'
     },
     Checkbox: {
       colorText: tailwindTheme.theme.extend.colors.gray[40],
@@ -37,6 +38,9 @@ const antdTheme = {
       colorPrimary: tailwindTheme.theme.extend.colors.gray[50],
       colorPrimaryHover: tailwindTheme.theme.extend.colors.gray[40],
       borderRadiusSM: 2
+    },
+    Button: {
+      borderRadius: 0
     }
   }
 };

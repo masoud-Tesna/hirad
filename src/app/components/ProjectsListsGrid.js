@@ -2,6 +2,8 @@
 
 import {Col, Divider, Row, Space} from 'antd';
 import styled from 'styled-components';
+import locationIcon from '/public/icons/location2.svg';
+import Image from 'next/image';
 
 const Box = styled.div`
   .--image {
@@ -55,10 +57,11 @@ export default () => {
       <Box className="grid grid-cols-3 grid-rows-5 gap-4 h-[400px] [&>div>div]:cursor-pointer [&>div>div]:h-full [&>div>div]:relative [&>div>div]:overflow-hidden [&>div>div]:bg-center [&>div>div]:bg-cover [&>div>div]:bg-no-repeat mt-[40px]">
         <div className="row-span-5 col-start-3 row-start-1">
           <div className="--image bg-[url('/images/projects/project1.png')]">
-            <div className="flex flex-col opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
+            <div className="flex flex-col py-[15px] opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
               <div className="relative top-[50%] translate-y-[-50%]">
                 <Space
-                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-[5px]" />}
+                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-0" />}
+                  size={4}
                   direction="vertical"
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
@@ -73,7 +76,11 @@ export default () => {
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
-                Mazandaran, Nowshahr, chelak
+                <Space size={4}>
+                  Mazandaran, Nowshahr, chelak
+                  
+                  <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
+                </Space>
               </div>
             </div>
           </div>
@@ -81,10 +88,11 @@ export default () => {
         
         <div className="row-span-2 col-start-2 row-start-1">
           <div className="--image bg-[url('/images/projects/project2.png')]">
-            <div className="flex flex-col opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
+            <div className="flex flex-col py-[15px] opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
               <div className="relative top-[50%] translate-y-[-50%]">
                 <Space
-                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-[5px]" />}
+                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-0" />}
+                  size={4}
                   direction="vertical"
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
@@ -99,7 +107,11 @@ export default () => {
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
-                Mazandaran, Nowshahr, chelak
+                <Space size={4}>
+                  Mazandaran, Nowshahr, chelak
+                  
+                  <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
+                </Space>
               </div>
             </div>
           </div>
@@ -107,10 +119,11 @@ export default () => {
         
         <div className="row-span-3 col-start-2 row-start-3">
           <div className="--image bg-[url('/images/projects/project3.png')]">
-            <div className="flex flex-col opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
+            <div className="flex flex-col py-[15px] opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
               <div className="relative top-[50%] translate-y-[-50%]">
                 <Space
-                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-[5px]" />}
+                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-0" />}
+                  size={4}
                   direction="vertical"
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
@@ -125,7 +138,11 @@ export default () => {
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
-                Mazandaran, Nowshahr, chelak
+                <Space size={4}>
+                  Mazandaran, Nowshahr, chelak
+                  
+                  <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
+                </Space>
               </div>
             </div>
           </div>
@@ -133,10 +150,11 @@ export default () => {
         
         <div className="row-span-3 col-start-1 row-start-1">
           <div className="--image bg-[url('/images/projects/project4.png')]">
-            <div className="flex flex-col opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
+            <div className="flex flex-col py-[15px] opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
               <div className="relative top-[50%] translate-y-[-50%]">
                 <Space
-                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-[5px]" />}
+                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-0" />}
+                  size={4}
                   direction="vertical"
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
@@ -151,7 +169,11 @@ export default () => {
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
-                Mazandaran, Nowshahr, chelak
+                <Space size={4}>
+                  Mazandaran, Nowshahr, chelak
+                  
+                  <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
+                </Space>
               </div>
             </div>
           </div>
@@ -159,10 +181,11 @@ export default () => {
         
         <div className="row-span-2 row-start-4">
           <div className="--image bg-[url('/images/projects/project5.png')]">
-            <div className="flex flex-col opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
+            <div className="flex flex-col py-[15px] opacity-0 relative z-10 items-center text-white h-full transition-opacity duration-[300ms] bg-[rgba(32,32,32,.90)]">
               <div className="relative top-[50%] translate-y-[-50%]">
                 <Space
-                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-[5px]" />}
+                  split={<Divider className="!border-[rgba(221,221,221,.50)] !my-0" />}
+                  size={4}
                   direction="vertical"
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
@@ -177,7 +200,11 @@ export default () => {
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
-                Mazandaran, Nowshahr, chelak
+                <Space size={4}>
+                  Mazandaran, Nowshahr, chelak
+                  
+                  <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
+                </Space>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@
 import {useBanner} from '@/app/contexts/Banner';
 import Image from 'next/image';
 
-const passiveEventListener = {passive: true};
+// const passiveEventListener = {passive: true};
 
 /*const FixParallaxScrollEvent = () => {
   const parallaxController = useParallaxController();
@@ -25,7 +25,6 @@ const passiveEventListener = {passive: true};
 
 const Banner = () => {
   const {bannerSettings} = useBanner();
-  
   
   return (
     <div style={{height: bannerSettings?.height}}>

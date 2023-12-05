@@ -7,58 +7,29 @@ import FollowUsSection from '@/app/components/FollowUsSection';
 import BusinessPartners from '@/app/components/BusinessPartners';
 import FalamacProject from '@/app/components/FalamacProject';
 import ChangeBanner from '@/app/components/ChangeBanner';
+import {useQuery} from '@tanstack/react-query';
 
 const Home = () => {
-  /*const [formRef] = Form.useForm();
   
-  const inputWatch = Form.useWatch('test', formRef) || '';
-  
-  const [focused, setFocused] = useState(false);
-  
-  const floating = inputWatch.trim().length !== 0 || focused || undefined;*/
+  const {} = useQuery({});
   
   return (
     <>
-      {/*<div className="my-[60px] w-[300px] mx-auto">
-        <Form
-          form={formRef}
-          layout="vertical"
-          
-          onFinish={v => {
-            console.log({v});
-          }}
-        >
-          <div className="--floatingLabel" data-floating={floating}>
-            <Form.Item
-              name="test" label={floating ? 'ایمیل' : 'ایمیل (اجباری)'}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-            >
-              <Input
-              />
-            </Form.Item>
-          </div>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">Submit</Button>
-          </Form.Item>
-        </Form>
-      </div>*/}
-      
       <ChangeBanner />
       
       <div className="pb-[80px]">
-        <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
+        <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%] max-md:mt-[40px]">
           <ProjectsList />
         </div>
       </div>
       
-      <div className="bg-gray-10 py-[80px]">
+      <div className="bg-gray-10 py-[80px] md:mx-[-10%]">
         <div className="mx-auto max-sm:w-full max-lg:w-[85%] lg:w-[80%]">
           <ProjectsListSlider />
         </div>
       </div>
       
-      <div>
+      <div className="md:mx-[-10%]">
         <FollowUsSection />
       </div>
       
@@ -68,7 +39,7 @@ const Home = () => {
         </div>
       </div>
       
-      <div>
+      <div className="md:mx-[-10%]">
         <FalamacProject />
       </div>
     </>

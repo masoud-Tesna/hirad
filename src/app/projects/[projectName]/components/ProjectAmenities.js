@@ -17,27 +17,28 @@ const ProjectAmenities = () => {
     <Row
       className=""
       style={{backgroundImage: `url('${projectAmenitiesBg.src}')`}}
-      align="middle h-[555px] mx-[-10%]"
+      align="middle h-[600px] md:mx-[-10%]"
     >
       <Col
-        className={classNames('w-2/5 fill-[linear-gradient(180deg,rgba(137,137,137,0.50)_-2.81%,rgba(255,255,255,0.00)_104.22%)] drop-shadow-[-3px_0px_12px_rgba(0,0,0,0.12)] backdrop-blur-[20px] transition-[height] ease-in-out duration-[2s] pt-[56px] pb-[22px] px-[2%] text-white text-center', {'h-full': showAmenitiesVisible})}
+        className={classNames('w-[500px] fill-[linear-gradient(180deg,rgba(137,137,137,0.50)_-2.81%,rgba(255,255,255,0.00)_104.22%)] drop-shadow-[-3px_0px_12px_rgba(0,0,0,0.12)] backdrop-blur-[20px] transition-[height] ease-in-out duration-[2s] pt-[56px] pb-[22px] px-[2%] text-white text-center', {'h-full': showAmenitiesVisible})}
       >
         <div className="text-captionXxl">
           امکانات رفاهی فلامک
         </div>
         
         <div className="text-captionXl">
-          Flamac Project Amenities
+          Falamac Project Amenities
         </div>
         
-        <div className={classNames('w-1/2 mt-[25px] mx-auto space-y-[12px] [&>div]:border-solid [&>div]:border-0 [&>div]:border-b [&>div]:border-white [&>div]:pb-[12px] max-h-0 !transition-[max-height]  duration-[.4s] overflow-hidden', {'!max-h-full': showAmenitiesVisible})}>
+        <div className={classNames('w-1/2 mt-[25px] mx-auto space-y-[12px] [&>div]:border-solid [&>div]:border-0 [&>div]:border-b [&>div]:border-gray-30 [&>div]:pb-[12px] max-h-0 !transition-[max-height]  duration-[.4s] overflow-hidden', {'!max-h-full': showAmenitiesVisible})}>
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={parkingIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
@@ -46,13 +47,15 @@ const ProjectAmenities = () => {
               </Col>
             </Row>
           </div>
+          
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={cinemaIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
@@ -61,13 +64,15 @@ const ProjectAmenities = () => {
               </Col>
             </Row>
           </div>
+          
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={snookerIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
@@ -76,13 +81,15 @@ const ProjectAmenities = () => {
               </Col>
             </Row>
           </div>
+          
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={parkingIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
@@ -91,13 +98,15 @@ const ProjectAmenities = () => {
               </Col>
             </Row>
           </div>
+          
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={cinemaIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
@@ -106,13 +115,15 @@ const ProjectAmenities = () => {
               </Col>
             </Row>
           </div>
+          
           <div>
             <Row align="middle" gutter={18}>
-              <Col flex="50px" className="text-end">
+              <Col flex="58px" className="text-end">
                 <Image
                   src={snookerIcon}
                   alt={'parking'}
                   layout="responsive"
+                  className="w-[40px]"
                 />
               </Col>
               
