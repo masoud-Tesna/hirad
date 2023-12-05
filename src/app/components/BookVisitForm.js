@@ -20,6 +20,22 @@ const BookVisitForm = () => {
       }}
     >
       <Row gutter={16}>
+        <Col span={24}>
+          <Form.Item
+            name="project"
+          >
+            <Select
+              placeholder="انتخاب پروژه جهت بازدید"
+              options={[
+                {
+                  label: 'فلامک',
+                  value: 'falamac'
+                }
+              ]}
+            />
+          </Form.Item>
+        </Col>
+        
         <Col span={4}>
           <Form.Item
             name="gender"
