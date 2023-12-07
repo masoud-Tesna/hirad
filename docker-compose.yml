@@ -1,36 +1,9 @@
 version: "3.9"
 
 services:
-  backend:
-    container_name: backend
-    image: backend
-    restart: always
-    healthcheck:
-      test: [ "CMD", "curl", "--location", "'localhost:3001'" ]
-      interval: 10s
-      timeout: 10s
-      retries: 10
-    environment:
-      ##setting
-      - PORT=3001
-      - MONGO_URL=mongodb://62.60.212.62:27017/hirad_group
-      - JWT_PRIVATE_KEY=HiraDConsTructorsTWJWT
-    deploy:
-      replicas: 1
-    ports:
-      - "3001:3001"
-    volumes:
-      - /root/projects/hirad-backend/hirad-backend:/app
-  
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-  
-  # this service should use the web image after you build it
-  hirad-frontend:
-    image: hirad-frontend
-    container_name: hirad-frontend
+  frontend:
+    image: frontend
+    container_name: frontend
     restart: unless-stopped
     build:
       context: .
@@ -38,8 +11,6 @@ services:
         - ENV=$ENV
       dockerfile: Dockerfile
     ports:
-      - "3002:3002"
+      - "80:80"
     environment:
       NODE_ENV: production
-    volumes:
-      - /root/projects/hirad-frontend:/app
