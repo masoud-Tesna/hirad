@@ -7,9 +7,9 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+COPY package.json ./
 
-RUN npm i --loglevel verbose --force
+RUN npm i -s -f --verbose
 
 
 # Rebuild the source code only when needed
