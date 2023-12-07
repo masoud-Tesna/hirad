@@ -12,4 +12,4 @@ ENV PORT 3002
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-CMD [ "serve" , "-s" , "out" , "-l" , "3002" ]
+CMD [ "serve" , "-s" , "out" , "-p" , "3002" ]
