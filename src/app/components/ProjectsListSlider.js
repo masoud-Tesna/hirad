@@ -186,7 +186,7 @@ const ProjectsListSlider = () => {
                   <Button
                     onClick={() => router?.push('/projects/falamac', {scroll: false})}
                     type="primary"
-                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    className="!bg-primary !shadow-3"
                     block
                   >
                     معرفی کامل پروژه
@@ -360,7 +360,7 @@ const ProjectsListSlider = () => {
                   <Button
                     onClick={() => router?.push('/projects/falamac', {scroll: false})}
                     type="primary"
-                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    className="!bg-primary !shadow-3"
                     block
                   >
                     معرفی کامل پروژه
@@ -534,7 +534,7 @@ const ProjectsListSlider = () => {
                   <Button
                     onClick={() => router?.push('/projects/falamac', {scroll: false})}
                     type="primary"
-                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    className="!bg-primary !shadow-3"
                     block
                   >
                     معرفی کامل پروژه
@@ -708,7 +708,7 @@ const ProjectsListSlider = () => {
                   <Button
                     onClick={() => router?.push('/projects/falamac', {scroll: false})}
                     type="primary"
-                    className="bg-primary !shadow-3 !h-[47px] !leading-[47px]-"
+                    className="!bg-primary !shadow-3"
                     block
                   >
                     معرفی کامل پروژه
@@ -748,8 +748,8 @@ const ProjectImageGallery = ({images}) => {
       }}
       className="h-full"
     >
-      {images?.map(item => (
-        <SwiperSlide key={item}>
+      {images?.map((item, i) => (
+        <SwiperSlide key={i}>
           <Image src={item} alt={'alt'} layout="fill" />
         </SwiperSlide>
       ))}

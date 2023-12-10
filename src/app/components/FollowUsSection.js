@@ -16,7 +16,7 @@ export default () => {
       </div>
       
       <div>
-        <Button className="!bg-transparent !text-white !text-captionXl !tracking-[2.7px] !border-white !h-[47px] !px-[3rem]">
+        <Button className="!bg-transparent !text-white !text-captionXl !tracking-[2.7px] !border-white !px-[3rem]">
           Follow Us
         </Button>
       </div>
