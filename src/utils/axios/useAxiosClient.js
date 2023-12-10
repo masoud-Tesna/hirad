@@ -14,6 +14,7 @@ export const useAxiosClient = ({type = 'JSON', customRequestHeader = {}}) => {
                                                                                       // application/json OR
                                                                                       // multipart/form-data
     Accept: 'application/json',
+    // 'Access-Control-Allow-Origin': '*',
     Authorization: 'Bearer ' + accessToken, // set Authorization accessToken,
     ...customRequestHeader
   };

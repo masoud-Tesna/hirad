@@ -35,7 +35,7 @@ const Box = styled.div`
   }
 `;
 
-export default () => {
+const ProjectsListsGrid = () => {
   return (
     <>
       <Row justify={'center'}>
@@ -213,3 +213,5 @@ export default () => {
     </>
   );
 };
+
+export default ProjectsListsGrid;

@@ -40,7 +40,8 @@ const antdTheme = {
       borderRadiusSM: 2
     },
     Button: {
-      borderRadius: 0
+      borderRadius: 0,
+      controlHeight: 47
     }
   }
 };

@@ -13,7 +13,7 @@ import messagesIcon from '/public/icons/messages.svg';
 
 const BannerCTA = () => {
   
-  const [bookVisitModalVisible, setBookVisitModalVisible] = useState(false);
+  const [bookVisitModalVisible, setBookVisitModalVisible] = useState(true);
   
   const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-30';
   
@@ -59,8 +59,13 @@ const BannerCTA = () => {
         title="رزرو زمان بازدید"
         className="--customModal"
         width="55%"
+        style={{
+          top: 10
+        }}
       >
-        <BookVisitForm />
+        <div>
+          <BookVisitForm />
+        </div>
       </Modal>
     </>
   );

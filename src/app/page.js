@@ -7,12 +7,8 @@ import FollowUsSection from '@/app/components/FollowUsSection';
 import BusinessPartners from '@/app/components/BusinessPartners';
 import FalamacProject from '@/app/components/FalamacProject';
 import ChangeBanner from '@/app/components/ChangeBanner';
-import {useQuery} from '@tanstack/react-query';
 
 const Home = () => {
-  
-  const {} = useQuery({});
-  
   return (
     <>
       <ChangeBanner />

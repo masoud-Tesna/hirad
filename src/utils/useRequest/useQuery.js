@@ -9,7 +9,6 @@ export const useQuery = (
     method = 'get',
     justResponse = true,
     customRequestHeader,
-    queryKey = [],
     ...rest
   }
 ) => {
@@ -27,15 +26,10 @@ export const useQuery = (
       }
     );
     
-    if (justResponse) {
-      return result?.data?.response;
-    }
-    
     return result?.data;
   };
   
   return tanstackUseQuery({
-    queryKey,
     queryFn: callApi,
     refetchOnWindowFocus: false,
     retry: 2,

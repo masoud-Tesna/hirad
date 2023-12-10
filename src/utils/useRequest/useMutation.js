@@ -23,8 +23,6 @@ export const useMutation = (
   }
 ) => {
   
-  const {NODE_ENV} = process.env;
-  
   const axiosClient = useAxiosClient({type: formType, customRequestHeader});
   
   let requestMessage = {
@@ -61,19 +59,21 @@ export const useMutation = (
   };
   
   // Instead of returning here, just save the result in a variable
-  const mutationResult = tanstackUseMutation({
+  return tanstackUseMutation({
     mutationFn: callApi,
     onMutate: () => setMutationRequestIsLoading(true), // start is loading
     retry: false,
     onSettled: async (data, error) => {
       setMutationRequestIsLoading(false); // end is loading
       
+      console.log({data, error});
+      
       if (data?.message) {
         if (requestMessage?.success) {
           const message = data?.message;
           const findMessage = requestMessages.find(item => item?.en === message);
           
-          toast(customSuccessMessage || findMessage?.fa || (NODE_ENV === 'development' ?
+          toast(customSuccessMessage || findMessage?.fa || (process.env.NODE_ENV === 'development' ?
             message : 'عملیات با موفقیت انجام شد'), {
             toastId: `mutationRequest/${url}`,
             type: successMessageType
@@ -84,7 +84,7 @@ export const useMutation = (
           const message = error?.message;
           const findMessage = requestMessages.find(item => item?.en === error?.message);
           
-          toast(customErrorMessage || findMessage?.fa || (NODE_ENV === 'development' ?
+          toast(customErrorMessage || findMessage?.fa || (process.env.NODE_ENV === 'development' ?
             message : 'عملیات با موفقیت انجام شد'), {
             toastId: `mutationRequest/${url}`,
             type: errorMessageType
@@ -95,8 +95,8 @@ export const useMutation = (
     ...rest
   });
   
-  return {
+  /*return {
     ...mutationResult,
     isLoading: mutationRequestIsLoading
-  };
+  };*/
 };

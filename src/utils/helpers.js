@@ -98,19 +98,21 @@ export const convertDatePicker = (date, format = 'YYYY/MM/DD', local = 'fa') => 
   return (toEnDigit(dateConvert));
 };
 
-export const inputRule = (text, args) => {
-  const argsKeys = args ? Object.keys(args) : [];
+export const convertStringDateToTime = date => date.toISOString().split('T')[1].substring(0, 5);
+
+export const setInputRule = (key, vars) => {
+  const argsKeys = vars ? Object.keys(vars) : [];
   
-  let messageText = messages[text];
+  let messageText = messages[key].message;
   
   if (messageText && argsKeys.length > 0) {
-    for (const [key, val] of Object.entries(args)) {
-      const pattern = new RegExp(`{{${ key }}}`, 'g');
+    for (const [key, val] of Object.entries(vars)) {
+      const pattern = new RegExp(`{{${key}}}`, 'g');
       messageText = messageText.replace(pattern, val?.toString() || '');
     }
   }
   
-  return messageText || text;
+  return messageText || key;
 };
 
 export const convertColor = (color, percent) => {
@@ -205,4 +207,21 @@ const checkBanksCard = (cardNumber) => {
 export const getChunksFromString = (str, chunkSize) => {
   let regexChunk = new RegExp(`.{1,${ chunkSize }}`, 'g');   // '.' represents any character
   return str.match(regexChunk);
+};
+
+
+export const useCreateAntdZodValidation = (schema) => {
+  return {
+    validator: async ({field}, value) => {
+      const fieldValue = typeof value === 'boolean' ? value : !value?.length ? value : undefined;
+      
+      const result = await schema.safeParseAsync({[field]: fieldValue});
+      
+      if (result.success) return Promise.resolve();
+      
+      const error = result.error.issues.filter(issue => issue.path.includes(field))[0]?.message;
+      
+      return error ? Promise.reject(error) : Promise.resolve();
+    }
+  };
 };

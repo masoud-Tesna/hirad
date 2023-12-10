@@ -1,10 +1,12 @@
+'use client';
+
 import MultiDatePicker from 'react-multi-date-picker';
 import persian from 'react-date-object/calendars/persian';
 import persian_fa from 'react-date-object/locales/persian_fa';
 import transition from 'react-element-popper/animations/transition';
 import opacity from 'react-element-popper/animations/opacity';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
-import {convertDatePicker, inputRule, useWindowSize} from '@/utils/helpers';
+import {useWindowSize} from '@/utils/helpers';
 import {Form, Input} from 'antd';
 
 export const DatePicker = (props) => {
@@ -13,18 +15,10 @@ export const DatePicker = (props) => {
     name,
     placeholder,
     listName,
-    dateFormat = 'YYYY/MM/DD'
+    dateFormat = 'YYYY/MM/DD',
+    onChange,
+    ...rest
   } = props;
-  
-  const formRef = Form.useFormInstance();
-  
-  let inputNameByListName = name;
-  
-  if (listName) {
-    inputNameByListName = [listName, ...inputNameByListName];
-  }
-  
-  const inputWatch = Form.useWatch(inputNameByListName, formRef);
   
   const {width} = useWindowSize();
   
@@ -42,33 +36,37 @@ export const DatePicker = (props) => {
     );
   };
   
-  const handleOnChangeDatePicker = value => {
-    if (value) {
-      formRef.setFields([
-        {
-          name: inputNameByListName,
-          value: convertDatePicker(value, dateFormat),
-          errors: []
-        }
-      ]);
-    } else {
-      formRef.setFields([
-        {
-          name: inputNameByListName,
-          value: '',
-          errors: [inputRule('required selectBox', {name: placeholder})]
-        }
-      ]);
+  /*const handleOnChangeDatePicker = value => {
+     if (value) {
+       formRef.setFields([
+         {
+           name: inputNameByListName,
+           value: convertDatePicker(value, dateFormat),
+           errors: []
+         }
+       ]);
+     } else {
+       formRef.setFields([
+         {
+           name: inputNameByListName,
+           value: '',
+           errors: [inputRule('required selectBox', {name: placeholder})]
+         }
+       ]);
+     }
+    
+    if (onChange) {
+      return onChange(value);
     }
     
     return true;
-  };
+  };*/
   
   return (
     <MultiDatePicker
       className={width <= 767 ? 'rmdp-mobile' : ''}
       render={<CustomDatePickerInput />}
-      onChange={handleOnChangeDatePicker}
+      onChange={onChange}
       locale={persian_fa}
       calendar={persian}
       format={dateFormat}
@@ -84,6 +82,7 @@ export const DatePicker = (props) => {
       hideOnScroll
       mobi
       portal
+      {...rest}
     />
   );
 };

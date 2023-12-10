@@ -28,7 +28,7 @@ const Description = ({details}) => {
         </p>
       </div>
       
-      <Button type="primary" className="bg-primary !shadow-3 !h-[47px] mt-[20px]" block>
+      <Button type="primary" className="!bg-primary !shadow-3 mt-[20px]" block>
         رزرو بازدید پروژه
       </Button>
     </>
