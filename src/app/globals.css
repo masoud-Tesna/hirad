@@ -343,4 +343,61 @@
       }
     }
   }
+  
+  .--customModalBlurred {
+    .ant-modal-content {
+      @apply py-[55px] px-[10%] text-white text-center !important;
+      
+      .ant-modal-body > div {
+        @apply text-captionXl font-bold;
+      }
+      
+      .ant-divider {
+        @apply border-white my-[16px];
+      }
+      
+      .anticon-close {
+        @apply text-white;
+      }
+      
+      /*background: linear-gradient(93deg, rgba(156, 156, 156, 0.33) 2.42%, rgba(255, 255, 255, 0.10) 121.3%) !important;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12) !important;
+      backdrop-filter: blur(20px) !important;*/
+      
+      background: linear-gradient(90deg, rgba(155.76, 155.76, 155.76, 0.33) 0%, rgba(255, 255, 255, 0.10) 100%) !important;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12) !important;
+      backdrop-filter: blur(40px) !important;
+    }
+  }
+}
+
+.ant-layout-sider {
+  .ant-menu-item {
+    @apply px-[8px] font-bold text-captionLg !important;
+  }
+}
+
+.ant-table-wrapper {
+  .ant-table {
+    @apply text-captionMd font-bold !important;
+    
+    .ant-table-thead {
+      @apply shadow-9;
+    }
+    
+    .ant-table-cell {
+      @apply text-captionMd border-0 !important;
+      
+      &:before {
+        display: none;
+      }
+    }
+    
+    .ant-table-tbody {
+      .ant-table-cell.ant-table-cell-row-hover,
+      .ant-table-row:nth-child(even) {
+        @apply bg-[#F9F9F9] !important;
+      }
+    }
+  }
 }

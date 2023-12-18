@@ -1,11 +1,11 @@
-import ChangeBanner from '@/app/projects/[projectName]/components/ChangeBanner';
+import ChangeBanner from '@/app/(basic)/projects/[projectName]/components/ChangeBanner';
 import {Col, Row} from 'antd';
 
 import projectImage from '/public/images/projects/falamac/forDescription.png';
 import Image from 'next/image';
-import Description from '@/app/projects/[projectName]/components/Description';
-import ProjectAmenities from '@/app/projects/[projectName]/components/ProjectAmenities';
-import ProjectGallery from '@/app/projects/[projectName]/components/ProjectGallery';
+import Description from '@/app/(basic)/projects/[projectName]/components/Description';
+import ProjectAmenities from '@/app/(basic)/projects/[projectName]/components/ProjectAmenities';
+import ProjectGallery from '@/app/(basic)/projects/[projectName]/components/ProjectGallery';
 
 export async function generateStaticParams() {
   const projects = ['falamac', 'saadat', 'test'];

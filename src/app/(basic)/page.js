@@ -1,12 +1,12 @@
 'use client';
 
 // components
-import ProjectsList from '@/app/components/ProjectsListsGrid';
-import ProjectsListSlider from '@/app/components/ProjectsListSlider';
-import FollowUsSection from '@/app/components/FollowUsSection';
-import BusinessPartners from '@/app/components/BusinessPartners';
-import FalamacProject from '@/app/components/FalamacProject';
-import ChangeBanner from '@/app/components/ChangeBanner';
+import ProjectsList from '@/app/(basic)/components/ProjectsListsGrid';
+import ProjectsListSlider from '@/app/(basic)/components/ProjectsListSlider';
+import FollowUsSection from '@/app/(basic)/components/FollowUsSection';
+import BusinessPartners from '@/app/(basic)/components/BusinessPartners';
+import FalamacProject from '@/app/(basic)/components/FalamacProject';
+import ChangeBanner from '@/app/(basic)/components/ChangeBanner';
 
 const Home = () => {
   return (

@@ -1,182 +1,46 @@
 export const requestMessages = [
-  {
-    'en': 'otp sent successfully',
-    'fa': 'پیامک با موفقیت ارسال شد'
-  },
-  {
-    'en': 'login successfully',
-    'fa': 'ورود با موفقیت انجام شد'
-  },
-  {
-    'en': 'user registered successfully',
-    'fa': 'ثبت نام با موفقیت انجام شد'
-  },
-  {
-    'en': 'reset password successfully',
-    'fa': 'تغییر رمز با موفقیت انجام شد'
-  },
-  {
-    'en': 'nationalCode Is Exists',
-    'fa': 'این کدملی قبلا ثبت شده است'
-  },
-  {
-    'en': 'Authorization Error',
-    'fa': 'احراز هویت ناموفق'
-  },
-  {
-    'en': 'Invalid oldPassword',
-    'fa': 'رمز قبلی نادرست است'
-  },
-  {
-    'en': 'Invalid Credentials',
-    'fa': 'اطلاعات ورودی اشتباه است'
-  },
-  {
-    'en': 'user not found',
-    'fa': 'کاربری با این اطلاعات یافت نشد'
-  },
-  {
-    'en': 'Invalid Otp',
-    'fa': 'رمز یکبار مصرف اشتباه است'
-  },
-  {
-    'en': 'token has been refreshed successfully',
-    'fa': 'توکن مربوطه دوباره ساخته شد'
-  },
-  {
-    'en': 'gas bill inquiry success',
-    'fa': 'استعلام قبض گاز با موفقیت انجام شد'
-  },
-  {
-    'en': 'water bill inquiry success',
-    'fa': 'استعلام قبض آب با موفقیت انجام شد'
-  },
-  {
-    'en': 'electricity bill inquiry success',
-    'fa': 'استعلام قبض برق با موفقیت انجام شد'
-  },
-  {
-    'en': 'phone bill inquiry success',
-    'fa': 'استعلام قبض تلفن با موفقیت انجام شد'
-  },
-  {
-    'en': 'token is expired',
-    'fa': 'دسترسی شما منقضی شد. لطفا مجددا وارد سایت شوید'
-  },
-  {
-    'en': 'user data updated successfully',
-    'fa': 'اطلاعات شما با موفقیت ویرایش شد'
-  },
-  {
-    'en': 'user upgraded to secondary admin',
-    'fa': 'کاربر با موفقیت به سطح ادمین ارتقا یافت'
-  },
-  {
-    'en': 'password can not be less than 6 characters',
-    'fa': 'کلمه عبور نمیتواند کمتر از 6 کاراکتر باشد'
-  },
-  {
-    'en': 'Invalid pan',
-    'fa': 'کارت وارد شده معتبر نمی‌باشد'
-  },
-  {
-    'en': 'Card Is Dublicate.',
-    'fa': 'کارت قبلا ثبت شده'
-  },
-  {
-    'en': 'toWalletId is not valid.',
-    'fa': 'شناسه کیف پول مقصد نامعتبر است'
-  },
-  {
-    'en': '{"code":"card.not_valid","message":"کارت نامعتبر است"}',
-    'fa': 'کارت وارد شده معتبر نمی‌باشد'
-  },
-  {
-    'en': 'Not Enough Credit',
-    'fa': 'موجودی کافی نمیباشد'
-  },
-  {
-    'en': 'pay fail',
-    'fa': 'تراکنش انجام نشد. لطفا مجددا تلاش فرمایید'
-  },
-  {
-    'en': 'wallet chraged successfully',
-    'fa': 'کیف پول با موفقیت شارژ شد'
-  },
-  {
-    'en': 'Rate limit exceeded, retry in 1 minute',
-    'fa': 'لطفا پس از ۱ دقیقه مجددا تلاش کنید'
-  },
-  {
-    'en': 'mobile number has been charged successfully',
-    'fa': 'شارژ موبایل با موفقیت انجام شد'
-  },
-  {
-    'en': 'Mobile & NationalCode Is Not Matched',
-    'fa': 'شماره موبایل وارد شده متعلق به این کد ملی نمی‌باشد'
-  },
-  {
-    'en': 'Error walletserial is not found.',
-    'fa': 'کیف پولی با این مشخصات یافت نشد'
-  },
-  {
-    'en': 'cashed out successfully',
-    'fa': 'برداشت از کیف پول با موفقیت انجام شد'
-  },
-  {
-    'en': 'bill payed successfully',
-    'fa': 'پرداخت قبض با موفقیت انجام شد'
-  },
-  {
-    'en': 'Charge/Internet error',
-    'fa': 'خرید شارژ / اینترنت با خطا مواجه شد'
-  },
-  {
-    'en': 'internet package purchased successfully',
-    'fa': 'بسته اینترنت با موفقیت خریداری شد'
-  },
-  {
-    'en': 'this service is not available for you right now',
-    'fa': 'این سرویس در حال حاضر برای شما فعال نیست'
-  },
-  {
-    'en': 'postal code could not be found',
-    'fa': 'کد پستی یافت نشد'
-  },
-  {
-    'en': 'error in get personal info',
-    'fa': 'خطا در دریافت اطلاعات شخص'
-  },
-  {
-    'en': 'wallet not enough cradit.',
-    'fa': 'موجودی کافی نمیباشد'
-  },
-  {
-    'en': 'not enough credit',
-    'fa': 'موجودی کافی نمیباشد'
-  },
-  {
-    'en': 'body/amount must be >= 10000',
-    'fa': 'حداقل میزان انتقال 10,000 ریال میباشد'
-  },
-  {
-    'en': 'the card in not compatible with the user',
-    'fa': 'کارت وارد شده متعلق به شما نیست'
-  },
-  {
-    'en': 'booklet accident purchased successfully',
-    'fa': 'بیمه حوادث با موفقیت خریداری شد'
-  },
-  {
-    'en': 'third party plan purchased successfully',
-    'fa': 'بیمه شخص ثالث با موفقیت خریداری شد'
-  },
-  {
-    'en': 'The transfer must be made to another person',
-    'fa': 'امکان انتقال به کیف پول خود را ندارید'
-  },
-  {
-    'en': 'bill pay fail',
-    'fa': 'پرداخت انجام نشد'
-  }
+    {
+        'en': 'there is already a legal user registered with this nationalcode or mobile number',
+        'fa': 'شماره موبایل یا کدملی قبلا به عنوان کاربر حقوقی ثبت شده است لطفا ابتدا لاگین کنید'
+    },
+    {
+        'en': 'wrong credentials',
+        'fa': 'اطلاعات وارد شده نادرست است'
+    },
+    {
+        'en': 'no reservation was disabled',
+        'fa': 'رزروی با این مشخصات یافت نشد'
+    },
+    {
+        'en': 'your account is banned',
+        'fa': 'حساب کاربری شما مسدود شده است'
+    },
+    {
+        'en': 'you dont have access to this service',
+        'fa': 'شما به این سرویس دسترسی ندارید'
+    },
+    {
+        'en': 'too many request',
+        'fa': 'تعداد دفعات فراخوانی بیشتر از حد مجاز میباشد'
+    },
+    {
+        'en': 'selected date must be between now and 7 days from today',
+        'fa': 'تاریخ انتخاب شده باید در بازه امروز تا هفت روز آینده قرار داشته باشدتاریخ انتخاب شده باید در بازه امروز تا هفت روز آینده قرار داشته باشد'
+    },
+    {
+        'en': 'this mobile number has been regsitered as an legal person',
+        'fa': 'این شماره موبایل امکان ثبت رزرو به عنوان کاربر حقیقی را ندارد'
+    },
+    {
+        'en': 'You currently have an open booking for the  for this project',
+        'fa': 'شما در حال حاضر یک رزرو فعال برای این پروژه دارید'
+    },
+    {
+        'en': 'Time slot is not availabl',
+        'fa': 'بازه انتخاب شده دردسترس نمیباشدبازه انتخاب شده دردسترس نمیباشد'
+    }/*,
+    {
+        'en': 'there',
+        'fa': 'پیامک'
+    }*/
 ];
