@@ -7,8 +7,8 @@ import Description from '@/app/(basic)/projects/[projectName]/components/Descrip
 import ProjectAmenities from '@/app/(basic)/projects/[projectName]/components/ProjectAmenities';
 import ProjectGallery from '@/app/(basic)/projects/[projectName]/components/ProjectGallery';
 
-export async function generateStaticParams() {
-  const projects = ['falamac', 'saadat', 'test'];
+/*export async function generateStaticParams() {
+  const projects = ['falamac'];
   
   return projects.map((project) => {
     console.log('project >>', project);
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
       projectName: project
     };
   });
-}
+}*/
 
 const ProjectDetailsPage = ({params: {projectName}}) => {
   console.log({projectName});

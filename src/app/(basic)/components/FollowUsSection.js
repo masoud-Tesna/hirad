@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {Button} from 'antd';
 
-export default () => {
+const FollowUsSection = () => {
   return (
     <div className="bg-primary shadow-4 flex flex-col justify-center items-center py-[30px]">
       <div>
@@ -23,3 +23,4 @@ export default () => {
     </div>
   );
 };
+export default FollowUsSection;

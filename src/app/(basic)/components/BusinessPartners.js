@@ -1,4 +1,4 @@
-export default () => {
+const BusinessPartners = () => {
   return (
     <>
       <div className="text-center">
@@ -20,4 +20,6 @@ export default () => {
       </div>
     </>
   );
-}
+};
+
+export default BusinessPartners;

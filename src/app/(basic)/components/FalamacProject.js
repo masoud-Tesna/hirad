@@ -1,6 +1,6 @@
 import {Button, Col, Row} from 'antd';
 
-export default () => {
+const FalamacProject = () => {
   return (
     <div className="bg-[url('/images/falamacProjectBg.png')] bg-center bg-cover bg-no-repeat --falamacProjectSection">
       <Row className="bg-[rgba(21,21,21,.85)] py-[40px]" justify="center">
@@ -18,4 +18,6 @@ export default () => {
       </Row>
     </div>
   );
-}
+};
+
+export default FalamacProject;

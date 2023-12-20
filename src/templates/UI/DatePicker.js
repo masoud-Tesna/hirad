@@ -41,32 +41,6 @@ export const DatePicker = (props) => {
         );
     };
 
-    /*const handleOnChangeDatePicker = value => {
-       if (value) {
-         formRef.setFields([
-           {
-             name: inputNameByListName,
-             value: convertDatePicker(value, dateFormat),
-             errors: []
-           }
-         ]);
-       } else {
-         formRef.setFields([
-           {
-             name: inputNameByListName,
-             value: '',
-             errors: [inputRule('required selectBox', {name: placeholder})]
-           }
-         ]);
-       }
-
-      if (onChange) {
-        return onChange(value);
-      }
-
-      return true;
-    };*/
-
     return (
         <MultiDatePicker
             className={width <= 767 ? 'rmdp-mobile' : ''}

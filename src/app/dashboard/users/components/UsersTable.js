@@ -7,12 +7,9 @@ import {DateObject} from 'react-multi-date-picker';
 import gregorian from 'react-date-object/calendars/gregorian';
 import gregorian_en from 'react-date-object/locales/gregorian_en';
 import persian from 'react-date-object/calendars/persian';
-import {convertStringDateToTime} from '@/utils/helpers';
 import {userGender, userTypes} from '@/app/dashboard/utils/userDetails';
-import {Badge, Col, Dropdown, Form, Input, Popconfirm, Row, Select, Space, Switch, Table} from 'antd';
-import {SearchOutlined, TrashOutlined} from '@/templates/icons';
-import {DatePicker} from '@/templates/UI';
-import {DownOutlined} from '@ant-design/icons';
+import {Col, Form, Input, Row, Select, Switch, Table} from 'antd';
+import {SearchOutlined} from '@/templates/icons';
 import debounce from 'lodash.debounce';
 
 const UsersTable = () => {
@@ -132,7 +129,7 @@ const UsersTable = () => {
         }
 
 
-        return <Table columns={columns} dataSource={[record]} pagination={false}/>;
+        return <Table columns={columns} dataSource={[record]} pagination={false} />;
     };
 
     const columns = [
@@ -269,7 +266,7 @@ const UsersTable = () => {
                                 >
                                     <Input
                                         placeholder={'جستجو...'}
-                                        suffix={<SearchOutlined className="!text-gray-40"/>}
+                                        suffix={<SearchOutlined className="!text-gray-40" />}
                                         onChange={e => {
                                             const value = e?.target?.value;
 

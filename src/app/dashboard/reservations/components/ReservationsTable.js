@@ -1,9 +1,8 @@
 'use client';
 
-import {Col, ConfigProvider, Form, Input, Popconfirm, Row, Select, Table} from 'antd';
-import {convertStringDateToTime, handleCreateAntdZodValidator} from '@/utils/helpers';
-import {BookVisitFormZod} from '@/app/(basic)/components/schema/bookVisitForm';
-import {DatePicker} from '@/templates/UI';
+import {Col, Form, Input, Popconfirm, Row, Select, Table} from 'antd';
+import {convertStringDateToTime} from '@/utils/helpers';
+// import {DatePicker} from '@/templates/UI';
 import {DateObject} from 'react-multi-date-picker';
 import {SearchOutlined, TrashOutlined} from '@/templates/icons';
 import {useEffect, useMemo, useState} from 'react';
@@ -14,6 +13,9 @@ import {userTypes} from '@/app/dashboard/utils/userDetails';
 import {useRequest} from '@/utils/useRequest';
 import {useQueryClient} from '@tanstack/react-query';
 import debounce from 'lodash.debounce';
+import dynamic from 'next/dynamic';
+
+const DatePicker = dynamic(() => import('@/templates/UI/DatePicker').then((mod) => mod.DatePicker), {ssr: false});
 
 const ReservationsTable = () => {
     const [formRef] = Form.useForm();
