@@ -1,17 +1,22 @@
 'use client';
 
-import {Swiper, SwiperSlide} from 'swiper/react';
-// import required modules
-import {Autoplay, EffectCreative, Navigation, Pagination} from 'swiper/modules';
+import {Button, Col, Row} from 'antd';
+import Image from 'next/image';
+import {useRouter} from 'next/navigation';
+import parkingIcon from '/public/icons/parking.svg';
+import cinemaIcon from '/public/icons/cinema.svg';
+import snookerIcon from '/public/icons/snooker.svg';
+import imageForSlider from '/public//images/forGallery.png';
 
+// import required modules
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Autoplay, EffectCreative, Navigation, Pagination} from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {Button, Col, Row} from 'antd';
-import Image from 'next/image';
-import {useRouter} from 'next/navigation';
+
 
 const ProjectsListSlider = () => {
   const router = useRouter();
@@ -79,7 +84,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -96,7 +101,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -114,8 +119,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={49}
                             height={40}
@@ -131,8 +136,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -149,8 +154,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -166,8 +171,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -198,12 +203,7 @@ const ProjectsListSlider = () => {
             <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
-                  [
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png'
-                  ]
+                  [imageForSlider, imageForSlider, imageForSlider, imageForSlider]
                 }
               />
             </Col>
@@ -253,7 +253,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -270,7 +270,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -288,8 +288,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={49}
                             height={40}
@@ -305,8 +305,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -323,8 +323,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -340,8 +340,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -372,12 +372,7 @@ const ProjectsListSlider = () => {
             <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
-                  [
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png'
-                  ]
+                  [imageForSlider, imageForSlider, imageForSlider, imageForSlider]
                 }
               />
             </Col>
@@ -427,7 +422,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -444,7 +439,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -462,8 +457,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={49}
                             height={40}
@@ -479,8 +474,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -497,8 +492,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -514,8 +509,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -546,12 +541,7 @@ const ProjectsListSlider = () => {
             <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
-                  [
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png'
-                  ]
+                  [imageForSlider, imageForSlider, imageForSlider, imageForSlider]
                 }
               />
             </Col>
@@ -601,7 +591,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -618,7 +608,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/parking.svg'}
+                            src={parkingIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -636,8 +626,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={49}
                             height={40}
@@ -653,8 +643,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/cinema.svg'}
-                            alt={'parking'}
+                            src={cinemaIcon}
+                            alt={'cinema'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -671,8 +661,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -688,8 +678,8 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={'/icons/snooker.svg'}
-                            alt={'parking'}
+                            src={snookerIcon}
+                            alt={'snooker'}
                             layout="responsive"
                             width={40}
                             height={40}
@@ -720,12 +710,7 @@ const ProjectsListSlider = () => {
             <Col xs={0} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
-                  [
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png',
-                    '/images/forGallery.png'
-                  ]
+                  [imageForSlider, imageForSlider, imageForSlider, imageForSlider]
                 }
               />
             </Col>
@@ -750,7 +735,7 @@ const ProjectImageGallery = ({images}) => {
     >
       {images?.map((item, i) => (
         <SwiperSlide key={i}>
-          <Image src={item} alt={'alt'} layout="fill" />
+          <Image src={item} alt={'alt'} layout="fill" placeholder="blur" />
         </SwiperSlide>
       ))}
     </Swiper>

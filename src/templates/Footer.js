@@ -1,5 +1,9 @@
 import {Col, Row} from 'antd';
 import Image from 'next/image';
+import logo from '/public/logo.svg';
+import locationIcon from '/public//icons/location.svg';
+import phoneIcon from '/public//icons/phone.svg';
+import emailIcon from '/public//icons/email.svg';
 
 const Footer = () => {
   return (
@@ -8,7 +12,7 @@ const Footer = () => {
         <Row gutter={8} align="middle">
           <Col span={4} className="text-center">
             <Image
-              src="/logo.svg"
+              src={logo}
               alt="Hirad Construction Company"
               width={61}
               height={91}
@@ -24,7 +28,7 @@ const Footer = () => {
                 <Row gutter={20} align={'middle'}>
                   <Col flex="70px">
                     <Image
-                      src="/icons/location.svg"
+                      src={locationIcon}
                       alt="Hirad Construction Company"
                       width={50}
                       height={50}
@@ -57,7 +61,7 @@ const Footer = () => {
                   
                   <Col flex="50px">
                     <Image
-                      src="/icons/phone.svg"
+                      src={phoneIcon}
                       alt="Hirad Construction Company"
                       width={31}
                       height={31}
@@ -74,7 +78,7 @@ const Footer = () => {
                   
                   <Col flex="50px">
                     <Image
-                      src="/icons/email.svg"
+                      src={emailIcon}
                       alt="Hirad Construction Company"
                       width={31}
                       height={31}

@@ -117,6 +117,7 @@ const CTALink = ({text, icon, onClick}) => {
         <Image
           src={icon?.path}
           alt={text?.persian}
+          priority
           width={50}
           height={54}
           className="max-w-[50px] max-h-[54px]"

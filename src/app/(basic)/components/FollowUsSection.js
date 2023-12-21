@@ -1,16 +1,15 @@
 import Image from 'next/image';
 import {Button} from 'antd';
+import argonLogo from '/public/argonLogo.svg';
 
 const FollowUsSection = () => {
   return (
     <div className="bg-primary shadow-4 flex flex-col justify-center items-center py-[30px]">
       <div>
         <Image
-          src={'/aargon»ogo.svg'}
-          alt={'alt'}
-          layout="FILL"
-          width={312}
-          height={280}
+          src={argonLogo}
+          alt={'argonLogo'}
+          layout="responsive"
           className="max-h-[280px] mt-[-50px]"
         />
       </div>
