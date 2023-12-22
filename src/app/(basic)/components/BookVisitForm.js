@@ -10,13 +10,13 @@ import {convertStringDateToTime, handleCreateAntdZodValidator} from '@/utils/hel
 import {DateObject} from 'react-multi-date-picker';
 import {useEffect, useState} from 'react';
 import {
-    BookVisitFormZod,
+    BookVisitZod,
     BookVisitRequestLegalZod,
-    BookVisitRequestZod,
-    LoginFormZod,
-    RegisterFormZod
+    BookVisitRequestZod
 } from '@/app/(basic)/components/schema/bookVisitForm';
 import {useAuth} from '@/app/contexts/auth/AuthContext';
+import {RegisterZod} from '@/app/schema/register';
+import {LoginZod} from "@/app/schema/login";
 
 export const dynamic = 'force-dynamic';
 
@@ -97,18 +97,18 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
 
     const occupiedTimes = data?.response || {};
     /*{
-      '2023-12-09': [
-        '2023-12-09T09:00:00.000Z',
-        '2023-12-09T10:15:00.000Z'
-      ],
-      '2023-12-10': [],
-      '2023-12-11': [],
-      '2023-12-12': [],
-      '2023-12-13': [],
-      '2023-12-14': [],
-      '2023-12-15': [],
-      '2023-12-16': []
-    };*/
+     '2023-12-09': [
+     '2023-12-09T09:00:00.000Z',
+     '2023-12-09T10:15:00.000Z'
+     ],
+     '2023-12-10': [],
+     '2023-12-11': [],
+     '2023-12-12': [],
+     '2023-12-13': [],
+     '2023-12-14': [],
+     '2023-12-15': [],
+     '2023-12-16': []
+     };*/
 
     const {mutateAsync: naturalVisitRequest, isPending: naturalVisitIsPending} = request.useMutation({
         url: '/api/v1/appeal/visit/natural'
@@ -196,36 +196,36 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
 
     /*const handleOnFinishCustomForm = async () => {
 
-        try {
-            await formRef.validateFields();
-            const formData = await formRef.getFieldsValue(true);
+     try {
+     await formRef.validateFields();
+     const formData = await formRef.getFieldsValue(true);
 
-            const convertedDate = formData?.date?.convert(gregorian, gregorian_en)?.format('YYYY-MM-DD');
+     const convertedDate = formData?.date?.convert(gregorian, gregorian_en)?.format('YYYY-MM-DD');
 
-            formData.selectedDate = `${convertedDate} ${formData?.time}`;
+     formData.selectedDate = `${convertedDate} ${formData?.time}`;
 
-            const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
-            console.log({bookVisitRequestLegalZod});
+     const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
+     console.log({bookVisitRequestLegalZod});
 
-            return await legalVisitRequest(bookVisitRequestLegalZod);
+     return await legalVisitRequest(bookVisitRequestLegalZod);
 
-        } catch (error) {
-            console.log('error in handleOnFinishForm >>', error);
-        }
-    };*/
+     } catch (error) {
+     console.log('error in handleOnFinishForm >>', error);
+     }
+     };*/
 
     const handleChangeToRegister = async () => {
         try {
             await formRef.validateFields();
             const formData = await formRef.getFieldsValue(true);
 
-            const registerFormZod = RegisterFormZod.parse(formData);
+            const registerZod = RegisterZod.parse(formData);
 
-            await registerRequest(registerFormZod);
+            await registerRequest(registerZod);
 
-            const loginFormZod = LoginFormZod.parse({...formData, credential: formData?.mobileNumber});
+            const loginZod = LoginZod.parse({...formData, credential: formData?.mobileNumber});
 
-            const loginResponse = await loginRequest(loginFormZod);
+            const loginResponse = await loginRequest(loginZod);
 
             await handleChangeUserData(loginResponse?.response);
 
@@ -251,12 +251,76 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         }
     }, [tokenInfo]);
 
+    /*
+     [
+     {
+     label: 'فلامک',
+     value: 'greenHouse'
+     },
+     {
+     label: 'LaResidence',
+     value: 'LaResidence'
+     },
+     {
+     label: 'تست1',
+     value: 'test1'
+     },
+     {
+     label: 'تست2',
+     value: 'test2'
+     },
+     {
+     label: 'تست3',
+     value: 'test3'
+     },
+     {
+     label: 'تست4',
+     value: 'test4'
+     },
+     {
+     label: 'تست5',
+     value: 'test5'
+     },
+     {
+     label: 'تست6',
+     value: 'test6'
+     },
+     {
+     label: 'تست7',
+     value: 'test7'
+     },
+     {
+     label: 'تست8',
+     value: 'test8'
+     },
+     {
+     label: 'تست9',
+     value: 'test9'
+     },
+     {
+     label: 'تست10',
+     value: 'test10'
+     }
+     ]
+     */
+
+    const projectOptions = [
+        {
+            label: 'هیراد پالاس',
+            value: 'hiradPalace'
+        },
+        {
+            label: 'هیراد پالاس 2',
+            value: 'hiradPalace2'
+        }
+    ];
+
     const VisitFormInputs = () => (
         <>
             <Col span={24}>
                 <Form.Item
                     name="projectName"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
                     <Select
                         placeholder="انتخاب پروژه جهت بازدید"
@@ -274,56 +338,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
 
                             setTimeItems(defaultTimes);
                         }}
-                        options={[
-                            {
-                                label: 'فلامک',
-                                value: 'greenHouse'
-                            },
-                            {
-                                label: 'LaResidence',
-                                value: 'LaResidence'
-                            },
-                            {
-                                label: 'تست1',
-                                value: 'test1'
-                            },
-                            {
-                                label: 'تست2',
-                                value: 'test2'
-                            },
-                            {
-                                label: 'تست3',
-                                value: 'test3'
-                            },
-                            {
-                                label: 'تست4',
-                                value: 'test4'
-                            },
-                            {
-                                label: 'تست5',
-                                value: 'test5'
-                            },
-                            {
-                                label: 'تست6',
-                                value: 'test6'
-                            },
-                            {
-                                label: 'تست7',
-                                value: 'test7'
-                            },
-                            {
-                                label: 'تست8',
-                                value: 'test8'
-                            },
-                            {
-                                label: 'تست9',
-                                value: 'test9'
-                            },
-                            {
-                                label: 'تست10',
-                                value: 'test10'
-                            }
-                        ]}
+                        options={projectOptions}
                     />
                 </Form.Item>
             </Col>
@@ -331,7 +346,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             <Col span={4}>
                 <Form.Item
                     name="gender"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
                     <Select
                         placeholder="جنسیت"
@@ -352,34 +367,34 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             <Col span={8}>
                 <Form.Item
                     name="firstName"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
-                    <Input placeholder="نام" />
+                    <Input placeholder="نام"/>
                 </Form.Item>
             </Col>
 
             <Col span={12}>
                 <Form.Item
                     name="lastName"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
-                    <Input placeholder="نام خانوادگی" />
+                    <Input placeholder="نام خانوادگی"/>
                 </Form.Item>
             </Col>
 
             <Col span={12}>
                 <Form.Item
                     name="mobileNumber"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
-                    <Input placeholder="شماره موبایل" />
+                    <Input placeholder="شماره موبایل"/>
                 </Form.Item>
             </Col>
 
             <Col span={12}>
                 <Form.Item
                     name="date"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
                     <DatePicker
                         placeholder="تاریخ بازدید"
@@ -400,10 +415,10 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             <Col span={24} className="mt-7">
                 <Form.Item
                     name="time"
-                    rules={[handleCreateAntdZodValidator(BookVisitFormZod)]}
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
                 >
                     <div>
-                        <Input hidden />
+                        <Input hidden/>
 
                         <Row
                             gutter={[10, 16]}
@@ -447,16 +462,16 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             <Col span={12}>
                 <Form.Item
                     name={'nationalCode'}
-                    rules={[handleCreateAntdZodValidator(RegisterFormZod)]}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
                 >
-                    <Input placeholder={'کد ملی'} />
+                    <Input placeholder={'کد ملی'}/>
                 </Form.Item>
             </Col>
 
             <Col span={12}>
                 <Form.Item
                     name="password"
-                    rules={[handleCreateAntdZodValidator(RegisterFormZod)]}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
                 >
                     <Input.Password
                         placeholder={'کلمه عبور'}
@@ -468,27 +483,27 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             <Col span={12}>
                 <Form.Item
                     name={'realstateName'}
-                    rules={[handleCreateAntdZodValidator(RegisterFormZod)]}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
                 >
-                    <Input placeholder={'نام دفتر املاک'} />
+                    <Input placeholder={'نام دفتر املاک'}/>
                 </Form.Item>
             </Col>
 
             <Col span={12}>
                 <Form.Item
                     name="realstateRegNo"
-                    rules={[handleCreateAntdZodValidator(RegisterFormZod)]}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
                 >
-                    <Input placeholder={'کد دفتر املاک'} />
+                    <Input placeholder={'کد دفتر املاک'}/>
                 </Form.Item>
             </Col>
 
             <Col span={24}>
                 <Form.Item
                     name="realstateAddress"
-                    rules={[handleCreateAntdZodValidator(RegisterFormZod)]}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
                 >
-                    <Input.TextArea placeholder={'آدرس'} />
+                    <Input.TextArea placeholder={'آدرس'}/>
                 </Form.Item>
             </Col>
         </>
@@ -507,8 +522,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
             >
                 <Row gutter={16}>
                     {formStep === 0 ?
-                        <VisitFormInputs /> :
-                        <RegisterForm />
+                        <VisitFormInputs/> :
+                        <RegisterForm/>
                     }
 
                     {!isLoggedIn &&

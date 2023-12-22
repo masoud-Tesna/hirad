@@ -5,8 +5,8 @@ import gregorian from 'react-date-object/calendars/gregorian';
 import messages from './inputRulesMessage';
 
 /*export const formatNumber = number => {
-  return number.toLocaleString(undefined, {maximumFractionDigits: 0});
-};*/
+ return number.toLocaleString(undefined, {maximumFractionDigits: 0});
+ };*/
 
 export const formatCadNumber = cardNumber => cardNumber?.replace(/\d{4}(?=.)/g, '$& - ');
 
@@ -145,7 +145,8 @@ export const isValidNationalCode = (value) => {
     for (let i = 0; i < 9; i++) {
         sum += +input[i] * (10 - i);
     }
-    sum = sum % 11;
+
+    sum %= 11;
 
     return sum < 2 ? check === sum : check + sum === 11;
 };

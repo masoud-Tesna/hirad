@@ -1,8 +1,13 @@
+'use client'
+
 import Link from 'next/link';
 import {Dropdown, Space} from 'antd';
 import {DownOutlined} from '@ant-design/icons';
+import {useAuth} from "@/app/contexts/auth/AuthContext";
 
 const Header = () => {
+    const {handleLogout} = useAuth();
+
     const items = [
         {
             label: (
@@ -18,7 +23,8 @@ const Header = () => {
         {
             label: <div>خروج</div>,
             key: '1',
-            danger: true
+            danger: true,
+            onClick: handleLogout
         }
     ];
 

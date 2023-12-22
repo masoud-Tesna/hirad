@@ -1,11 +1,7 @@
-import {Col, Row} from 'antd';
+import Dashboard from "./components/Dashboard";
 
 const DashboardPage = () => {
-  return (
-    <h1>
-      DashboardPage
-    </h1>
-  );
+    return <Dashboard/>;
 };
 
 export default DashboardPage;
