@@ -25,7 +25,7 @@ export const requestMessages = [
     },
     {
         'en': 'selected date must be between now and 7 days from today',
-        'fa': 'تاریخ انتخاب شده باید در بازه امروز تا هفت روز آینده قرار داشته باشدتاریخ انتخاب شده باید در بازه امروز تا هفت روز آینده قرار داشته باشد'
+        'fa': 'تاریخ انتخاب شده باید در بازه امروز تا هفت روز آینده قرار داشته باشد'
     },
     {
         'en': 'this mobile number has been regsitered as an legal person',
@@ -38,6 +38,26 @@ export const requestMessages = [
     {
         'en': 'Time slot is not availabl',
         'fa': 'بازه انتخاب شده دردسترس نمیباشدبازه انتخاب شده دردسترس نمیباشد'
+    },
+    {
+        'en': 'reservation completed successfully',
+        'fa': 'رزور با موفقیت انجام شد'
+    },
+    {
+        'en': 'occupied times',
+        'fa': 'زمان های اشغال شده'
+    },
+    {
+        'en': 'legal user registered successfully',
+        'fa': 'کاربر حقوقی با موفقیت ثبت نام شد'
+    },
+    {
+        'en': 'login successfully',
+        'fa': 'ورود با موفقیت انجام شد'
+    },
+    {
+        'en': 'success',
+        'fa': 'موفق'
     }/*,
     {
         'en': 'there',

@@ -42,8 +42,7 @@ export const useMutation = (
         };
     }
 
-    const [mutationRequestIsLoading, setMutationRequestIsLoading] = useState(false); // state for mutation request is
-                                                                                     // loading
+    const [mutationRequestIsLoading, setMutationRequestIsLoading] = useState(false); // state for mutation request iLoading
 
     const callApi = async (data) => {
         const result = await axiosClient.request(
@@ -73,7 +72,7 @@ export const useMutation = (
 
                     toast(customSuccessMessage || findMessage?.fa || (process.env.NODE_ENV === 'development' ?
                         message : 'عملیات با موفقیت انجام شد'), {
-                        toastId: `mutationRequest/${url}`,
+                        toastId: `mutationIsSuccess/${url}`,
                         type: successMessageType
                     });
                 }
@@ -83,8 +82,8 @@ export const useMutation = (
                     const findMessage = requestMessages.find(item => item?.en === error?.message);
 
                     toast(customErrorMessage || findMessage?.fa || (process.env.NODE_ENV === 'development' ?
-                        message : 'عملیات با موفقیت انجام شد'), {
-                        toastId: `mutationRequest/${url}`,
+                        message : 'خطای در انجام عملیات لطفا محددا تلاش کنید'), {
+                        toastId: `mutationIsError/${url}`,
                         type: errorMessageType
                     });
                 }
@@ -92,9 +91,4 @@ export const useMutation = (
         },
         ...rest
     });
-
-    /*return {
-      ...mutationResult,
-      isLoading: mutationRequestIsLoading
-    };*/
 };
