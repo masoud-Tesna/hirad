@@ -15,7 +15,11 @@ const FollowUsSection = () => {
       </div>
       
       <div>
-        <Button className="!bg-transparent !text-white !text-captionXl !tracking-[2.7px] !border-white !px-[3rem]">
+        <Button
+          type={'link'}
+          href="https://aargon.ir"
+          className="!bg-transparent !text-white !text-captionXl !tracking-[2.7px] !border-white !px-[3rem]"
+        >
           Follow Us
         </Button>
       </div>

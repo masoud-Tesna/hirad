@@ -1,23 +1,20 @@
 'use client';
 
 import classNames from 'classnames';
-import {Col, Divider, Modal, Row, Space} from 'antd';
+import {Col, Row, Space} from 'antd';
 import Image from 'next/image';
-import {useState} from 'react';
-import BookVisitForm from '@/app/(basic)/components/BookVisitForm';
 
 import calendarIcon from '/public/icons/calendar.svg';
 import hotelIcon from '/public/icons/hotel.svg';
 import cooperationIcon from '/public/icons/cooperation.svg';
 import messagesIcon from '/public/icons/messages.svg';
+import {useBookVisit} from '@/app/contexts/bookVisit';
 
 
 export const dynamic = 'force-dynamic';
 
 const BannerCTA = () => {
-  
-  const [bookVisitModalVisible, setBookVisitModalVisible] = useState(false);
-  const [bookVisitSuccessModalVisible, setBookVisitSuccessModalVisible] = useState(false);
+  const {setBookVisitOpen} = useBookVisit();
   
   const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-30';
   
@@ -30,13 +27,13 @@ const BannerCTA = () => {
           <CTALink
             text={{persian: 'رزرو بازدید واحد', english: 'Book Visit'}}
             icon={{path: calendarIcon, width: 50, height: 54}}
-            onClick={() => setBookVisitModalVisible(true)}
+            onClick={() => setBookVisitOpen(true)}
           />
         </Col>
         
         <Col span={6}>
           <CTALink
-            text={{persian: 'پروژه فلامک', english: 'Falamac'}}
+            text={{persian: 'پروژه هیراد پالاس', english: 'Hirad Palace'}}
             icon={{path: hotelIcon, width: 50, height: 54}}
           />
         </Col>
@@ -55,51 +52,6 @@ const BannerCTA = () => {
           />
         </Col>
       </Row>
-      
-      <Modal
-        open={bookVisitModalVisible}
-        footer={null}
-        onCancel={() => setBookVisitModalVisible(false)}
-        title="رزرو زمان بازدید"
-        className="--customModal"
-        width="55%"
-        style={{
-          top: 10
-        }}
-      >
-        <div>
-          <BookVisitForm
-            handleCloseBookVisitModal={() => setBookVisitModalVisible(false)}
-            handleOpenBookVisitSuccessModal={() => setBookVisitSuccessModalVisible(true)}
-          />
-        </div>
-      </Modal>
-      
-      <Modal
-        open={bookVisitSuccessModalVisible}
-        footer={null}
-        onCancel={() => setBookVisitSuccessModalVisible(false)}
-        className="--customModalBlurred"
-        width="50%"
-        styles={{
-          mask: {
-            backgroundColor: 'rgba(0, 0, 0, 0.10)'
-          }
-        }}
-        style={{
-          top: '30%'
-        }}
-      >
-        <div>
-          زمان بازدید با موفقیت ثبت شد، منتظر دیدارتان هستیم!
-        </div>
-        
-        <Divider />
-        
-        <div className="!font-normal d-ltr">
-          We are waiting to meet you!
-        </div>
-      </Modal>
     </>
   );
 };

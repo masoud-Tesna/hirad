@@ -1,6 +1,9 @@
 import {Button, Col, Row} from 'antd';
+import {useBookVisit} from '@/app/contexts/bookVisit';
 
 const FalamacProject = () => {
+  const {setBookVisitOpen} = useBookVisit();
+  
   return (
     <div className="bg-[url('/images/falamacProjectBg.png')] bg-center bg-cover bg-no-repeat --falamacProjectSection">
       <Row className="bg-[rgba(21,21,21,.85)] py-[40px]" justify="center">
@@ -10,7 +13,10 @@ const FalamacProject = () => {
           </div>
           
           <div className="mt-[12px]">
-            <Button className="!h-[38px] !pb-[5px] !px-[4rem]">
+            <Button
+              className="!h-[38px] !py-0 !leading-[40px] uppercase !text-black !w-[226px]"
+              onClick={() => setBookVisitOpen(true)}
+            >
               book to visit
             </Button>
           </div>
