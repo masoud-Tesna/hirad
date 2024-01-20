@@ -11,7 +11,7 @@ const BookVisitProvider = ({children}) => {
   const [bookVisitSuccessOpen, setBookVisitSuccessOpen] = useState(false);
   
   return (
-    <bookVisitContext.Provider value={{bookVisitOpen, setBookVisitOpen, bookVisitSuccessOpen, setBookVisitSuccessOpen}}>
+    <bookVisitContext.Provider value={{bookVisitOpen, setBookVisitOpen}}>
       {children}
       
       <Modal
@@ -61,10 +61,7 @@ export const useBookVisit = () => {
   const bookVisitOpen = getBookVisitContext?.bookVisitOpen; // get current bookVisitOpen
   const setBookVisitOpen = getBookVisitContext?.setBookVisitOpen; // dispatch bookVisitOpen
   
-  const bookVisitSuccessOpen = getBookVisitContext?.bookVisitSuccessOpen; // get current bookVisitSuccessOpen
-  const setBookVisitSuccessOpen = getBookVisitContext?.setBookVisitSuccessOpen; // dispatch bookVisitSuccessOpen
-  
-  return {bookVisitOpen, setBookVisitOpen, bookVisitSuccessOpen, setBookVisitSuccessOpen};
+  return {bookVisitOpen, setBookVisitOpen};
 };
 
 export default BookVisitProvider;
