@@ -1,8 +1,11 @@
 'use client';
 
 import {Button} from 'antd';
+import {useBookVisit} from '@/app/contexts/bookVisit';
 
 const Description = ({details}) => {
+  const {setBookVisitOpen} = useBookVisit();
+  
   return (
     <>
       <div
@@ -30,7 +33,7 @@ const Description = ({details}) => {
         </p>
       </div>
       
-      <Button type="primary" className="!bg-primary !shadow-3 mt-[20px]" block>
+      <Button type="primary" className="!bg-primary !shadow-3 mt-[20px]" block onClick={() => setBookVisitOpen(true)}>
         رزرو بازدید پروژه
       </Button>
     </>
