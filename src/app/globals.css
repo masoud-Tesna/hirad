@@ -59,9 +59,11 @@
 @layer components {
     .--pointsSection {
         & > div {
-            &:not(:nth-last-child(-n+2)) {
-                & > div {
-                    @apply border-solid border-0 border-b border-gray-40
+            @media only screen and (min-width: 768px) {
+                &:not(:nth-last-child(-n+2)) {
+                    & > div {
+                          @apply border-solid border-0 border-b border-gray-40
+                      }
                 }
             }
         }
@@ -70,7 +72,7 @@
     .--projectsListSlider {
         .swiper-button-prev,
         .swiper-button-next {
-            @apply bg-primary bg-clip-text text-transparent;
+            @apply hidden md:flex bg-primary bg-clip-text text-transparent;
         }
 
         .swiper-pagination-bullets {
@@ -346,11 +348,11 @@
 
     .--customModal {
         .ant-modal-content {
-            @apply pt-[20px] pb-[35px] px-[5%] !important;
+            @apply pt-[20px] pb-[35px] px-[8px] md:px-[5%] !important;
 
             .ant-modal-header {
                 .ant-modal-title {
-                    @apply text-black text-captionXl;
+                    @apply text-black text-captionLg md:text-captionXl;
                 }
             }
         }
@@ -410,6 +412,73 @@
             .ant-table-row:nth-child(even) {
                 @apply bg-[#F9F9F9] !important;
             }
+        }
+    }
+}
+
+.--mobileMenu {
+    .ant-menu-item,
+    .ant-menu-submenu {
+        @apply bg-white px-0 !important;
+        
+        .ant-menu-title-content {
+            @apply text-black;
+        }
+    }
+
+    .ant-menu-submenu {
+        .ant-menu-submenu-title {
+            @apply px-0 !important;
+            
+            .ant-menu-submenu-arrow {
+                @apply text-black end-0 !important;
+            }
+        }
+
+        .ant-menu-sub {
+            @apply bg-transparent !important;
+        }
+    }
+}
+
+.ant-form-item-explain-error {
+    @apply text-captionSm md:text-captionLg ;
+}
+
+.ant-form-item {
+    @apply mb-[20px] md:mb-[30px] !important;
+}
+
+.--mobileProjectsSlider {
+    @apply w-[80%] !important;
+
+    .--image {
+    @apply cursor-pointer h-full relative overflow-hidden bg-center bg-cover bg-no-repeat ml-[16px];
+    
+        &:after {
+             content: "";
+             position: absolute;
+             top: 0;
+             right: 0;
+             bottom: 0;
+             left: 0;
+             background: inherit;
+             background-size: cover;
+             transform-origin: center;
+             transition-property: all;
+             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+             transition-duration: 150ms;
+         }
+        
+        &:focus,
+        &:hover {
+            &::after {
+                 transform: scale(1.05);
+             }
+            
+            & > div {
+                  opacity: 1;
+              }
         }
     }
 }

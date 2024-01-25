@@ -21,9 +21,10 @@ const BannerCTA = () => {
   return (
     <>
       <Row
-        className={classNames('w-full bg-white py-[18px] shadow-2 [&>.ant-col]:text-center', borderClassName)}
+        className={classNames('w-full bg-white py-[18px] shadow-1 [&>.ant-col]:text-center', borderClassName)}
+        justify={'center'}
       >
-        <Col span={6}>
+        <Col xs={12} md={6} className="max-md:!border-0">
           <CTALink
             text={{persian: 'رزرو بازدید واحد', english: 'Book Visit'}}
             icon={{path: calendarIcon, width: 50, height: 54}}
@@ -31,21 +32,21 @@ const BannerCTA = () => {
           />
         </Col>
         
-        <Col span={6}>
+        <Col xs={0} md={6}>
           <CTALink
             text={{persian: 'پروژه هیراد پالاس', english: 'Hirad Palace'}}
             icon={{path: hotelIcon, width: 50, height: 54}}
           />
         </Col>
         
-        <Col span={6}>
+        <Col xs={0} md={6}>
           <CTALink
             text={{persian: 'همکاری با هیراد', english: 'Cooperation'}}
             icon={{path: cooperationIcon, width: 50, height: 54}}
           />
         </Col>
         
-        <Col span={6}>
+        <Col xs={0} md={6}>
           <CTALink
             text={{persian: 'درباره هیراد', english: 'About Hirad'}}
             icon={{path: messagesIcon, width: 50, height: 54}}
@@ -59,7 +60,7 @@ const BannerCTA = () => {
 const CTALink = ({text, icon, onClick}) => {
   return (
     <Space onClick={onClick} className="cursor-pointer select-none">
-      <div className="[&>div]:text-center [&>div]:text-captionXl">
+      <div className="[&>div]:text-center [&>div]:text-captionLg [&>div]:md:text-captionXl">
         <div className="text-black">{text?.persian}</div>
         
         <div className="text-gray-40">{text?.english}</div>

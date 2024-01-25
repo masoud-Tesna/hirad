@@ -7,9 +7,9 @@ const FalamacProject = () => {
   return (
     <div className="bg-[url('/images/falamacProjectBg.png')] bg-center bg-cover bg-no-repeat --falamacProjectSection">
       <Row className="bg-[rgba(21,21,21,.85)] py-[40px]" justify="center">
-        <Col span={12} className="--centerSection py-[25px] text-center">
+        <Col xs={18} md={12} className="--centerSection py-[25px] text-center">
           <div className="text-white text-captionXl tracking-[4px] uppercase">
-            falamac project
+            hirad palace
           </div>
           
           <div className="mt-[12px]">

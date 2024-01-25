@@ -23,13 +23,13 @@ import Image from 'next/image';
  return null;
  };*/
 
-const Banner = () => {
+const Banner = ({asMobile}) => {
   const {bannerSettings} = useBanner();
   
   const {height, alt, banner, ...rest} = bannerSettings;
   
   return (
-    <div style={{height: height}}>
+    <div style={{height: asMobile ? 150 : height}}>
       <Image
         src={banner}
         alt={alt}

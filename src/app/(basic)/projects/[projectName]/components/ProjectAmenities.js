@@ -31,7 +31,7 @@ const ProjectAmenities = () => {
           Falamac Project Amenities
         </div>
         
-        <div className={classNames('w-1/2 mt-[25px] mx-auto space-y-[12px] [&>div]:border-solid [&>div]:border-0 [&>div]:border-b [&>div]:border-gray-30 [&>div]:pb-[12px] max-h-0 !transition-[max-height]  duration-[.4s] overflow-hidden', {'!max-h-full': showAmenitiesVisible})}>
+        <div className={classNames('w-2/3 md:w-1/2 mt-[25px] mx-auto space-y-[12px] [&>div]:border-solid [&>div]:border-0 [&>div]:border-b [&>div]:border-gray-30 [&>div]:pb-[12px] max-h-0 !transition-[max-height]  duration-[.4s] overflow-hidden', {'!max-h-full': showAmenitiesVisible})}>
           <div>
             <Row align="middle" gutter={18}>
               <Col flex="58px" className="text-end">

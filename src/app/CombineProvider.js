@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {AuthProvider} from '@/app/contexts/auth/AuthContext';
 import {AntdRegistry} from '@ant-design/nextjs-registry';
 import BookVisitProvider from '@/app/contexts/bookVisit';
+import LoginModalProvider from '@/app/contexts/auth/LoginModalContext';
 
 const CombineProvider = ({children}) => {
   
@@ -33,7 +34,9 @@ const CombineProvider = ({children}) => {
             />
             <BookVisitProvider>
               <BannerProvider>
-                {children}
+                <LoginModalProvider>
+                  {children}
+                </LoginModalProvider>
               </BannerProvider>
             </BookVisitProvider>
             

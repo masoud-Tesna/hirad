@@ -29,6 +29,8 @@ import 'swiper/css/effect-creative';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import quote from '/public/icons/quote.svg';
+
 
 const ProjectsListSlider = () => {
   const router = useRouter();
@@ -55,42 +57,42 @@ const ProjectsListSlider = () => {
       >
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
-              <Row gutter={[0, 35]}>
+            <Col xs={24} md={12} className="p-[10px] md:p-[60px] pb-[34px]">
+              <Row className="gap-y-[16px] md:gap-y-[35px]">
                 <Col span={24}>
-                  <Row gutter={23}>
-                    <Col className="text-secondary/10 tracking-[-24px]">
-                      <svg
-                        className="w-[50px] h-[70px] text-secondary/10"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 18 14"
-                      >
-                        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
-                      </svg>
+                  <Row gutter={[{md: 23}]}>
+                    <Col className="max-md:mt-[10px]">
+                      <Image src={quote} alt={'quote'} className="max-md:max-h-[30px]" />
                     </Col>
                     
-                    <Col flex="1 1" className="ps-[12px]">
-                      <div className="bg-primary bg-clip-text text-transparent text-captionXxl">
-                        پروژه فلامک، شهـرک غرب
+                    <Col flex="1 1" className="md:ps-[12px]">
+                      <div className="bg-primary bg-clip-text text-transparent text-captionXl2 !font-[700] md:text-captionXxl">
+                        پروژه هیراد پالاس
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Falamac Project, Shahrak-e Gharb
+                        Hirad Palace
                       </div>
                       
-                      <div className="text-black uppercase text-captionLg">
+                      <div className="text-black uppercase text-captionMd md:text-captionLg">
                         Modern and magnificent architecture
                       </div>
                     </Col>
                   </Row>
                 </Col>
                 
+                <Col span={24} className="h-[250px] md:!hidden">
+                  <ProjectImageGallery
+                    images={
+                      [sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5, sliderImage6, sliderImage7, sliderImage8, sliderImage9, sliderImage10, sliderImage11]
+                    }
+                  />
+                </Col>
+                
                 <Col span={24}>
                   <Row
                     gutter={[16, 8]}
-                    className="--pointsSection [&>div>div]:pb-[12px]"
+                    className="--pointsSection [&>div>div]:pb-[12px] max-md:!hidden"
                   >
                     <Col span={12}>
                       <Row align="middle">
@@ -197,6 +199,73 @@ const ProjectsListSlider = () => {
                       </Row>
                     </Col>
                   </Row>
+                  
+                  <Row
+                    gutter={16}
+                    className="--pointsSection [&>div>div]:pb-[12px] md:!hidden"
+                    align={'middle'}
+                    justify={'space-between'}
+                  >
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={parkingIcon}
+                        alt={'parking'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={parkingIcon}
+                        alt={'parking'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={cinemaIcon}
+                        alt={'cinema'}
+                        layout="fill"
+                        /*width={49}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={cinemaIcon}
+                        alt={'cinema'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={snookerIcon}
+                        alt={'snooker'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={snookerIcon}
+                        alt={'snooker'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                  </Row>
                 </Col>
                 
                 <Col span={24}>
@@ -212,7 +281,7 @@ const ProjectsListSlider = () => {
               </Row>
             </Col>
             
-            <Col xs={0} md={12} className="hidden md:block">
+            <Col xs={24} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5, sliderImage6, sliderImage7, sliderImage8, sliderImage9, sliderImage10, sliderImage11]
@@ -224,42 +293,42 @@ const ProjectsListSlider = () => {
         
         <SwiperSlide className="bg-white text-black">
           <Row>
-            <Col xs={24} md={12} className="p-[60px] pb-[34px]">
-              <Row gutter={[0, 35]}>
+            <Col xs={24} md={12} className="p-[10px] md:p-[60px] pb-[34px]">
+              <Row className="gap-y-[16px] md:gap-y-[35px]">
                 <Col span={24}>
-                  <Row gutter={23}>
-                    <Col className="text-secondary/10 tracking-[-24px]">
-                      <svg
-                        className="w-[50px] h-[70px] text-secondary/10"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 18 14"
-                      >
-                        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
-                      </svg>
+                  <Row gutter={[{md: 23}]}>
+                    <Col className="max-md:mt-[10px]">
+                      <Image src={quote} alt={'quote'} className="max-md:max-h-[30px]" />
                     </Col>
                     
-                    <Col flex="1 1" className="ps-[12px]">
-                      <div className="bg-primary bg-clip-text text-transparent text-captionXxl">
-                        پروژه فلامک، شهـرک غرب
+                    <Col flex="1 1" className="md:ps-[12px]">
+                      <div className="bg-primary bg-clip-text text-transparent text-captionXl2 !font-[700] md:text-captionXxl">
+                        پروژه هیراد پالاس
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Falamac Project, Shahrak-e Gharb
+                        Hirad Palace
                       </div>
                       
-                      <div className="text-black uppercase text-captionLg">
+                      <div className="text-black uppercase text-captionMd md:text-captionLg">
                         Modern and magnificent architecture
                       </div>
                     </Col>
                   </Row>
                 </Col>
                 
+                <Col span={24} className="h-[250px] md:!hidden">
+                  <ProjectImageGallery
+                    images={
+                      [sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5, sliderImage6, sliderImage7, sliderImage8, sliderImage9, sliderImage10, sliderImage11]
+                    }
+                  />
+                </Col>
+                
                 <Col span={24}>
                   <Row
                     gutter={[16, 8]}
-                    className="--pointsSection [&>div>div]:pb-[12px]"
+                    className="--pointsSection [&>div>div]:pb-[12px] max-md:!hidden"
                   >
                     <Col span={12}>
                       <Row align="middle">
@@ -366,6 +435,73 @@ const ProjectsListSlider = () => {
                       </Row>
                     </Col>
                   </Row>
+                  
+                  <Row
+                    gutter={16}
+                    className="--pointsSection [&>div>div]:pb-[12px] md:!hidden"
+                    align={'middle'}
+                    justify={'space-between'}
+                  >
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={parkingIcon}
+                        alt={'parking'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={parkingIcon}
+                        alt={'parking'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={cinemaIcon}
+                        alt={'cinema'}
+                        layout="fill"
+                        /*width={49}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={cinemaIcon}
+                        alt={'cinema'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={snookerIcon}
+                        alt={'snooker'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                    
+                    <Col flex={'50px'} className="text-center h-[30px]">
+                      <Image
+                        src={snookerIcon}
+                        alt={'snooker'}
+                        layout="fill"
+                        /*width={40}
+                        height={40}*/
+                      />
+                    </Col>
+                  </Row>
                 </Col>
                 
                 <Col span={24}>
@@ -381,7 +517,7 @@ const ProjectsListSlider = () => {
               </Row>
             </Col>
             
-            <Col xs={0} md={12} className="hidden md:block">
+            <Col xs={24} md={12} className="hidden md:block">
               <ProjectImageGallery
                 images={
                   [sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5, sliderImage6, sliderImage7, sliderImage8, sliderImage9, sliderImage10, sliderImage11]

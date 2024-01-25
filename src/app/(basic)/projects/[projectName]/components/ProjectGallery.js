@@ -54,7 +54,7 @@ const ProjectGallery = () => {
        
        </div>*/}
       
-      <div className="d-ltr grid grid-cols-12 grid-rows-16 gap-[16px] [&>div]:!bg-center [&>div]:!bg-cover [&>div]:!bg-no-repeat">
+      <div className="d-ltr grid grid-cols-12 grid-rows-16 gap-[16px] [&>div]:!bg-center [&>div]:!bg-cover [&>div]:!bg-no-repeat mb-[30px]">
         <div
           className="col-span-4 row-span-7 h-[470px]"
           style={{

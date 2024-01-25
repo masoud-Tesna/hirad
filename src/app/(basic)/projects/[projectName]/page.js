@@ -21,8 +21,8 @@ const ProjectDetailsPage = ({params: {projectName}}) => {
       <Row
         justify={'space-between'}
         align={'stretch'}
-        gutter={[40, 16]}
-        className="mb-[100px] !flex-col-reverse md:!flex-row max-md:px-[40px] max-md:mt-[5vh] mt-[15dvh] max-md:!mx-0"
+        gutter={[{xs: 0, md: 40}, 16]}
+        className="mb-[50px] md:mb-[100px] !flex-col-reverse md:!flex-row max-md:px-[16px] max-md:mt-[5vh] mt-[15dvh] max-md:!mx-0"
       >
         <Col xs={24} md={12} xl={11}>
           <Description

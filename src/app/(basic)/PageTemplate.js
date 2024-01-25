@@ -1,6 +1,6 @@
 'use client';
 
-import {Col, Layout, Row} from 'antd';
+import {Col, Drawer, Layout, Row} from 'antd';
 import Image from 'next/image';
 import Banner from '@/templates/Banner';
 import BannerCTA from '@/templates/BannerCTA';
@@ -9,6 +9,9 @@ import logo from '/public/logo.svg';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Skeleton from 'react-loading-skeleton';
+import {MenuOutlined} from '@ant-design/icons';
+import {useState} from 'react';
+import MobileMenu from './components/MobileMenu';
 
 const LoginSection = dynamic(
   () => import('./components/LoginSection'),
@@ -19,10 +22,17 @@ const LoginSection = dynamic(
 );
 
 export default function PageTemplate({children}) {
+  
+  const [menuDrawerOpen, setMenuDrawerOpen] = useState(false);
+  
+  const handleOpenDrawer = () => setMenuDrawerOpen(true);
+  
+  const handleCloseDrawer = () => setMenuDrawerOpen(false);
+  
   return (
     <Layout className="min-h-full !bg-white">
-      <Layout.Header className="!shadow-1 !bg-primary !h-[75px]">
-        <Row align={'middle'} className="h-full">
+      <Layout.Header className="!shadow-1 !bg-primary !h-[50px] md:!h-[75px] !px-[6%] !leading-[50px] md:!leading-[75px]">
+        <Row align={'middle'} className="h-full !hidden md:!flex">
           <Col flex={'1 1'} className="text-center">
             <Link href={'/'} className="my-auto" scroll={false}>
               <Image
@@ -38,6 +48,23 @@ export default function PageTemplate({children}) {
             <LoginSection />
           </Col>
         </Row>
+        
+        <Row align={'middle'} className="h-full md:!hidden" justify={'space-between'}>
+          <Col span={3} className="cursor-pointer" onClick={handleOpenDrawer}>
+            <MenuOutlined className="!text-white text-[21px] !align-middle" />
+          </Col>
+          
+          <Col flex={'1 1'} className="text-center">
+            <Link href={'/'} className="my-auto inl" scroll={false}>
+              <Image
+                src={logo}
+                alt="Hirad Construction Company"
+                priority
+                className="cursor-pointer max-h-[40px] md:max-h-[65px]"
+              />
+            </Link>
+          </Col>
+        </Row>
       </Layout.Header>
       
       <Layout.Content>
@@ -51,6 +78,14 @@ export default function PageTemplate({children}) {
           </div>
         </div>
         
+        <div className="--mobileBannerSection relative md:!hidden">
+          <Banner asMobile />
+        </div>
+        
+        <div className="w-full mx-auto relative md:hidden p-[16px] pb-0">
+          <BannerCTA />
+        </div>
+        
         <div className="--pageSection md:mt-[40px] text-black w-full md:w-10/12 mx-auto">
           {children}
         </div>
@@ -59,6 +94,15 @@ export default function PageTemplate({children}) {
       <Layout.Footer className="!bg-black !p-0">
         <Footer />
       </Layout.Footer>
+      
+      <Drawer
+        title="گروه ساختمانی هیراد"
+        onClose={handleCloseDrawer}
+        open={menuDrawerOpen}
+        width={'70%'}
+      >
+        <MobileMenu handleCloseDrawer={handleCloseDrawer} />
+      </Drawer>
     </Layout>
   );
 }

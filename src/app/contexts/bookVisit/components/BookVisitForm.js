@@ -74,8 +74,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
     
     if (time && date && mobileNumber && lastName && firstName && gender && projectName) {
       setDisabledIsRealState(false);
-    }
-    else {
+    } else {
       setDisabledIsRealState(true);
     }
   }, [formRef.getFieldsValue(true)]);
@@ -151,8 +150,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
           }
           return item;
         }));
-      }
-      else {
+      } else {
         setTimeItems(defaultTimes);
       }
       
@@ -181,8 +179,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         console.log({bookVisitRequestZod});
         
         await naturalVisitRequest(bookVisitRequestZod);
-      }
-      else {
+      } else {
         const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
         console.log({bookVisitRequestLegalZod});
         
@@ -346,7 +343,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         </Form.Item>
       </Col>
       
-      <Col span={4}>
+      <Col xs={24} md={4}>
         <Form.Item
           name="gender"
           rules={[handleCreateAntdZodValidator(BookVisitZod)]}
@@ -367,7 +364,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         </Form.Item>
       </Col>
       
-      <Col span={8}>
+      <Col xs={12} md={8}>
         <Form.Item
           name="firstName"
           rules={[handleCreateAntdZodValidator(BookVisitZod)]}
@@ -376,7 +373,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         </Form.Item>
       </Col>
       
-      <Col span={12}>
+      <Col xs={12} md={12}>
         <Form.Item
           name="lastName"
           rules={[handleCreateAntdZodValidator(BookVisitZod)]}
@@ -410,7 +407,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
       
       <Col
         span={24}
-        className="mt-2 text-black text-captionLg border-solid border-0 border-b border-gray-30 pb-[10px]"
+        className="md:mt-2 text-black !text-captionMd md:!text-captionLg border-solid border-0 border-b border-gray-30 pb-[10px]"
       >
         یکی از بازه های زمانی زیر را جهت بازدید انتخاب کنید
       </Col>
@@ -422,17 +419,18 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         >
           <div>
             <Row
-              gutter={[10, 16]}
+              gutter={[10, 10]}
               className="d-ltr"
             >
               {timeItems?.map(item => (
                 <Col
-                  span={6}
+                  xs={12}
+                  md={6}
                   key={item?.value}
                 >
                   <div
                     className={classNames(
-                      'h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
+                      'h-[40px] md:h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
                       {'bg-secondary text-white': timeWatch === item?.value},
                       {'bg-gray-60/50 !cursor-not-allowed select-none': item?.disabled || !Object.keys(occupiedTimes)?.length || !dateWatch?.length}
                     )}
@@ -528,7 +526,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
           }
           
           {!isLoggedIn &&
-            <Col span={24} className="mt-7">
+            <Col span={24} className="md:mt-7">
               <Form.Item
                 name="isRealEstate"
                 valuePropName="checked"

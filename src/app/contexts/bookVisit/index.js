@@ -19,8 +19,7 @@ const BookVisitProvider = ({children}) => {
         footer={null}
         onCancel={() => setBookVisitOpen(false)}
         title="رزرو زمان بازدید"
-        className="--customModal"
-        width="55%"
+        className="--customModal !w-full md:!w-[55%]"
         style={{
           top: 10
         }}

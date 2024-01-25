@@ -27,7 +27,7 @@ const Description = ({details}) => {
         {details?.title?.bottom}
       </div>
       
-      <div className="text-captionXl text-gray-40 text-justify line-clamp-[18]">
+      <div className="text-captionMd md:text-captionXl text-gray-40 text-justify line-clamp-[18]">
         <p>
           {details?.description}
         </p>
