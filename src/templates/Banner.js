@@ -1,7 +1,11 @@
 'use client';
 
-import {useBanner} from '@/app/contexts/banner';
 import Image from 'next/image';
+import {useSelectedLayoutSegment} from 'next/navigation';
+
+import homeBanner from '/public/images/homeBanner.png';
+import projectsBanner from '/public/images/projects/projectsPageBanner.png';
+
 
 // const passiveEventListener = {passive: true};
 
@@ -24,18 +28,36 @@ import Image from 'next/image';
  };*/
 
 const Banner = ({asMobile}) => {
-  const {bannerSettings} = useBanner();
+  const segment = useSelectedLayoutSegment();
   
-  const {height, alt, banner, ...rest} = bannerSettings;
+  const bannersSettings = {
+    home: {
+      banner: homeBanner,
+      alt: 'Hirad',
+      height: 'calc(100vh - 75px - 72px)',
+      objectFit: 'cover',
+      rest: {}
+    },
+    projects: {
+      banner: projectsBanner,
+      alt: 'projectName',
+      height: 297,
+      rest: {
+        className: 'max-md:object-cover max-md:object-left'
+      }
+    }
+  };
+  
+  const activeBannerSetting = bannersSettings[segment || 'home'];
   
   return (
-    <div style={{height: asMobile ? 150 : height}}>
+    <div style={{height: asMobile ? 150 : activeBannerSetting?.height}}>
       <Image
-        src={banner}
-        alt={alt}
+        src={activeBannerSetting?.banner}
+        alt={activeBannerSetting?.alt}
         layout={'fill'}
-        style={{maxHeight: height}}
-        {...rest}
+        style={{maxHeight: activeBannerSetting?.height}}
+        {...activeBannerSetting.rest}
       />
     </div>
   );

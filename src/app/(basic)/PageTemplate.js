@@ -12,6 +12,8 @@ import Skeleton from 'react-loading-skeleton';
 import {MenuOutlined} from '@ant-design/icons';
 import {useState} from 'react';
 import MobileMenu from './components/MobileMenu';
+import {useSelectedLayoutSegment} from 'next/navigation';
+import classNames from 'classnames';
 
 const LoginSection = dynamic(
   () => import('./components/LoginSection'),
@@ -22,6 +24,7 @@ const LoginSection = dynamic(
 );
 
 export default function PageTemplate({children}) {
+  const segment = useSelectedLayoutSegment();
   
   const [menuDrawerOpen, setMenuDrawerOpen] = useState(false);
   
@@ -82,7 +85,7 @@ export default function PageTemplate({children}) {
           <Banner asMobile />
         </div>
         
-        <div className="w-full mx-auto relative md:hidden p-[16px] pb-0">
+        <div className={classNames('w-full mx-auto relative md:hidden p-[16px] pb-0', {'!hidden': segment === 'projects'})}>
           <BannerCTA />
         </div>
         

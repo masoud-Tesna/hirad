@@ -9,11 +9,14 @@ import hotelIcon from '/public/icons/hotel.svg';
 import cooperationIcon from '/public/icons/cooperation.svg';
 import messagesIcon from '/public/icons/messages.svg';
 import {useBookVisit} from '@/app/contexts/bookVisit';
+import {useRouter} from 'next/navigation';
 
 
 export const dynamic = 'force-dynamic';
 
 const BannerCTA = () => {
+  const router = useRouter();
+  
   const {setBookVisitOpen} = useBookVisit();
   
   const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-30';
@@ -32,10 +35,11 @@ const BannerCTA = () => {
           />
         </Col>
         
-        <Col xs={0} md={6}>
+        <Col xs={12} md={6}>
           <CTALink
             text={{persian: 'پروژه هیراد پالاس', english: 'Hirad Palace'}}
             icon={{path: hotelIcon, width: 50, height: 54}}
+            onClick={() => router.push('/projects/hirad-palace')}
           />
         </Col>
         

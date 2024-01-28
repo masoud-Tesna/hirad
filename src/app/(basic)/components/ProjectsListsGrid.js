@@ -6,7 +6,7 @@ import locationIcon from '/public/icons/location2.svg';
 import Image from 'next/image';
 // import required modules
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay, EffectCreative, Navigation, Pagination} from 'swiper/modules';
+import {Autoplay} from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
@@ -385,12 +385,6 @@ const ProjectsListsGrid = () => {
           </SwiperSlide>
         
         </Swiper>
-        
-        {/*{images?.map((item, i) => (
-            <SwiperSlide key={i} className="!w-[80%]">
-              <Image src={item} alt={'alt'} layout="fill" placeholder="blur" className="" />
-            </SwiperSlide>
-          ))}*/}
       </div>
     </>
   );
