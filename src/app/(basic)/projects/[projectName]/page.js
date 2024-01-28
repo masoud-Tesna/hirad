@@ -1,14 +1,15 @@
-import ChangeBanner from '@/app/(basic)/projects/[projectName]/components/ChangeBanner';
 import {Col, Row} from 'antd';
 
 import projectImage from '/public/images/projects/falamac/forDescription.png';
 import Image from 'next/image';
-import Description from '@/app/(basic)/projects/[projectName]/components/Description';
-import ProjectAmenities from '@/app/(basic)/projects/[projectName]/components/ProjectAmenities';
-import ProjectGallery from '@/app/(basic)/projects/[projectName]/components/ProjectGallery';
+import Description from './components/Description';
+import ProjectAmenities from './components/ProjectAmenities';
+import ProjectGallery from './components/ProjectGallery';
+import ProjectDetails from './components/ProjectDetails';
+import {BusinessPartnersBox} from '@/app/(basic)/components/BusinessPartners';
 
 export async function generateStaticParams() {
-  const projects = ['falamac'];
+  const projects = ['falamac', 'hirad-palace'];
   
   return projects.map((project) => ({projectName: project}));
 }
@@ -16,13 +17,11 @@ export async function generateStaticParams() {
 const ProjectDetailsPage = ({params: {projectName}}) => {
   return (
     <>
-      <ChangeBanner projectName={projectName} />
-      
       <Row
         justify={'space-between'}
         align={'stretch'}
         gutter={[{xs: 0, md: 40}, 16]}
-        className="mb-[50px] md:mb-[100px] !flex-col-reverse md:!flex-row max-md:px-[16px] max-md:mt-[5vh] mt-[15dvh] max-md:!mx-0"
+        className="mb-[50px] md:mb-[100px] !flex-col-reverse md:!flex-row max-md:px-[16px] mt-[20px] md:mt-[15dvh] max-md:!mx-0"
       >
         <Col xs={24} md={12} xl={11}>
           <Description
@@ -53,6 +52,12 @@ const ProjectDetailsPage = ({params: {projectName}}) => {
       <ProjectAmenities />
       
       <ProjectGallery />
+      
+      <ProjectDetails />
+      
+      <div className="mt-[20px] mb-[50px] md:mb-[100px]">
+        <BusinessPartnersBox count={5} />
+      </div>
     </>
   );
 };

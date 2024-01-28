@@ -8,8 +8,10 @@ import {useLoginModal} from '@/app/contexts/auth/LoginModalContext';
 import {useAuth} from '@/app/contexts/auth/AuthContext';
 import Link from 'next/link';
 import {useBookVisit} from '@/app/contexts/bookVisit';
+import {useRouter} from 'next/navigation';
 
 const MobileMenu = ({handleCloseDrawer}) => {
+  const router = useRouter();
   const {handleOpenLoginModal} = useLoginModal();
   const {isLoggedIn, userInfo, handleLogout} = useAuth();
   const {setBookVisitOpen} = useBookVisit();
@@ -80,7 +82,8 @@ const MobileMenu = ({handleCloseDrawer}) => {
         width={30}
         height={34}
         className="max-w-[30px] max-h-[34px]"
-      />
+      />,
+      onClick: () => router.push('/projects/hirad-place')
     },
     {
       label: 'همکاری با هیراد',
@@ -116,28 +119,28 @@ const MobileMenu = ({handleCloseDrawer}) => {
       />
       
       {/*<Row gutter={[0, 16]}>
-        <Col span={24}>
-          <Space
-            size={12} onClick={() => {
-            handleCloseDrawer();
-            handleOpenLoginModal();
-          }}
-          >
-            <Image
-              src={cooperationIcon}
-              alt={'ورود | Login'}
-              priority
-              width={35}
-              height={39}
-              className="max-w-[50px] max-h-[54px]"
-            />
-        
-            <div>
-              ورود | Login
-            </div>
-          </Space>
-        </Col>
-      </Row>*/}
+       <Col span={24}>
+       <Space
+       size={12} onClick={() => {
+       handleCloseDrawer();
+       handleOpenLoginModal();
+       }}
+       >
+       <Image
+       src={cooperationIcon}
+       alt={'ورود | Login'}
+       priority
+       width={35}
+       height={39}
+       className="max-w-[50px] max-h-[54px]"
+       />
+       
+       <div>
+       ورود | Login
+       </div>
+       </Space>
+       </Col>
+       </Row>*/}
     </>
   );
 };

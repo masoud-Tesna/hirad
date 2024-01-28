@@ -66,6 +66,9 @@ const antdTheme = {
     Switch: {
       trackHeight: 30,
       handleSize: 25
+    },
+    Image: {
+      colorBgMask: 'rgba(0,0,0,.93)'
     }
   }
 };

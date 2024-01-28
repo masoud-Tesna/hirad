@@ -6,7 +6,6 @@ import {antdTheme} from '@/theme';
 import {useState} from 'react';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
-import {BannerProvider} from '@/app/contexts/banner';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {AuthProvider} from '@/app/contexts/auth/AuthContext';
@@ -33,11 +32,9 @@ const CombineProvider = ({children}) => {
               bodyClassName="text-[0.875rem] font-vazir"
             />
             <BookVisitProvider>
-              <BannerProvider>
-                <LoginModalProvider>
-                  {children}
-                </LoginModalProvider>
-              </BannerProvider>
+              <LoginModalProvider>
+                {children}
+              </LoginModalProvider>
             </BookVisitProvider>
             
             <ReactQueryDevtools />

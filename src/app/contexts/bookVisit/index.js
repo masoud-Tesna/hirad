@@ -37,8 +37,7 @@ const BookVisitProvider = ({children}) => {
         open={bookVisitSuccessOpen}
         footer={null}
         onCancel={() => setBookVisitSuccessOpen(false)}
-        className="--customModalBlurred"
-        width="50%"
+        className="--customModalBlurred !w-full md:!w-[50%]"
         styles={{
           mask: {
             backgroundColor: 'rgba(0, 0, 0, 0.10)'
