@@ -1,24 +1,26 @@
 'use client';
 
-import {Button, Checkbox, Col, Form, Input, Row, Select, Spin} from 'antd';
-import {DatePicker} from '@/templates/UI';
+import {Button, Checkbox, Col, ConfigProvider, Form, Input, Row, Select, Spin} from 'antd';
 import classNames from 'classnames';
 import {useRequest} from '@/utils/useRequest';
 import gregorian from 'react-date-object/calendars/gregorian';
 import gregorian_en from 'react-date-object/locales/gregorian_en';
-import {convertStringDateToTime, handleCreateAntdZodValidator} from '@/utils/helpers';
-import {DateObject} from 'react-multi-date-picker';
+import {convertStringDateToTime, handleCreateAntdZodValidator, useWindowSize} from '@/utils/helpers';
+import MultiDatePicker, {DateObject} from 'react-multi-date-picker';
 import {useEffect, useState} from 'react';
 import {
-  BookVisitZod,
   BookVisitRequestLegalZod,
-  BookVisitRequestZod
+  BookVisitRequestZod,
+  BookVisitZod
 } from '@/app/(basic)/components/schema/bookVisitForm';
 import {useAuth} from '@/app/contexts/auth/AuthContext';
 import {RegisterZod} from '@/app/schema/register';
 import {LoginZod} from '@/app/schema/login';
-
-export const dynamic = 'force-dynamic';
+import persian_fa from 'react-date-object/locales/persian_fa';
+import persian from 'react-date-object/calendars/persian';
+import opacity from 'react-element-popper/animations/opacity';
+import transition from 'react-element-popper/animations/transition';
+import {CalendarDateOutlined} from '@/templates/icons';
 
 const defaultTimes = [
   {
@@ -74,7 +76,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
     
     if (time && date && mobileNumber && lastName && firstName && gender && projectName) {
       setDisabledIsRealState(false);
-    } else {
+    }
+    else {
       setDisabledIsRealState(true);
     }
   }, [formRef.getFieldsValue(true)]);
@@ -96,19 +99,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
   });
   
   const occupiedTimes = data?.response || {};
-  /*{
-   '2023-12-09': [
-   '2023-12-09T09:00:00.000Z',
-   '2023-12-09T10:15:00.000Z'
-   ],
-   '2023-12-10': [],
-   '2023-12-11': [],
-   '2023-12-12': [],
-   '2023-12-13': [],
-   '2023-12-14': [],
-   '2023-12-15': [],
-   '2023-12-16': []
-   };*/
   
   const {mutateAsync: naturalVisitRequest, isPending: naturalVisitIsPending} = request.useMutation({
     url: '/api/v1/appeal/visit/natural'
@@ -150,7 +140,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
           }
           return item;
         }));
-      } else {
+      }
+      else {
         setTimeItems(defaultTimes);
       }
       
@@ -179,7 +170,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         console.log({bookVisitRequestZod});
         
         await naturalVisitRequest(bookVisitRequestZod);
-      } else {
+      }
+      else {
         const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
         console.log({bookVisitRequestLegalZod});
         
@@ -193,26 +185,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
       console.log('error in handleOnFinishForm >>', error);
     }
   };
-  
-  /*const handleOnFinishCustomForm = async () => {
-   
-   try {
-   await formRef.validateFields();
-   const formData = await formRef.getFieldsValue(true);
-   
-   const convertedDate = formData?.date?.convert(gregorian, gregorian_en)?.format('YYYY-MM-DD');
-   
-   formData.selectedDate = `${convertedDate} ${formData?.time}`;
-   
-   const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
-   console.log({bookVisitRequestLegalZod});
-   
-   return await legalVisitRequest(bookVisitRequestLegalZod);
-   
-   } catch (error) {
-   console.log('error in handleOnFinishForm >>', error);
-   }
-   };*/
   
   const handleChangeToRegister = async () => {
     try {
@@ -251,58 +223,23 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
     }
   }, [tokenInfo]);
   
-  /*
-   [
-   {
-   label: 'فلامک',
-   value: 'greenHouse'
-   },
-   {
-   label: 'LaResidence',
-   value: 'LaResidence'
-   },
-   {
-   label: 'تست1',
-   value: 'test1'
-   },
-   {
-   label: 'تست2',
-   value: 'test2'
-   },
-   {
-   label: 'تست3',
-   value: 'test3'
-   },
-   {
-   label: 'تست4',
-   value: 'test4'
-   },
-   {
-   label: 'تست5',
-   value: 'test5'
-   },
-   {
-   label: 'تست6',
-   value: 'test6'
-   },
-   {
-   label: 'تست7',
-   value: 'test7'
-   },
-   {
-   label: 'تست8',
-   value: 'test8'
-   },
-   {
-   label: 'تست9',
-   value: 'test9'
-   },
-   {
-   label: 'تست10',
-   value: 'test10'
-   }
-   ]
-   */
+  const {width} = useWindowSize();
+  
+  const CustomDatePickerInput = ({openCalendar, value, handleValueChange}) => {
+    return (
+      <Input
+        placeholder="تاریخ بازدید"
+        onFocus={openCalendar}
+        onClick={openCalendar}
+        value={value}
+        onChange={handleValueChange}
+        allowClear={false}
+        rootClassName="d-ltr [&>input]:placeholder:text-right [&>.ant-input-prefix]:!me-[8px]"
+        className="--test"
+        prefix={<CalendarDateOutlined className="!text-[20px] !text-gray-40" />}
+      />
+    );
+  };
   
   const projectOptions = [
     {
@@ -396,12 +333,35 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
           name="date"
           rules={[handleCreateAntdZodValidator(BookVisitZod)]}
         >
-          <DatePicker
-            placeholder="تاریخ بازدید"
-            onChange={handleOnChangeDatePicker}
-            minDate={new DateObject()}
-            maxDate={new DateObject().add(7, 'days')}
-          />
+          <ConfigProvider direction={'ltr'}>
+            <MultiDatePicker
+              className={width <= 767 ? 'rmdp-mobile' : ''}
+              render={<CustomDatePickerInput />}
+              onChange={handleOnChangeDatePicker}
+              minDate={new DateObject()}
+              maxDate={new DateObject().add(7, 'days')}
+              locale={persian_fa}
+              calendar={persian}
+              zIndex={9999}
+              animations={[
+                opacity(),
+                transition({
+                  from: 40,
+                  transition: 'all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)'
+                })
+              ]}
+              containerStyle={{width: '100%'}}
+              mobi
+              portal
+            />
+          </ConfigProvider>
+          
+          {/*<DatePicker
+           placeholder="تاریخ بازدید"
+           onChange={handleOnChangeDatePicker}
+           minDate={new DateObject()}
+           maxDate={new DateObject().add(7, 'days')}
+           />*/}
         </Form.Item>
       </Col>
       

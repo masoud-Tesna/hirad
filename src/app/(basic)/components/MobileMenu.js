@@ -83,7 +83,10 @@ const MobileMenu = ({handleCloseDrawer}) => {
         height={34}
         className="max-w-[30px] max-h-[34px]"
       />,
-      onClick: () => router.push('/projects/hirad-place')
+      onClick: () => {
+        router.push('/projects/hirad-place');
+        handleCloseDrawer();
+      }
     },
     {
       label: 'همکاری با هیراد',

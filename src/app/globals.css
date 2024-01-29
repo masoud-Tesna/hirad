@@ -43,6 +43,12 @@
     direction: ltr;
   }
   
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .--loadingSkeleton {
     .ant-skeleton-input {
       background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0.4) 37%, rgba(255, 255, 255, 0.15) 63%) !important;

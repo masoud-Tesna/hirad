@@ -159,16 +159,14 @@ const ProjectAmenities = () => {
           </div>
         </div>
         
-        <div className="mt-[20px]">
+        <div className="h-[50px] center " onClick={toggleAmenities}>
           <Image
             src={downOutlined}
             alt={''}
-            className={classNames('transition-all ease-in-out duration-[.4s]', {'rotate-180': showAmenitiesVisible})}
-            onClick={toggleAmenities}
+            className={classNames('transition-all ease-in-out duration-[.4s] mt-[20px]', {'rotate-180': showAmenitiesVisible})}
           />
         </div>
       </Col>
-    
     </Row>
   );
 };
