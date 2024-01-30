@@ -1,6 +1,6 @@
 import {Col, Row} from 'antd';
 
-import projectImage from '/public/images/projects/falamac/forDescription.png';
+import projectImage from '/public/images/projects/hiradPalace/forDescription.png';
 import Image from 'next/image';
 import Description from './components/Description';
 import ProjectAmenities from './components/ProjectAmenities';
@@ -9,12 +9,18 @@ import ProjectDetails from './components/ProjectDetails';
 import {BusinessPartnersBox} from '@/app/(basic)/components/BusinessPartners';
 
 export async function generateStaticParams() {
-  const projects = ['falamac', 'hirad-palace'];
+  const projects = ['hirad-palace'];
   
   return projects.map((project) => ({projectName: project}));
 }
 
 const ProjectDetailsPage = ({params: {projectName}}) => {
+  
+  const convertProjectNames = {
+    'hirad-palace': 'Hirad Palace'
+  };
+  
+  
   return (
     <>
       <Row
@@ -26,10 +32,10 @@ const ProjectDetailsPage = ({params: {projectName}}) => {
         <Col xs={24} md={12} xl={11}>
           <Description
             details={{
-              projectName,
+              projectName: convertProjectNames[projectName],
               projectImage: projectImage?.src,
               title: {
-                top: 'Falamac Project, Shahrak-e Gharb',
+                top: 'Hirad Palace, Shahrak-e Gharb',
                 bottom: 'Modern and magnificent architecture'
               },
               description: 'منطقه چلک در فاصله ۵ کیلومتری نوشهر کوتاهترین فاصله میان جنگل و دریا را در سرتاسر مازندران دارد. و همین موضوع باعث شده آب و هوای این منطقه همیشه معتدل بوده و کمترین میزان رطوبت را داشته باشد. دسترسی این منطقه به آزادراه تهران شمال باعث شده که در ۲ ساعت از تهران بتوان به چلک رسید. وجود تراکم درختان و حفاظت از آنها سبب شد تا جانمایی بنا در سطوحی که فاقد پوشش طبیعی بودند صورت پذیرد و این استقرار با رویکرد اشراف حداکثری به محیط پیرامونی همچون جنگل و دریا صورت گرفته است. استقراری که می باید در فصول مختلف موجب فراهم آوردن حد مطلوب آسایش برای ساکنین باشد. سناریوی طراحی فضاهای سکونتی بنای فوق بر اساس راهبرد تفکیک فضاها شکل گرفته است. در حقیقت تمامی فضا در عین حال که به صورت مطلوب با هم در ارتباط هستند از طریق فضاهای فیلتر بدون ایجاد مزاحمت و تداخل در عملکرد از هم مجزا شده‌اند. به صورتی که فضاهای عمومی تر مانند پذیرایی، آشپزخانه و نشیمن در طبقه همکف و اتاق خواب ها، حال خصوصی و استخر.'
@@ -40,7 +46,7 @@ const ProjectDetailsPage = ({params: {projectName}}) => {
         <Col xs={24} md={12} className="max-[420px]:!min-h-[250px] max-md:!min-h-[300px]">
           <Image
             src={projectImage}
-            alt={projectName}
+            alt={convertProjectNames[projectName]}
             className="max-w-full"
             placeholder="blur"
             layout="fill"

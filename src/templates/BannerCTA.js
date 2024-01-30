@@ -65,9 +65,9 @@ const CTALink = ({text, icon, onClick}) => {
   return (
     <Space onClick={onClick} className="cursor-pointer select-none">
       <div className="[&>div]:text-center [&>div]:text-captionLg [&>div]:md:text-captionXl">
-        <div className="text-black">{text?.persian}</div>
+        <div className="text-black truncate">{text?.persian}</div>
         
-        <div className="text-gray-40">{text?.english}</div>
+        <div className="text-gray-40 truncate">{text?.english}</div>
       </div>
       
       <div>

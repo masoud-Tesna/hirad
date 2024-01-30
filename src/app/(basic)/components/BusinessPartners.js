@@ -5,13 +5,34 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
+import businessPartnerIcon1 from '/public/icons/businessPartners/businessPartnerIcon1.svg';
+import businessPartnerIcon2 from '/public/icons/businessPartners/businessPartnerIcon2.svg';
+import businessPartnerIcon3 from '/public/icons/businessPartners/businessPartnerIcon3.svg';
+import businessPartnerIcon4 from '/public/icons/businessPartners/businessPartnerIcon4.svg';
+import businessPartnerIcon5 from '/public/icons/businessPartners/businessPartnerIcon5.svg';
+import businessPartnerIcon6 from '/public/icons/businessPartners/businessPartnerIcon6.svg';
+import Image from 'next/image';
+
+const businessPartnersIcons = [
+  businessPartnerIcon1,
+  businessPartnerIcon2,
+  businessPartnerIcon3,
+  businessPartnerIcon4,
+  businessPartnerIcon5,
+  businessPartnerIcon6
+];
 
 export const BusinessPartnersBox = ({count}) => {
   return (
     <>
-      <div className="mt-[30px] hidden md:grid grid-cols-2 md:grid-cols-5 gap-[16px]">
-        {(new Array(count).fill(2))?.map((_, index) => (
-          <div key={index} className="bg-gray-20 h-[143px]" />
+      <div className="mt-[30px] hidden md:grid grid-cols-2 md:grid-cols-3 gap-[16px]">
+        {businessPartnersIcons?.map((img, index) => (
+          <div
+            key={index}
+            className="h-[143px] center [&>img]:object-contain [&>img]:aspect-[3/2] hover:[&>img]:mix-blend-luminosity"
+          >
+            <Image src={img} alt={'business partners'} className="max-w-full transition-all duration-[.4s]" />
+          </div>
         ))}
       </div>
       
@@ -27,9 +48,11 @@ export const BusinessPartnersBox = ({count}) => {
           }}
           className="h-full"
         >
-          {(new Array(count).fill(2))?.map((_, index) => (
+          {businessPartnersIcons?.map((img, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-20 h-[143px]" />
+              <div className="h-[143px] center [&>img]:object-contain [&>img]:aspect-[3/2] hover:[&>img]:mix-blend-luminosity">
+                <Image src={img} alt={'business partners'} className="max-w-full transition-all duration-[.4s]" />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

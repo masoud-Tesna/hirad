@@ -1,11 +1,11 @@
 import {Button, Col, Row} from 'antd';
 import {useBookVisit} from '@/app/contexts/bookVisit';
 
-const FalamacProject = () => {
+const HiradPalaceProject = () => {
   const {setBookVisitOpen} = useBookVisit();
   
   return (
-    <div className="bg-[url('/images/falamacProjectBg.png')] bg-center bg-cover bg-no-repeat --falamacProjectSection">
+    <div className="bg-[url('/images/hiradPalaceProjectBg.png')] bg-center bg-cover bg-no-repeat --hiradPalaceProjectSection">
       <Row className="bg-[rgba(21,21,21,.85)] py-[40px]" justify="center">
         <Col xs={18} md={12} className="--centerSection py-[25px] text-center">
           <div className="text-white text-captionXl tracking-[4px] uppercase">
@@ -26,4 +26,4 @@ const FalamacProject = () => {
   );
 };
 
-export default FalamacProject;
+export default HiradPalaceProject;

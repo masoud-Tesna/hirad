@@ -5,7 +5,7 @@
 import ProjectsListSlider from '@/app/(basic)/components/ProjectsListSlider';
 import FollowUsSection from '@/app/(basic)/components/FollowUsSection';
 import BusinessPartners from '@/app/(basic)/components/BusinessPartners';
-import FalamacProject from '@/app/(basic)/components/FalamacProject';
+import HiradPalaceProject from '@/app/(basic)/components/HiradPalaceProject';
 import dynamic from 'next/dynamic';
 import Skeleton from 'react-loading-skeleton';
 
@@ -41,7 +41,7 @@ const Home = () => {
       </div>
       
       <div className="md:mx-[-10%]">
-        <FalamacProject />
+        <HiradPalaceProject />
       </div>
     </>
   );

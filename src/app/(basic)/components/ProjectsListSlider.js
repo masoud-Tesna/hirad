@@ -1,11 +1,14 @@
 'use client';
 
-import {Button, Col, Row} from 'antd';
+import {Button, Col, Divider, Row, Space} from 'antd';
 import Image from 'next/image';
 import {useRouter} from 'next/navigation';
 import parkingIcon from '/public/icons/parking.svg';
-import cinemaIcon from '/public/icons/cinema.svg';
-import snookerIcon from '/public/icons/snooker.svg';
+import poolIcon from '/public/icons/pool.svg';
+import jacuzziIcon from '/public/icons/jacuzzi.svg';
+import storageRoomIcon from '/public/icons/storageRoom.svg';
+import saunaIcon from '/public/icons/sauna.svg';
+import smartHomeIcon from '/public/icons/smartHome.svg';
 
 // slider Images
 import sliderImage1 from '/public/images/slider/image-1.png';
@@ -71,7 +74,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Hirad Palace
+                        Hirad Palace, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionMd md:text-captionLg">
@@ -106,8 +109,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Parking | پارکینگ
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              دو پارکینگ
+                            </div>
+                            
+                            <div>
+                              Parking
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -115,7 +126,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={parkingIcon}
+                            src={poolIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -123,8 +134,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Parking | پارکینگ
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              استخر
+                            </div>
+                            
+                            <div>
+                              Pool
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -133,7 +152,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={cinemaIcon}
+                            src={jacuzziIcon}
                             alt={'cinema'}
                             layout="responsive"
                             width={49}
@@ -141,8 +160,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Cinema | سینما
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              جکوزی
+                            </div>
+                            
+                            <div>
+                              Jacuzzi
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -150,7 +177,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={cinemaIcon}
+                            src={storageRoomIcon}
                             alt={'cinema'}
                             layout="responsive"
                             width={40}
@@ -158,8 +185,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Cinema | سینما
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              انباری
+                            </div>
+                            
+                            <div>
+                              Storage Room
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -168,7 +203,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={snookerIcon}
+                            src={saunaIcon}
                             alt={'snooker'}
                             layout="responsive"
                             width={40}
@@ -176,8 +211,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Snooker | بیلیارد
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              سونا
+                            </div>
+                            
+                            <div>
+                              Sauna
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -185,7 +228,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={snookerIcon}
+                            src={smartHomeIcon}
                             alt={'snooker'}
                             layout="responsive"
                             width={40}
@@ -193,8 +236,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Snooker | بیلیارد
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              واحد هوشمند
+                            </div>
+                            
+                            <div>
+                              Smart
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -212,57 +263,57 @@ const ProjectsListSlider = () => {
                         alt={'parking'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={parkingIcon}
+                        src={poolIcon}
                         alt={'parking'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={cinemaIcon}
+                        src={jacuzziIcon}
                         alt={'cinema'}
                         layout="fill"
                         /*width={49}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={cinemaIcon}
+                        src={storageRoomIcon}
                         alt={'cinema'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={snookerIcon}
+                        src={saunaIcon}
                         alt={'snooker'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={snookerIcon}
+                        src={smartHomeIcon}
                         alt={'snooker'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                   </Row>
@@ -270,7 +321,7 @@ const ProjectsListSlider = () => {
                 
                 <Col span={24}>
                   <Button
-                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    onClick={() => router?.push('/projects/hirad-palace', {scroll: false})}
                     type="primary"
                     className="!bg-primary !shadow-3"
                     block
@@ -307,7 +358,7 @@ const ProjectsListSlider = () => {
                       </div>
                       
                       <div className="text-gray-40 text-captionXl">
-                        Hirad Palace
+                        Hirad Palace, Shahrak-e Gharb
                       </div>
                       
                       <div className="text-black uppercase text-captionMd md:text-captionLg">
@@ -342,8 +393,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Parking | پارکینگ
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              دو پارکینگ
+                            </div>
+                            
+                            <div>
+                              Parking
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -351,7 +410,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={parkingIcon}
+                            src={poolIcon}
                             alt={'parking'}
                             layout="responsive"
                             width={40}
@@ -359,8 +418,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Parking | پارکینگ
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              استخر
+                            </div>
+                            
+                            <div>
+                              Pool
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -369,7 +436,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={cinemaIcon}
+                            src={jacuzziIcon}
                             alt={'cinema'}
                             layout="responsive"
                             width={49}
@@ -377,8 +444,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Cinema | سینما
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              جکوزی
+                            </div>
+                            
+                            <div>
+                              Jacuzzi
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -386,7 +461,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={cinemaIcon}
+                            src={storageRoomIcon}
                             alt={'cinema'}
                             layout="responsive"
                             width={40}
@@ -394,8 +469,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Cinema | سینما
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              انباری
+                            </div>
+                            
+                            <div>
+                              Storage Room
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -404,7 +487,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={snookerIcon}
+                            src={saunaIcon}
                             alt={'snooker'}
                             layout="responsive"
                             width={40}
@@ -412,8 +495,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Snooker | بیلیارد
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              سونا
+                            </div>
+                            
+                            <div>
+                              Sauna
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -421,7 +512,7 @@ const ProjectsListSlider = () => {
                       <Row align="middle">
                         <Col flex="50px" className="text-end">
                           <Image
-                            src={snookerIcon}
+                            src={smartHomeIcon}
                             alt={'snooker'}
                             layout="responsive"
                             width={40}
@@ -429,8 +520,16 @@ const ProjectsListSlider = () => {
                           />
                         </Col>
                         
-                        <Col flex="1 1" className="ps-[12px]">
-                          Snooker | بیلیارد
+                        <Col flex="1 1" className="ps-[12px] truncate">
+                          <Space size={6} split={<Divider type={'vertical'} className="!border-black !m-0" />}>
+                            <div>
+                              واحد هوشمند
+                            </div>
+                            
+                            <div>
+                              Smart
+                            </div>
+                          </Space>
                         </Col>
                       </Row>
                     </Col>
@@ -448,57 +547,57 @@ const ProjectsListSlider = () => {
                         alt={'parking'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={parkingIcon}
+                        src={poolIcon}
                         alt={'parking'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={cinemaIcon}
+                        src={jacuzziIcon}
                         alt={'cinema'}
                         layout="fill"
                         /*width={49}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={cinemaIcon}
+                        src={storageRoomIcon}
                         alt={'cinema'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={snookerIcon}
+                        src={saunaIcon}
                         alt={'snooker'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                     
                     <Col flex={'50px'} className="text-center h-[30px]">
                       <Image
-                        src={snookerIcon}
+                        src={smartHomeIcon}
                         alt={'snooker'}
                         layout="fill"
                         /*width={40}
-                        height={40}*/
+                         height={40}*/
                       />
                     </Col>
                   </Row>
@@ -506,7 +605,7 @@ const ProjectsListSlider = () => {
                 
                 <Col span={24}>
                   <Button
-                    onClick={() => router?.push('/projects/falamac', {scroll: false})}
+                    onClick={() => router?.push('/projects/hirad-palace', {scroll: false})}
                     type="primary"
                     className="!bg-primary !shadow-3"
                     block
