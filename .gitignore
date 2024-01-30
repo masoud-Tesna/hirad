@@ -40,3 +40,5 @@ package-lock.json
 /.git
 ./.idea
 .idea
+!/package-lock.json
+/package-lock.json
