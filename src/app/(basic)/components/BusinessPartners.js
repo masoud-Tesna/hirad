@@ -29,9 +29,13 @@ export const BusinessPartnersBox = ({count}) => {
         {businessPartnersIcons?.map((img, index) => (
           <div
             key={index}
-            className="h-[143px] center [&>img]:object-contain [&>img]:aspect-[3/2] hover:[&>img]:mix-blend-luminosity"
+            className="h-[143px] center group"
           >
-            <Image src={img} alt={'business partners'} className="max-w-full transition-all duration-[.4s]" />
+            <Image
+              src={img}
+              alt={'business partners'}
+              className="max-w-full transition-all duration-[.4s] object-contain aspect-[3/2] md:mix-blend-luminosity md:group-hover:mix-blend-normal"
+            />
           </div>
         ))}
       </div>
@@ -40,18 +44,22 @@ export const BusinessPartnersBox = ({count}) => {
         <Swiper
           slidesPerView={2}
           spaceBetween={16}
-          modules={[Autoplay]}
-          loop
-          autoplay={{delay: 2500, disableOnInteraction: false}}
+          // modules={[Autoplay]}
+          // loop
+          // autoplay={{delay: 2500, disableOnInteraction: false}}
           pagination={{
             clickable: true
           }}
           className="h-full"
         >
           {businessPartnersIcons?.map((img, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-[143px] center [&>img]:object-contain [&>img]:aspect-[3/2] hover:[&>img]:mix-blend-luminosity">
-                <Image src={img} alt={'business partners'} className="max-w-full transition-all duration-[.4s]" />
+            <SwiperSlide key={index} className="group bg-white">
+              <div className="h-[143px] center">
+                <Image
+                  src={img}
+                  alt={'business partners'}
+                  className="max-w-full transition-all duration-[.4s] object-contain aspect-[3/2] md:mix-blend-luminosity md:group-hover:mix-blend-normal"
+                />
               </div>
             </SwiperSlide>
           ))}

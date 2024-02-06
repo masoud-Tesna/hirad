@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import {Col, Row, Space} from 'antd';
+import {Col, Modal, Row, Space} from 'antd';
 import Image from 'next/image';
 
 import calendarIcon from '/public/icons/calendar.svg';
@@ -10,6 +10,8 @@ import cooperationIcon from '/public/icons/cooperation.svg';
 import messagesIcon from '/public/icons/messages.svg';
 import {useBookVisit} from '@/app/contexts/bookVisit';
 import {useRouter} from 'next/navigation';
+import CooperationForm from '@/app/(basic)/components/CooperationForm';
+import {useState} from 'react';
 
 
 export const dynamic = 'force-dynamic';
@@ -18,6 +20,8 @@ const BannerCTA = () => {
   const router = useRouter();
   
   const {setBookVisitOpen} = useBookVisit();
+  
+  const [cooperationModalOpen, setCooperationModalOpen] = useState(false);
   
   const borderClassName = '[&>div:not(:last-child)]:text-center [&>div:not(:last-child)]:border-solid [&>div:not(:last-child)]:border-0 [&>div:not(:last-child)]:border-e [&>div:not(:last-child)]:border-gray-30';
   
@@ -47,6 +51,7 @@ const BannerCTA = () => {
           <CTALink
             text={{persian: 'همکاری با هیراد', english: 'Cooperation'}}
             icon={{path: cooperationIcon, width: 50, height: 54}}
+            onClick={() => setCooperationModalOpen(true)}
           />
         </Col>
         
@@ -57,6 +62,20 @@ const BannerCTA = () => {
           />
         </Col>
       </Row>
+      
+      <Modal
+        open={cooperationModalOpen}
+        footer={null}
+        onCancel={() => setCooperationModalOpen(false)}
+        title="همکاری با هیراد"
+        className="--customModal !w-full md:!w-[55%]"
+        style={{
+          top: 10
+        }}
+        destroyOnClose
+      >
+        <CooperationForm />
+      </Modal>
     </>
   );
 };

@@ -63,7 +63,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
   const {isLoggedIn, userInfo, tokenInfo, handleChangeUserData} = useAuth();
   
   const timeWatch = Form.useWatch('time', formRef);
-  const dateWatch = Form.useWatch('date', formRef)?.convert(gregorian, gregorian_en)?.format('YYYY-MM-DD');
+  const dateWatch = Form.useWatch('date', formRef);
+  const convertedDateWatch = dateWatch?.convert(gregorian, gregorian_en)?.format('YYYY-MM-DD');
   const projectNameWatch = Form.useWatch('projectName', formRef);
   const isRealEstateWatch = Form.useWatch('isRealEstate', formRef);
   
@@ -125,6 +126,8 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
   const handleOnChangeDatePicker = date => {
     const convertedDate = date?.convert(gregorian, gregorian_en).format('YYYY-MM-DD');
     
+    formRef.setFieldsValue({date});
+    
     if (convertedDate?.length && Object.keys(occupiedTimes)?.length) {
       const selectedOccupiedTime = occupiedTimes[convertedDate];
       
@@ -142,6 +145,7 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         }));
       }
       else {
+        console.log('else', defaultTimes);
         setTimeItems(defaultTimes);
       }
       
@@ -335,13 +339,14 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         >
           <ConfigProvider direction={'ltr'}>
             <MultiDatePicker
+              value={dateWatch}
               className={width <= 767 ? 'rmdp-mobile' : ''}
               render={<CustomDatePickerInput />}
               onChange={handleOnChangeDatePicker}
               minDate={new DateObject()}
               maxDate={new DateObject().add(7, 'days')}
-              locale={persian_fa}
               calendar={persian}
+              locale={persian_fa}
               zIndex={9999}
               animations={[
                 opacity(),
@@ -355,13 +360,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
               portal
             />
           </ConfigProvider>
-          
-          {/*<DatePicker
-           placeholder="تاریخ بازدید"
-           onChange={handleOnChangeDatePicker}
-           minDate={new DateObject()}
-           maxDate={new DateObject().add(7, 'days')}
-           />*/}
         </Form.Item>
       </Col>
       
@@ -392,10 +390,10 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
                     className={classNames(
                       'h-[40px] md:h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
                       {'bg-secondary text-white': timeWatch === item?.value},
-                      {'bg-gray-60/50 !cursor-not-allowed select-none': item?.disabled || !Object.keys(occupiedTimes)?.length || !dateWatch?.length}
+                      {'bg-gray-60/50 !cursor-not-allowed select-none': item?.disabled || !Object.keys(occupiedTimes)?.length || !convertedDateWatch?.length}
                     )}
                     onClick={() => {
-                      if (!item?.disabled && Object.keys(occupiedTimes)?.length && dateWatch?.length) {
+                      if (!item?.disabled && Object.keys(occupiedTimes)?.length && convertedDateWatch?.length) {
                         formRef.setFields([
                           {
                             name: 'time',

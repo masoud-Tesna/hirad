@@ -227,7 +227,6 @@ const ProjectsListsGrid = () => {
             clickable: true
           }}
           className="h-full"
-          initialSlide={0}
         >
           <SwiperSlide className="--mobileProjectsSlider">
             <div className="--image bg-[url('/images/projects/project1.png')]">
