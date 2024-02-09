@@ -3,34 +3,59 @@
 import {Button, Col, Form, Input, Row, Space, Spin} from 'antd';
 import classNames from 'classnames';
 import {CheckOutlined} from '@ant-design/icons';
+import {useRequest} from '@/utils/useRequest';
+import {handleCreateAntdZodValidator} from '@/utils/helpers';
+import {CooperationZod} from '@/app/(basic)/schema/cooperationForm';
 
-const cooperations = [
-  {label: 'اجای پروژه ها', value: '1'},
+const cooperationFields = [
+  {label: 'اجای پروژه ها', value: 'projectImplementation'},
   {label: 'معماری و طراحی', value: '2'},
   {label: 'بازاریابی و فروش', value: '3'},
   {label: 'دریافت پروژه', value: '4'}
 ];
 
-const CooperationForm = () => {
+const CooperationForm = ({onCloseModal}) => {
   const [formRef] = Form.useForm();
   
-  const cooperationWatch = Form.useWatch('cooperation', formRef);
+  const request = useRequest();
+  
+  const cooperationFieldWatch = Form.useWatch('cooperationField', formRef);
+  
+  const {isPending: cooperationsIsLoading, mutate: cooperationsRequest} = request.useMutation({
+    url: '/api/v1/communication/work-with-us',
+    customSuccessMessage: 'درخواست شما با موفقیت ثبت شد',
+    onSuccess: () => {
+      formRef.resetFields();
+      onCloseModal();
+    }
+  });
   
   return (
-    <Spin spinning={false}>
-      <Form form={formRef} layout="vertical" scrollToFirstError>
+    <Spin spinning={cooperationsIsLoading}>
+      <Form form={formRef} layout="vertical" scrollToFirstError onFinish={cooperationsRequest}>
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item
-              name={'fullName'}
+              name={'firstName'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
-              <Input placeholder="نام و نام خانوادگی" />
+              <Input placeholder="نام" />
             </Form.Item>
           </Col>
           
           <Col span={12}>
             <Form.Item
+              name={'lastName'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
+            >
+              <Input placeholder="نام خانوادگی" />
+            </Form.Item>
+          </Col>
+          
+          <Col xs={12} md={8}>
+            <Form.Item
               name={'companyName'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input placeholder="نام شرکت" />
             </Form.Item>
@@ -38,7 +63,8 @@ const CooperationForm = () => {
           
           <Col xs={12} md={8}>
             <Form.Item
-              name={'input3'}
+              name={'activityField'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input placeholder="حوزه اشتغال و فعالیت" />
             </Form.Item>
@@ -46,23 +72,26 @@ const CooperationForm = () => {
           
           <Col xs={12} md={8}>
             <Form.Item
-              name={'input4'}
+              name={'mobileNumber'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input placeholder="شماره تماس" maxLength={11} />
             </Form.Item>
           </Col>
           
-          <Col xs={12} md={8}>
+          <Col span={12}>
             <Form.Item
               name={'email'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input placeholder="ایمیل" />
             </Form.Item>
           </Col>
           
-          <Col span={24}>
+          <Col xs={24} md={12}>
             <Form.Item
-              name={'site'}
+              name={'websiteAddress'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input placeholder="آدرس وب سایت" />
             </Form.Item>
@@ -70,13 +99,14 @@ const CooperationForm = () => {
           
           <Col span={24}>
             <Form.Item
-              name={'cooperation'}
+              name={'cooperationField'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
               label="در کدام زمینه ها آماده همکاری با ما هستید؟"
             >
               <Row
                 gutter={[10, 10]}
               >
-                {cooperations?.map(item => (
+                {cooperationFields?.map(item => (
                   <Col
                     xs={12}
                     md={6}
@@ -85,12 +115,12 @@ const CooperationForm = () => {
                     <div
                       className={classNames(
                         'h-[40px] md:h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
-                        {'bg-secondary text-white': cooperationWatch === item?.value}
+                        {'bg-secondary text-white': cooperationFieldWatch === item?.value}
                       )}
                       onClick={() => {
                         formRef.setFields([
                           {
-                            name: 'cooperation',
+                            name: 'cooperationField',
                             value: item?.value
                           }
                         ]);
@@ -110,7 +140,8 @@ const CooperationForm = () => {
           
           <Col span={24}>
             <Form.Item
-              name={'desc'}
+              name={'companyIntroduction'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
               label="توضیحات تکمیلی در خصوص زمینه های فعالیتی و سوابق اجرایی"
             >
               <Input.TextArea rows={4} placeholder="معرفی شرکت" />
@@ -119,7 +150,8 @@ const CooperationForm = () => {
           
           <Col span={24}>
             <Form.Item
-              name={'desc2'}
+              name={'extraInfo'}
+              rules={[handleCreateAntdZodValidator(CooperationZod)]}
             >
               <Input.TextArea rows={4} placeholder="توضیحات تکمیلی" />
             </Form.Item>
@@ -129,6 +161,7 @@ const CooperationForm = () => {
             <Button
               block
               className="!bg-primary !text-captionXl !text-white !p-0"
+              htmlType={'submit'}
             >
               ثبت درخواست همکاری
             </Button>

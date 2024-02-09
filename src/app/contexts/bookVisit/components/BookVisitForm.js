@@ -1,26 +1,22 @@
 'use client';
 
-import {Button, Checkbox, Col, ConfigProvider, Form, Input, Row, Select, Spin} from 'antd';
+import {Button, Checkbox, Col, Form, Input, Row, Select, Spin} from 'antd';
 import classNames from 'classnames';
 import {useRequest} from '@/utils/useRequest';
 import gregorian from 'react-date-object/calendars/gregorian';
 import gregorian_en from 'react-date-object/locales/gregorian_en';
-import {convertStringDateToTime, handleCreateAntdZodValidator, useWindowSize} from '@/utils/helpers';
-import MultiDatePicker, {DateObject} from 'react-multi-date-picker';
+import {convertStringDateToTime, handleCreateAntdZodValidator} from '@/utils/helpers';
+import {DateObject} from 'react-multi-date-picker';
 import {useEffect, useState} from 'react';
 import {
   BookVisitRequestLegalZod,
   BookVisitRequestZod,
   BookVisitZod
-} from '@/app/(basic)/components/schema/bookVisitForm';
+} from '@/app/contexts/bookVisit/schema/bookVisitForm';
 import {useAuth} from '@/app/contexts/auth/AuthContext';
 import {RegisterZod} from '@/app/schema/register';
 import {LoginZod} from '@/app/schema/login';
-import persian_fa from 'react-date-object/locales/persian_fa';
-import persian from 'react-date-object/calendars/persian';
-import opacity from 'react-element-popper/animations/opacity';
-import transition from 'react-element-popper/animations/transition';
-import {CalendarDateOutlined} from '@/templates/icons';
+import {DatePicker} from '@/templates/UI';
 
 const defaultTimes = [
   {
@@ -126,8 +122,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
   const handleOnChangeDatePicker = date => {
     const convertedDate = date?.convert(gregorian, gregorian_en).format('YYYY-MM-DD');
     
-    formRef.setFieldsValue({date});
-    
     if (convertedDate?.length && Object.keys(occupiedTimes)?.length) {
       const selectedOccupiedTime = occupiedTimes[convertedDate];
       
@@ -227,24 +221,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
     }
   }, [tokenInfo]);
   
-  const {width} = useWindowSize();
-  
-  const CustomDatePickerInput = ({openCalendar, value, handleValueChange}) => {
-    return (
-      <Input
-        placeholder="تاریخ بازدید"
-        onFocus={openCalendar}
-        onClick={openCalendar}
-        value={value}
-        onChange={handleValueChange}
-        allowClear={false}
-        rootClassName="d-ltr [&>input]:placeholder:text-right [&>.ant-input-prefix]:!me-[8px]"
-        className="--test"
-        prefix={<CalendarDateOutlined className="!text-[20px] !text-gray-40" />}
-      />
-    );
-  };
-  
   const projectOptions = [
     {
       label: 'هیراد پالاس',
@@ -255,216 +231,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
       value: 'hiradPalace2'
     }
   ];
-  
-  const VisitFormInputs = () => (
-    <>
-      <Col span={24}>
-        <Form.Item
-          name="projectName"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <Select
-            placeholder="انتخاب پروژه جهت بازدید"
-            onChange={() => {
-              formRef.setFields([
-                {
-                  name: 'time',
-                  value: null
-                },
-                {
-                  name: 'date',
-                  value: null
-                }
-              ]);
-              
-              setTimeItems(defaultTimes);
-            }}
-            options={projectOptions}
-          />
-        </Form.Item>
-      </Col>
-      
-      <Col xs={24} md={4}>
-        <Form.Item
-          name="gender"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <Select
-            placeholder="جنسیت"
-            options={[
-              {
-                label: 'آقا',
-                value: 'male'
-              },
-              {
-                label: 'خانم',
-                value: 'female'
-              }
-            ]}
-          />
-        </Form.Item>
-      </Col>
-      
-      <Col xs={12} md={8}>
-        <Form.Item
-          name="firstName"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <Input placeholder="نام" />
-        </Form.Item>
-      </Col>
-      
-      <Col xs={12} md={12}>
-        <Form.Item
-          name="lastName"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <Input placeholder="نام خانوادگی" />
-        </Form.Item>
-      </Col>
-      
-      <Col span={12}>
-        <Form.Item
-          name="mobileNumber"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <Input placeholder="شماره موبایل" maxLength={11} />
-        </Form.Item>
-      </Col>
-      
-      <Col span={12}>
-        <Form.Item
-          name="date"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <ConfigProvider direction={'ltr'}>
-            <MultiDatePicker
-              value={dateWatch}
-              className={width <= 767 ? 'rmdp-mobile' : ''}
-              render={<CustomDatePickerInput />}
-              onChange={handleOnChangeDatePicker}
-              minDate={new DateObject()}
-              maxDate={new DateObject().add(7, 'days')}
-              calendar={persian}
-              locale={persian_fa}
-              zIndex={9999}
-              animations={[
-                opacity(),
-                transition({
-                  from: 40,
-                  transition: 'all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)'
-                })
-              ]}
-              containerStyle={{width: '100%'}}
-              mobi
-              portal
-            />
-          </ConfigProvider>
-        </Form.Item>
-      </Col>
-      
-      <Col
-        span={24}
-        className="md:mt-2 text-black !text-captionMd md:!text-captionLg border-solid border-0 border-b border-gray-30 pb-[10px]"
-      >
-        یکی از بازه های زمانی زیر را جهت بازدید انتخاب کنید
-      </Col>
-      
-      <Col span={24} className="mt-7">
-        <Form.Item
-          name="time"
-          rules={[handleCreateAntdZodValidator(BookVisitZod)]}
-        >
-          <div>
-            <Row
-              gutter={[10, 10]}
-              className="d-ltr"
-            >
-              {timeItems?.map(item => (
-                <Col
-                  xs={12}
-                  md={6}
-                  key={item?.value}
-                >
-                  <div
-                    className={classNames(
-                      'h-[40px] md:h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
-                      {'bg-secondary text-white': timeWatch === item?.value},
-                      {'bg-gray-60/50 !cursor-not-allowed select-none': item?.disabled || !Object.keys(occupiedTimes)?.length || !convertedDateWatch?.length}
-                    )}
-                    onClick={() => {
-                      if (!item?.disabled && Object.keys(occupiedTimes)?.length && convertedDateWatch?.length) {
-                        formRef.setFields([
-                          {
-                            name: 'time',
-                            value: item?.value
-                          }
-                        ]);
-                      }
-                    }}
-                  >
-                    {item?.label}
-                  </div>
-                </Col>
-              ))}
-            </Row>
-          </div>
-        </Form.Item>
-      </Col>
-    </>
-  );
-  
-  const RegisterForm = () => (
-    <>
-      <Col span={12}>
-        <Form.Item
-          name={'nationalCode'}
-          rules={[handleCreateAntdZodValidator(RegisterZod)]}
-        >
-          <Input placeholder={'کد ملی'} />
-        </Form.Item>
-      </Col>
-      
-      <Col span={12}>
-        <Form.Item
-          name="password"
-          rules={[handleCreateAntdZodValidator(RegisterZod)]}
-        >
-          <Input.Password
-            placeholder={'کلمه عبور'}
-            rootClassName="d-ltr [&>input]:d-ltr [&>input]:placeholder:text-end"
-          />
-        </Form.Item>
-      </Col>
-      
-      <Col span={12}>
-        <Form.Item
-          name={'realstateName'}
-          rules={[handleCreateAntdZodValidator(RegisterZod)]}
-        >
-          <Input placeholder={'نام دفتر املاک'} />
-        </Form.Item>
-      </Col>
-      
-      <Col span={12}>
-        <Form.Item
-          name="realstateRegNo"
-          rules={[handleCreateAntdZodValidator(RegisterZod)]}
-        >
-          <Input placeholder={'کد دفتر املاک'} />
-        </Form.Item>
-      </Col>
-      
-      <Col span={24}>
-        <Form.Item
-          name="realstateAddress"
-          rules={[handleCreateAntdZodValidator(RegisterZod)]}
-        >
-          <Input.TextArea placeholder={'آدرس'} />
-        </Form.Item>
-      </Col>
-    </>
-  );
   
   
   return (
@@ -478,9 +244,199 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         scrollToFirstError
       >
         <Row gutter={16}>
+          
           {formStep === 0 ?
-            <VisitFormInputs /> :
-            <RegisterForm />
+            (
+              <>
+                <Col span={24}>
+                  <Form.Item
+                    name="projectName"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <Select
+                      placeholder="انتخاب پروژه جهت بازدید"
+                      onChange={() => {
+                        formRef.setFields([
+                          {
+                            name: 'time',
+                            value: null
+                          },
+                          {
+                            name: 'date',
+                            value: null
+                          }
+                        ]);
+                        
+                        setTimeItems(defaultTimes);
+                      }}
+                      options={projectOptions}
+                    />
+                  </Form.Item>
+                </Col>
+                
+                <Col xs={24} md={4}>
+                  <Form.Item
+                    name="gender"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <Select
+                      placeholder="جنسیت"
+                      options={[
+                        {
+                          label: 'آقا',
+                          value: 'male'
+                        },
+                        {
+                          label: 'خانم',
+                          value: 'female'
+                        }
+                      ]}
+                    />
+                  </Form.Item>
+                </Col>
+                
+                <Col xs={12} md={8}>
+                  <Form.Item
+                    name="firstName"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <Input placeholder="نام" />
+                  </Form.Item>
+                </Col>
+                
+                <Col xs={12} md={12}>
+                  <Form.Item
+                    name="lastName"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <Input placeholder="نام خانوادگی" />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={12}>
+                  <Form.Item
+                    name="mobileNumber"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <Input placeholder="شماره موبایل" maxLength={11} />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={12}>
+                  <Form.Item
+                    name="date"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <DatePicker
+                      placeholder="تاریخ بازدید"
+                      onChange={handleOnChangeDatePicker}
+                      minDate={new DateObject()}
+                      maxDate={new DateObject().add(7, 'days')}
+                    />
+                  </Form.Item>
+                </Col>
+                
+                <Col
+                  span={24}
+                  className="md:mt-2 text-black !text-captionMd md:!text-captionLg border-solid border-0 border-b border-gray-30 pb-[10px]"
+                >
+                  یکی از بازه های زمانی زیر را جهت بازدید انتخاب کنید
+                </Col>
+                
+                <Col span={24} className="mt-7">
+                  <Form.Item
+                    name="time"
+                    rules={[handleCreateAntdZodValidator(BookVisitZod)]}
+                  >
+                    <div>
+                      <Row
+                        gutter={[10, 10]}
+                        className="d-ltr"
+                      >
+                        {timeItems?.map(item => (
+                          <Col
+                            xs={12}
+                            md={6}
+                            key={item?.value}
+                          >
+                            <div
+                              className={classNames(
+                                'h-[40px] md:h-[56px] flex justify-center items-center border-solid border border-gray-30 text-gray-40 text-captionLg d-ltr cursor-pointer transition-all duration-[.4s]',
+                                {'bg-secondary text-white': timeWatch === item?.value},
+                                {'bg-gray-60/50 !cursor-not-allowed select-none': item?.disabled || !Object.keys(occupiedTimes)?.length || !convertedDateWatch?.length}
+                              )}
+                              onClick={() => {
+                                if (!item?.disabled && Object.keys(occupiedTimes)?.length && convertedDateWatch?.length) {
+                                  formRef.setFields([
+                                    {
+                                      name: 'time',
+                                      value: item?.value
+                                    }
+                                  ]);
+                                }
+                              }}
+                            >
+                              {item?.label}
+                            </div>
+                          </Col>
+                        ))}
+                      </Row>
+                    </div>
+                  </Form.Item>
+                </Col>
+              </>
+            ) :
+            (
+              <>
+                <Col span={12}>
+                  <Form.Item
+                    name={'nationalCode'}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
+                  >
+                    <Input placeholder={'کد ملی'} />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={12}>
+                  <Form.Item
+                    name="password"
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
+                  >
+                    <Input.Password
+                      placeholder={'کلمه عبور'}
+                      rootClassName="d-ltr [&>input]:d-ltr [&>input]:placeholder:text-end"
+                    />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={12}>
+                  <Form.Item
+                    name={'realstateName'}
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
+                  >
+                    <Input placeholder={'نام دفتر املاک'} />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={12}>
+                  <Form.Item
+                    name="realstateRegNo"
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
+                  >
+                    <Input placeholder={'کد دفتر املاک'} />
+                  </Form.Item>
+                </Col>
+                
+                <Col span={24}>
+                  <Form.Item
+                    name="realstateAddress"
+                    rules={[handleCreateAntdZodValidator(RegisterZod)]}
+                  >
+                    <Input.TextArea placeholder={'آدرس'} />
+                  </Form.Item>
+                </Col>
+              </>
+            )
           }
           
           {!isLoggedIn &&

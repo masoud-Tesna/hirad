@@ -1,4 +1,4 @@
-import {Col, Menu, Row, Space} from 'antd';
+import {Col, Menu, Modal, Row, Space} from 'antd';
 import calendarIcon from '/public/icons/calendar.svg';
 import hotelIcon from '/public/icons/hotel.svg';
 import cooperationIcon from '/public/icons/cooperation.svg';
@@ -9,12 +9,16 @@ import {useAuth} from '@/app/contexts/auth/AuthContext';
 import Link from 'next/link';
 import {useBookVisit} from '@/app/contexts/bookVisit';
 import {useRouter} from 'next/navigation';
+import CooperationForm from '@/app/(basic)/components/CooperationForm';
+import {useState} from 'react';
 
 const MobileMenu = ({handleCloseDrawer}) => {
   const router = useRouter();
   const {handleOpenLoginModal} = useLoginModal();
   const {isLoggedIn, userInfo, handleLogout} = useAuth();
   const {setBookVisitOpen} = useBookVisit();
+  
+  const [cooperationModalOpen, setCooperationModalOpen] = useState(false);
   
   const adminItem = userInfo?.type === 'admin' ? {key: '1', label: <Link href={'/dashboard'}>داشبورد</Link>} : {};
   
@@ -97,7 +101,11 @@ const MobileMenu = ({handleCloseDrawer}) => {
         width={30}
         height={34}
         className="max-w-[30px] max-h-[34px]"
-      />
+      />,
+      onClick: () => {
+        handleCloseDrawer();
+        setCooperationModalOpen(true);
+      }
     },
     {
       label: 'درباره هیراد',
@@ -121,29 +129,19 @@ const MobileMenu = ({handleCloseDrawer}) => {
         className={'--mobileMenu'}
       />
       
-      {/*<Row gutter={[0, 16]}>
-       <Col span={24}>
-       <Space
-       size={12} onClick={() => {
-       handleCloseDrawer();
-       handleOpenLoginModal();
-       }}
-       >
-       <Image
-       src={cooperationIcon}
-       alt={'ورود | Login'}
-       priority
-       width={35}
-       height={39}
-       className="max-w-[50px] max-h-[54px]"
-       />
-       
-       <div>
-       ورود | Login
-       </div>
-       </Space>
-       </Col>
-       </Row>*/}
+      <Modal
+        open={cooperationModalOpen}
+        footer={null}
+        onCancel={() => setCooperationModalOpen(false)}
+        title="همکاری با هیراد"
+        className="--customModal !w-full md:!w-[67%]"
+        style={{
+          top: 10
+        }}
+        destroyOnClose
+      >
+        <CooperationForm onCloseModal={() => setCooperationModalOpen(false)} />
+      </Modal>
     </>
   );
 };

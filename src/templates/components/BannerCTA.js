@@ -68,13 +68,13 @@ const BannerCTA = () => {
         footer={null}
         onCancel={() => setCooperationModalOpen(false)}
         title="همکاری با هیراد"
-        className="--customModal !w-full md:!w-[55%]"
+        className="--customModal !w-full md:!w-[67%]"
         style={{
           top: 10
         }}
         destroyOnClose
       >
-        <CooperationForm />
+        <CooperationForm onCloseModal={() => setCooperationModalOpen(false)} />
       </Modal>
     </>
   );
