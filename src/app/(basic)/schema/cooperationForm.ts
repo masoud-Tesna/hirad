@@ -12,8 +12,6 @@ export const CooperationZod = CooperationFromRegisterZod.extend({
   websiteAddress: z.string({ required_error: setInputRule('requiredInput', { inputName: 'آدرس وب سایت' }) })
   .url({ message: 'لطفا یک آدرس معتبر وارد نمایید' }),
   cooperationField: z.string({ required_error: setInputRule('requiredSelectBox', { inputName: 'زمینه همکاری' }) }),
-  companyIntroduction: z.string({ required_error: setInputRule('requiredSelectBox', { inputName: 'توضیحات تکمیلی در خصوص زمینه های فعالیتی و سوابق اجرایی' }) })
-  .optional(),
+  companyIntroduction: z.string({ required_error: setInputRule('requiredSelectBox', { inputName: 'توضیحات تکمیلی در خصوص زمینه های فعالیتی و سوابق اجرایی' }) }),
   extraInfo: z.string({ required_error: setInputRule('requiredSelectBox', { inputName: 'توضیحات تکمیلی' }) })
-  .optional()
 });

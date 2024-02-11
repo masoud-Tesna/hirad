@@ -53,7 +53,7 @@ const defaultTimes = [
   }
 ];
 
-const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessModal}) => {
+const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessModal, handleSetVisitLink}) => {
   const request = useRequest();
   const [formRef] = Form.useForm();
   const {isLoggedIn, userInfo, tokenInfo, handleChangeUserData} = useAuth();
@@ -139,7 +139,6 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
         }));
       }
       else {
-        console.log('else', defaultTimes);
         setTimeItems(defaultTimes);
       }
       
@@ -161,19 +160,17 @@ const BookVisitForm = ({handleCloseBookVisitModal, handleOpenBookVisitSuccessMod
       
       formData.selectedDate = `${convertedDate} ${formData?.time}`;
       
-      console.log({userInfo});
-      
       if (!isLoggedIn) {
         const bookVisitRequestZod = BookVisitRequestZod.parse(formData);
-        console.log({bookVisitRequestZod});
         
-        await naturalVisitRequest(bookVisitRequestZod);
+        const res = await naturalVisitRequest(bookVisitRequestZod);
+        await handleSetVisitLink(res?.response?.link);
       }
       else {
         const bookVisitRequestLegalZod = BookVisitRequestLegalZod.parse(formData);
-        console.log({bookVisitRequestLegalZod});
         
-        await legalVisitRequest(bookVisitRequestLegalZod);
+        const res = await legalVisitRequest(bookVisitRequestLegalZod);
+        await handleSetVisitLink(res?.response?.link);
       }
       
       handleCloseBookVisitModal();

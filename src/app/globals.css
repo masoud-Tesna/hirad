@@ -362,6 +362,21 @@
         }
       }
     }
+    
+    &.--bookVisitSuccess {
+      .ant-modal-content {
+        @apply py-[55px] text-center text-gray-40 !important;
+        
+        .ant-modal-body > div {
+          @apply text-captionXl font-bold;
+        }
+        
+        .ant-divider {
+          @apply border-gray-30 my-[16px];
+        }
+      }
+    }
+    
   }
   
   .--customModalBlurred {

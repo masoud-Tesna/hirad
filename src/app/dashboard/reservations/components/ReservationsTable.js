@@ -1,11 +1,11 @@
 'use client';
 
-import {Col, Form, Input, Popconfirm, Row, Select, Table} from 'antd';
+import {Button, Col, Form, Input, Popconfirm, Row, Select, Table} from 'antd';
 import {convertStringDateToTime} from '@/utils/helpers';
 // import {DatePicker} from '@/templates/UI';
 import {DateObject} from 'react-multi-date-picker';
 import {SearchOutlined, TrashOutlined} from '@/templates/icons';
-import {useEffect, useMemo, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 import gregorian from 'react-date-object/calendars/gregorian';
 import gregorian_en from 'react-date-object/locales/gregorian_en';
 import persian from 'react-date-object/calendars/persian';
@@ -14,10 +14,13 @@ import {useRequest} from '@/utils/useRequest';
 import {useQueryClient} from '@tanstack/react-query';
 import debounce from 'lodash.debounce';
 import dynamic from 'next/dynamic';
+import html2pdf from 'html2pdf.js';
 
 const DatePicker = dynamic(() => import('@/templates/UI/DatePicker').then((mod) => mod.DatePicker), {ssr: false});
 
 const ReservationsTable = () => {
+  const tableRef = useRef();
+  
   const [formRef] = Form.useForm();
   const request = useRequest();
   const queryClient = useQueryClient();
@@ -35,13 +38,9 @@ const ReservationsTable = () => {
   
   const handleChangeFilter = (value, filedName) => setFilters(current => ({...current, [filedName]: value}));
   
-  const handleOnChangeSearchFilter = (value, searchBy) => {
-    setSearchFilter({[searchBy]: value});
-  };
+  const handleOnChangeSearchFilter = (value, searchBy) => setSearchFilter({[searchBy]: value});
   
-  const debouncedOnSearch = useMemo((value, searchBy) => {
-    return debounce((value, searchBy) => handleOnChangeSearchFilter(value, searchBy), 500);
-  }, []);
+  const debouncedOnSearch = useMemo((value, searchBy) => debounce((value, searchBy) => handleOnChangeSearchFilter(value, searchBy), 500), []);
   
   const {isLoading, data: reservationsData} = request.useQuery({
     url: '/api/v1/management/reservation-list',
@@ -162,6 +161,25 @@ const ReservationsTable = () => {
       }
     }
   ];
+  
+  const downloadPDF = () => {
+    const content = tableRef.current;
+    
+    // Create an options object with the desired settings
+    const options = {
+      margin: 10,
+      filename: 'table.pdf',
+      image: {type: 'jpeg', quality: 0.98},
+      html2canvas: {scale: 2},
+      jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
+    };
+    
+    // Use html2pdf to generate PDF from the table
+    html2pdf().from(content).set(options).outputPdf(pdf => {
+      // Save the PDF
+      pdf.save();
+    });
+  };
   
   useEffect(() => {
     return () => {
@@ -290,16 +308,23 @@ const ReservationsTable = () => {
       
       <div className="bg-white my-[20px] py-[40px] px-[16px]">
         <Table
+          ref={tableRef}
           loading={isLoading}
           columns={columns}
           dataSource={reservations}
           rowKey={'_id'}
           bordered={false}
+          footer={() => <div className="text-end"><Button
+            onClick={downloadPDF}
+            type={'default'}
+            className="min-w-[174px] !border-secondary !text-secondary hover:!border-[#194a32] hover:!text-[#194a32]"
+          >چاپ لیست</Button>
+          </div>}
           pagination={{
             position: ['bottomRight'],
             hideOnSinglePage: true,
             showSizeChanger: false,
-            pageSize: 20,
+            pageSize: 5,
             total: reservationsCount,
             onChange: page => setFilters(current => ({...current, page}))
           }}

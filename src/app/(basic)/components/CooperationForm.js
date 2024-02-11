@@ -9,9 +9,9 @@ import {CooperationZod} from '@/app/(basic)/schema/cooperationForm';
 
 const cooperationFields = [
   {label: 'اجای پروژه ها', value: 'projectImplementation'},
-  {label: 'معماری و طراحی', value: '2'},
-  {label: 'بازاریابی و فروش', value: '3'},
-  {label: 'دریافت پروژه', value: '4'}
+  {label: 'معماری و طراحی', value: 'architectureAndDesign'},
+  {label: 'بازاریابی و فروش', value: 'marketingAndSales'},
+  {label: 'دریافت پروژه', value: 'receiveProject'}
 ];
 
 const CooperationForm = ({onCloseModal}) => {

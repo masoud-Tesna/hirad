@@ -9,6 +9,7 @@ const bookVisitContext = createContext({});
 const BookVisitProvider = ({children}) => {
   const [bookVisitOpen, setBookVisitOpen] = useState(false);
   const [bookVisitSuccessOpen, setBookVisitSuccessOpen] = useState(false);
+  const [visitLink, setVisitLink] = useState('');
   
   return (
     <bookVisitContext.Provider value={{bookVisitOpen, setBookVisitOpen, bookVisitSuccessOpen, setBookVisitSuccessOpen}}>
@@ -29,6 +30,7 @@ const BookVisitProvider = ({children}) => {
           <BookVisitForm
             handleCloseBookVisitModal={() => setBookVisitOpen(false)}
             handleOpenBookVisitSuccessModal={() => setBookVisitSuccessOpen(true)}
+            handleSetVisitLink={link => setVisitLink(link)}
           />
         </div>
       </Modal>
@@ -37,7 +39,7 @@ const BookVisitProvider = ({children}) => {
         open={bookVisitSuccessOpen}
         footer={null}
         onCancel={() => setBookVisitSuccessOpen(false)}
-        className="--customModalBlurred !w-full md:!w-[50%]"
+        className="--customModal --bookVisitSuccess !w-full md:!w-[50%]"
         styles={{
           mask: {
             backgroundColor: 'rgba(0, 0, 0, 0.10)'
@@ -47,7 +49,10 @@ const BookVisitProvider = ({children}) => {
           top: '30%'
         }}
       >
-        <BookVisitSuccess />
+        <BookVisitSuccess
+          visitLink={visitLink}
+          handleCloseBookVisitSuccessModal={() => setBookVisitSuccessOpen(false)}
+        />
       </Modal>
     </bookVisitContext.Provider>
   );
