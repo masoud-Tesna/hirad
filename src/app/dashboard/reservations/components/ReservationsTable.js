@@ -324,7 +324,7 @@ const ReservationsTable = () => {
             position: ['bottomRight'],
             hideOnSinglePage: true,
             showSizeChanger: false,
-            pageSize: 5,
+            pageSize: 20,
             total: reservationsCount,
             onChange: page => setFilters(current => ({...current, page}))
           }}
