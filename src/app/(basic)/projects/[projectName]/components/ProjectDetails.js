@@ -32,7 +32,7 @@ const ProjectDetails = () => {
             <Col xs={24} md={12}>
               <div className="list-disc list-inside text-captionLg text-black">
                 <li>
-                  کارفرما: گروه ساختمانی آوانگارد
+                  کارفرما: گروه ساختمانی هیراد
                 </li>
                 
                 <li>
@@ -40,19 +40,27 @@ const ProjectDetails = () => {
                 </li>
                 
                 <li>
-                  آدرس پروژه: مازندران، نوشهر، چلک
+                  نشانی: شهرک غرب، فاز 4،فلامک شمالی، کوچه حیدریان، پلاک 9
                 </li>
                 
                 <li>
-                  معمار: امیرحسین تبریزی
+                  سرپرست کارگاه: امیرحسین نوشاد
                 </li>
                 
                 <li>
-                  نوع سازه: اسکلت بتنی
+                  آرشیتکت: عطیه سوهانی
                 </li>
                 
                 <li>
-                  مساحت زمین: ۱۰,۰۰۰ متر مربع
+                  نوع سازه: بتن آرمه با سقف وافل
+                </li>
+                
+                <li>
+                  مساحت زمین: 450 متر مربع
+                </li>
+                
+                <li>
+                  زیربنا: 1500 متر مفید، 1000 متر غیرمفید
                 </li>
               </div>
             </Col>
@@ -60,7 +68,7 @@ const ProjectDetails = () => {
             <Col xs={24} md={12} className="d-ltr">
               <div className="list-none list-inside text-captionLg text-black ">
                 <li>
-                  Employer: Avangard Construction Group
+                  Employer: Hirad Construction Group
                 </li>
                 
                 <li>
@@ -68,19 +76,27 @@ const ProjectDetails = () => {
                 </li>
                 
                 <li>
-                  Project address: Mazandaran, Nowshehr, Chalak
+                  Address: Shahrak-e Gharb, Phase 4, North Flamak, Heydarian Alley, No. 9
                 </li>
                 
                 <li>
-                  Architect: Amirhossein Tabrizi
+                  Workshop Supervisor: Amir Hossein Noushad
                 </li>
                 
                 <li>
-                  Type of structure: concrete frame
+                  Architect: Atiye Sohani
                 </li>
                 
                 <li>
-                  Land area: 10,000 square meter
+                  Structure Type: Reinforced Concrete with Waffle Slab Roof
+                </li>
+                
+                <li>
+                  Land Area: 450 square meters
+                </li>
+                
+                <li>
+                  Built Area: 1500 square meters (Usable), 1000 square meters (Non-usable)
                 </li>
               </div>
             </Col>

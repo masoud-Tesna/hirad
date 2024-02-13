@@ -514,3 +514,11 @@
   transition: max-height .4s ease-in-out;
   overflow: hidden;
 }
+
+
+@media print {
+  /* Your print styles for landscape mode */
+  @page {
+    size: landscape;
+  }
+}

@@ -15,6 +15,9 @@ import {useQueryClient} from '@tanstack/react-query';
 import debounce from 'lodash.debounce';
 import dynamic from 'next/dynamic';
 import html2pdf from 'html2pdf.js';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import {toPng} from 'html-to-image';
 
 const DatePicker = dynamic(() => import('@/templates/UI/DatePicker').then((mod) => mod.DatePicker), {ssr: false});
 
@@ -162,23 +165,38 @@ const ReservationsTable = () => {
     }
   ];
   
-  const downloadPDF = () => {
-    const content = tableRef.current;
+  // const pdfContent = document.querySelector('#pdf');
+  // Use html2canvas to capture the content of the component
+  /*toPng(pdfContent)
+   .then((dataUrl) => {
+   // Create an anchor element to download the image
+   const a = document.createElement('a');
+   a.href = dataUrl;
+   a.download = 'exported_image.png';
+   a.click();
+   })
+   .catch((error) => {
+   console.error('Error exporting image:', error);
+   });*/
+  
+  
+  const downloadAndPrintPDF = () => {
+    const pdfContent = document.querySelector('#pdf');
     
-    // Create an options object with the desired settings
-    const options = {
-      margin: 10,
-      filename: 'table.pdf',
-      image: {type: 'jpeg', quality: 0.98},
-      html2canvas: {scale: 2},
-      jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
-    };
+    const currentDate = new Date().toISOString().slice(0, 10);
     
-    // Use html2pdf to generate PDF from the table
-    html2pdf().from(content).set(options).outputPdf(pdf => {
-      // Save the PDF
-      pdf.save();
-    });
+    // Use html2canvas to capture the content of the component
+    toPng(pdfContent)
+      .then((dataUrl) => {
+        // Create an anchor element to download the image
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = `visitsList_${currentDate}.png`;
+        a.click();
+      })
+      .catch((error) => {
+        console.error('Error exporting image:', error);
+      });
   };
   
   useEffect(() => {
@@ -308,18 +326,12 @@ const ReservationsTable = () => {
       
       <div className="bg-white my-[20px] py-[40px] px-[16px]">
         <Table
-          ref={tableRef}
+          id={'pdf'}
           loading={isLoading}
           columns={columns}
           dataSource={reservations}
           rowKey={'_id'}
           bordered={false}
-          footer={() => <div className="text-end"><Button
-            onClick={downloadPDF}
-            type={'default'}
-            className="min-w-[174px] !border-secondary !text-secondary hover:!border-[#194a32] hover:!text-[#194a32]"
-          >چاپ لیست</Button>
-          </div>}
           pagination={{
             position: ['bottomRight'],
             hideOnSinglePage: true,
@@ -329,6 +341,14 @@ const ReservationsTable = () => {
             onChange: page => setFilters(current => ({...current, page}))
           }}
         />
+        
+        <div className="text-end mt-16">
+          <Button
+            onClick={downloadAndPrintPDF}
+            type={'default'}
+            className="min-w-[174px] !border-secondary !text-secondary hover:!border-[#194a32] hover:!text-[#194a32]"
+          >چاپ لیست</Button>
+        </div>
       </div>
     </>
   );

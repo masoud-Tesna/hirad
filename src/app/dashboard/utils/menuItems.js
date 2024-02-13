@@ -14,9 +14,9 @@ export const menuItems = [
     link: '/dashboard/reservations'
   },
   {
-    key: 'collaboration',
+    key: 'cooperation',
     label: 'درخواست های همکاری',
     icon: <CollaborationOutlined className="!text-[25px]" />,
-    link: '/dashboard/collaboration'
+    link: '/dashboard/cooperation'
   }
 ];

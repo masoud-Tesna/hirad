@@ -71,18 +71,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه آوانگارد چلک
+                    پروژه هیراد پالاس
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Avangard Chelak
+                    Hirad Palace
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Mazandaran, Nowshahr, chelak
+                  Shahrak-e Gharb, Phase 4, North Flamak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -102,18 +102,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه آوانگارد چلک
+                    پروژه هیراد پالاس
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Avangard Chelak
+                    Hirad Palace
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Mazandaran, Nowshahr, chelak
+                  Shahrak-e Gharb, Phase 4, North Flamak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -133,18 +133,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه آوانگارد چلک
+                    پروژه هیراد پالاس
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Avangard Chelak
+                    Hirad Palace
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Mazandaran, Nowshahr, chelak
+                  Shahrak-e Gharb, Phase 4, North Flamak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -164,18 +164,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه آوانگارد چلک
+                    پروژه هیراد پالاس
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Avangard Chelak
+                    Hirad Palace
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Mazandaran, Nowshahr, chelak
+                  Shahrak-e Gharb, Phase 4, North Flamak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -195,18 +195,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه آوانگارد چلک
+                    پروژه هیراد پالاس
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Avangard Chelak
+                    Hirad Palace
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Mazandaran, Nowshahr, chelak
+                  Shahrak-e Gharb, Phase 4, North Flamak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -239,18 +239,18 @@ const ProjectsListsGrid = () => {
                     className="[&>div]:text-sm [&>div]:text-center"
                   >
                     <div>
-                      پروژه آوانگارد چلک
+                      پروژه هیراد پالاس
                     </div>
                     
                     <div className="tracking-[1.4px]">
-                      Avangard Chelak
+                      Hirad Palace
                     </div>
                   </Space>
                 </div>
                 
                 <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                   <Space size={4}>
-                    Mazandaran, Nowshahr, chelak
+                    Shahrak-e Gharb, Phase 4, North Flamak
                     
                     <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                   </Space>
@@ -270,18 +270,18 @@ const ProjectsListsGrid = () => {
                     className="[&>div]:text-sm [&>div]:text-center"
                   >
                     <div>
-                      پروژه آوانگارد چلک
+                      پروژه هیراد پالاس
                     </div>
                     
                     <div className="tracking-[1.4px]">
-                      Avangard Chelak
+                      Hirad Palace
                     </div>
                   </Space>
                 </div>
                 
                 <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                   <Space size={4}>
-                    Mazandaran, Nowshahr, chelak
+                    Shahrak-e Gharb, Phase 4, North Flamak
                     
                     <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                   </Space>
@@ -301,18 +301,18 @@ const ProjectsListsGrid = () => {
                     className="[&>div]:text-sm [&>div]:text-center"
                   >
                     <div>
-                      پروژه آوانگارد چلک
+                      پروژه هیراد پالاس
                     </div>
                     
                     <div className="tracking-[1.4px]">
-                      Avangard Chelak
+                      Hirad Palace
                     </div>
                   </Space>
                 </div>
                 
                 <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                   <Space size={4}>
-                    Mazandaran, Nowshahr, chelak
+                    Shahrak-e Gharb, Phase 4, North Flamak
                     
                     <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                   </Space>
@@ -332,18 +332,18 @@ const ProjectsListsGrid = () => {
                     className="[&>div]:text-sm [&>div]:text-center"
                   >
                     <div>
-                      پروژه آوانگارد چلک
+                      پروژه هیراد پالاس
                     </div>
                     
                     <div className="tracking-[1.4px]">
-                      Avangard Chelak
+                      Hirad Palace
                     </div>
                   </Space>
                 </div>
                 
                 <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                   <Space size={4}>
-                    Mazandaran, Nowshahr, chelak
+                    Shahrak-e Gharb, Phase 4, North Flamak
                     
                     <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                   </Space>
@@ -363,18 +363,18 @@ const ProjectsListsGrid = () => {
                     className="[&>div]:text-sm [&>div]:text-center"
                   >
                     <div>
-                      پروژه آوانگارد چلک
+                      پروژه هیراد پالاس
                     </div>
                     
                     <div className="tracking-[1.4px]">
-                      Avangard Chelak
+                      Hirad Palace
                     </div>
                   </Space>
                 </div>
                 
                 <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                   <Space size={4}>
-                    Mazandaran, Nowshahr, chelak
+                    Shahrak-e Gharb, Phase 4, North Flamak
                     
                     <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                   </Space>
