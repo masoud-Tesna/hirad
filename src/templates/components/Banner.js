@@ -5,6 +5,8 @@ import {useSelectedLayoutSegment} from 'next/navigation';
 
 import homeBanner from '/public/images/homeBanner.png';
 import projectsBanner from '/public/images/projects/projectsPageBanner.png';
+import projectsPageBannerXs from '/public/images/projects/projectsPageBannerXs.png';
+import {useWindowSize} from '@/utils/helpers';
 
 
 // const passiveEventListener = {passive: true};
@@ -30,6 +32,8 @@ import projectsBanner from '/public/images/projects/projectsPageBanner.png';
 const Banner = ({asMobile}) => {
   const segment = useSelectedLayoutSegment();
   
+  const {width} = useWindowSize();
+  
   const bannersSettings = {
     home: {
       banner: homeBanner,
@@ -39,7 +43,7 @@ const Banner = ({asMobile}) => {
       rest: {}
     },
     projects: {
-      banner: projectsBanner,
+      banner: width <= 767 ? projectsPageBannerXs : projectsBanner,
       alt: 'projectName',
       height: 297,
       rest: {

@@ -102,18 +102,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه هیراد پالاس
+                    پروژه آوانگارد چلک
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Hirad Palace
+                    Avangard Chelak
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Shahrak-e Gharb, Phase 4, North Flamak
+                  Mazandaran, Nowshahr, chelak
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -133,18 +133,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه هیراد پالاس
+                    بازار مبل پاسارگاد
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Hirad Palace
+                    Pasargad furniture market
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Shahrak-e Gharb, Phase 4, North Flamak
+                  Tehran, Yaftabad
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>
@@ -164,11 +164,11 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه هیراد پالاس
+                    پروژه هیراد پالاس 2
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Hirad Palace
+                    Hirad Palace 2
                   </div>
                 </Space>
               </div>
@@ -195,18 +195,18 @@ const ProjectsListsGrid = () => {
                   className="[&>div]:text-sm [&>div]:text-center"
                 >
                   <div>
-                    پروژه هیراد پالاس
+                    بازار مبل کاسپین
                   </div>
                   
                   <div className="tracking-[1.4px]">
-                    Hirad Palace
+                    Caspian furniture market
                   </div>
                 </Space>
               </div>
               
               <div className="text-[rgba(221,221,221,.50)] text-xs mt-auto">
                 <Space size={4}>
-                  Shahrak-e Gharb, Phase 4, North Flamak
+                  Tehran, Yaftabad
                   
                   <Image src={locationIcon} alt="" className="max-w-[9px] max-h-[12px]" />
                 </Space>

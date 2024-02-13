@@ -40,7 +40,7 @@ const ProjectAmenities = () => {
       <Image src={projectAmenitiesBg} alt={''} layout="fill" placeholder="blur" objectFit="cover" />
       
       <Col
-        className="w-[500px] fill-[linear-gradient(180deg,rgba(137,137,137,0.50)_-2.81%,rgba(255,255,255,0.00)_104.22%)] drop-shadow-[-3px_0px_12px_rgba(0,0,0,0.12)] backdrop-blur-[20px] transition-all duration-500 ease-in-out transform pt-[36px] pb-[22px] px-[2%] text-white text-center"
+        className="w-[500px] fill-[linear-gradient(180deg,rgba(137,137,137,0.50)_-2.81%,rgba(255,255,255,0.00)_104.22%)] drop-shadow-[-3px_0px_12px_rgba(0,0,0,0.12)] backdrop-blur-[20px] transition-all duration-500 ease-in-out transform py-[37px] md:pb-[22px] px-[2%] text-white text-center"
       >
         <div className="text-captionXl2 md:text-captionXxl">
           امکانات رفاهی هیراد پالاس
