@@ -8,11 +8,11 @@ import ProjectGallery from './components/ProjectGallery';
 import ProjectDetails from './components/ProjectDetails';
 import {BusinessPartnersBox} from '@/app/(basic)/components/BusinessPartners';
 
-export async function generateStaticParams() {
+/*export async function generateStaticParams() {
   const projects = ['hirad-palace'];
   
   return projects.map((project) => ({projectName: project}));
-}
+}*/
 
 const ProjectDetailsPage = ({params: {projectName}}) => {
   

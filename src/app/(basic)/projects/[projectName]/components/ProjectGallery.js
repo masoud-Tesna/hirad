@@ -48,6 +48,7 @@ const ProjectGallery = () => {
               src={image1?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -58,6 +59,7 @@ const ProjectGallery = () => {
               src={image2?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -68,6 +70,7 @@ const ProjectGallery = () => {
               src={image3?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -78,6 +81,7 @@ const ProjectGallery = () => {
               src={image4?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -88,6 +92,7 @@ const ProjectGallery = () => {
               src={image5?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -98,6 +103,7 @@ const ProjectGallery = () => {
               src={image6?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -108,6 +114,7 @@ const ProjectGallery = () => {
               src={image7?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -118,6 +125,7 @@ const ProjectGallery = () => {
               src={image8?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
           
@@ -128,6 +136,7 @@ const ProjectGallery = () => {
               src={image9?.src}
               rootClassName={'!size-full !max-w-full !max-h-full'}
               className="!size-full !max-w-full !max-h-full object-cover object-center"
+	      alt={"Fake Alt"}
             />
           </div>
         </div>
@@ -152,6 +161,7 @@ const ProjectGallery = () => {
                 src={image1?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -160,6 +170,7 @@ const ProjectGallery = () => {
                 src={image2?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -168,6 +179,7 @@ const ProjectGallery = () => {
                 src={image3?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -176,6 +188,7 @@ const ProjectGallery = () => {
                 src={image4?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -184,6 +197,7 @@ const ProjectGallery = () => {
                 src={image5?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -192,6 +206,7 @@ const ProjectGallery = () => {
                 src={image6?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -200,6 +215,7 @@ const ProjectGallery = () => {
                 src={image7?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -208,6 +224,7 @@ const ProjectGallery = () => {
                 src={image8?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
             
@@ -216,6 +233,7 @@ const ProjectGallery = () => {
                 src={image9?.src}
                 rootClassName={'!size-full !max-w-full !max-h-full'}
                 className="!size-full !max-w-full !max-h-full object-cover object-center"
+		alt={"Fake Alt"}
               />
             </SwiperSlide>
           
