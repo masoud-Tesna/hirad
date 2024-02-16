@@ -27,7 +27,7 @@ const Footer = () => {
             
             <Col xs={24} sm={16} md={10} lg={16}>
               <Row gutter={8} justify={'space-between'} align={'middle'}>
-                <Col xs={24} lg={12} className="max-md:!hidden">
+                <Col xs={24} lg={18} className="max-md:!hidden">
                   <Row gutter={20} align={'middle'}>
                     <Col flex="70px">
                       <Image
@@ -42,11 +42,11 @@ const Footer = () => {
                     
                     <Col flex="1 1" className="[&>div]:text-black [&>div]:text-captionLg [&>div]:py-[12px]">
                       <div className="border-solid border-0 border-b border-gray-30 inline-block">
-                        تهران، شهرک غرب، خیابان گل افشان، پلاک 84
+                        تهران، بازار آهن شادآباد، مجتمع اداری پارسیان، طبقه ۲
                       </div>
                       
                       <div className="max-md:hidden">
-                        Tehran, Shahrak-e gharb, Gol afshan Ave.
+                        2nd floor, Parsian office complex, Shadabad iron market, Tehran
                       </div>
                     </Col>
                   </Row>
@@ -59,7 +59,7 @@ const Footer = () => {
                     className="border-solid border-0 border-b border-gray-30 [&>div]:text-captionLg [&>div]:text-black md:!hidden"
                   >
                     <Col flex="1 1">
-                      تهران، شهرک غرب، خیابان گل افشان، پلاک 84
+                      تهران، بازار آهن شادآباد، مجتمع اداری پارسیان، طبقه ۲
                     </Col>
                     
                     <Col flex="50px" className="max-md:order-first">

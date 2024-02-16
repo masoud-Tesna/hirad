@@ -3,11 +3,12 @@ import {handleCreateAntdZodValidator} from '@/utils/helpers';
 import {LoginZod} from '@/app/schema/login';
 import {useRequest} from '@/utils/useRequest';
 import {useAuth} from '@/app/contexts/auth/AuthContext';
+import {useRouter} from 'next/navigation';
 
 const LoginForm = ({setLoginModalOpen}) => {
   const {handleChangeUserData} = useAuth();
-  
   const [formRef] = Form.useForm();
+  const router = useRouter();
   
   const request = useRequest();
   
@@ -27,6 +28,10 @@ const LoginForm = ({setLoginModalOpen}) => {
       await handleChangeUserData(loginResponse?.response);
       
       setLoginModalOpen(false);
+      
+      if (loginResponse.response?.userInfo?.type === 'admin') {
+        router.push('/dashboard/users');
+      }
     } catch (error) {
       console.log('error in handleOnFinishLogin >>>', error);
     }
